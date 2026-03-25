@@ -1,6 +1,7 @@
 /* ========================================
    CREAM GROUP - 公式サイト スタイルシート
    テーマ: ライト・南国・石垣島
+   v2: デザイン強化版
    ======================================== */
 
 /* --- Reset & Base --- */
@@ -65,6 +66,7 @@ ul {
 
 .section {
   padding: 80px 0;
+  position: relative;
 }
 
 .section:nth-child(even) {
@@ -103,6 +105,25 @@ ul {
 
 .skip-link:focus {
   top: 8px;
+}
+
+/* --- ウェーブディバイダー --- */
+.wave-divider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+.wave-divider--flip svg {
+  transform: scaleY(-1);
 }
 
 /* --- Header --- */
@@ -234,8 +255,16 @@ ul {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 30%, #80DEEA 60%, #4DD0E1 100%);
+  background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 25%, #80DEEA 50%, #4DD0E1 75%, #26C6DA 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
   overflow: hidden;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /* 写真背景用（写真追加後に有効化） */
@@ -247,6 +276,88 @@ ul {
   background-repeat: no-repeat;
 }
 
+/* 装飾的な浮遊バブル */
+.hero__bubbles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero__bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: bubbleFloat linear infinite;
+}
+
+.hero__bubble:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  background: var(--color-accent);
+  top: 20%;
+  left: 10%;
+  animation-duration: 18s;
+}
+
+.hero__bubble:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  background: var(--color-primary);
+  top: 60%;
+  right: 15%;
+  animation-duration: 14s;
+  animation-delay: -4s;
+}
+
+.hero__bubble:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  background: #FFD54F;
+  top: 30%;
+  right: 25%;
+  animation-duration: 20s;
+  animation-delay: -8s;
+}
+
+.hero__bubble:nth-child(4) {
+  width: 100px;
+  height: 100px;
+  background: var(--color-primary-dark);
+  bottom: 25%;
+  left: 20%;
+  animation-duration: 16s;
+  animation-delay: -2s;
+}
+
+.hero__bubble:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  background: #FF8A65;
+  top: 10%;
+  right: 10%;
+  animation-duration: 22s;
+  animation-delay: -6s;
+}
+
+.hero__bubble:nth-child(6) {
+  width: 70px;
+  height: 70px;
+  background: #81C784;
+  bottom: 15%;
+  right: 30%;
+  animation-duration: 17s;
+  animation-delay: -10s;
+}
+
+@keyframes bubbleFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.1); }
+  50% { transform: translate(-20px, -20px) scale(0.9); }
+  75% { transform: translate(15px, 30px) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -254,7 +365,7 @@ ul {
   right: -30%;
   width: 80%;
   height: 200%;
-  background: radial-gradient(ellipse, rgba(255, 111, 97, 0.15) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(255, 111, 97, 0.12) 0%, transparent 70%);
   animation: float 20s ease-in-out infinite;
 }
 
@@ -265,7 +376,7 @@ ul {
   left: -20%;
   width: 60%;
   height: 120%;
-  background: radial-gradient(ellipse, rgba(0, 188, 212, 0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0, 188, 212, 0.15) 0%, transparent 70%);
   animation: float 15s ease-in-out infinite reverse;
 }
 
@@ -278,12 +389,12 @@ ul {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 0 24px;
 }
 
@@ -291,45 +402,64 @@ ul {
   font-family: var(--font-en);
   font-size: 1rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  color: rgba(0, 77, 86, 0.7);
+  letter-spacing: 0.25em;
+  color: rgba(0, 77, 86, 0.6);
   margin-bottom: 16px;
+  text-transform: uppercase;
 }
 
 .hero__title {
   font-family: var(--font-en);
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: 700;
   color: #004D56;
   letter-spacing: 0.1em;
   line-height: 1.1;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 30px rgba(0, 77, 86, 0.1);
 }
 
 .hero__tagline {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #00696E;
   margin-bottom: 40px;
   font-weight: 500;
+  letter-spacing: 0.1em;
 }
 
 .hero__cta {
   display: inline-block;
-  padding: 14px 40px;
-  background: var(--color-primary);
+  padding: 16px 48px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
   border-radius: 50px;
   letter-spacing: 0.05em;
   transition: all var(--transition);
-  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 188, 212, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero__cta:hover::before {
+  left: 100%;
 }
 
 .hero__cta:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 188, 212, 0.45);
 }
 
 /* スクロールヒント */
@@ -338,7 +468,7 @@ ul {
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero__scroll-hint span {
@@ -379,24 +509,43 @@ ul {
 
 .about__stat {
   text-align: center;
-  padding: 24px;
+  padding: 28px 24px;
   background: var(--color-bg-card);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.about__stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
 }
 
 .about__stat:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
+}
+
+.about__stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+  display: block;
 }
 
 .about__stat-number {
   display: block;
   font-family: var(--font-en);
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   color: var(--color-primary);
+  line-height: 1.2;
 }
 
 .about__stat-label {
@@ -430,9 +579,10 @@ ul {
 }
 
 .store-card__image {
-  height: 180px;
+  height: 200px;
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   padding: 16px;
   position: relative;
   overflow: hidden;
@@ -441,6 +591,52 @@ ul {
 
 .store-card__link:hover .store-card__image {
   transform: scale(1.03);
+}
+
+/* 店舗アイコン装飾 */
+.store-card__emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  opacity: 0.3;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.store-card__link:hover .store-card__emoji {
+  opacity: 0.5;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* パターンオーバーレイ */
+.store-card__image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                     radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px, 40px 40px;
+  z-index: 0;
+}
+
+/* ホバー時の光沢 */
+.store-card__image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.store-card__link:hover .store-card__image::after {
+  left: 150%;
 }
 
 /* 写真用: store-card__image 内の img */
@@ -453,14 +649,15 @@ ul {
 }
 
 .store-card__badge {
-  background: rgba(255, 255, 255, 0.92);
-  padding: 4px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 5px 16px;
   border-radius: 20px;
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--color-text);
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  backdrop-filter: blur(4px);
 }
 
 .store-card__body {
@@ -524,9 +721,10 @@ ul {
   color: var(--color-accent);
   font-weight: 600;
   padding: 8px 12px;
-  background: #FFF5F4;
+  background: linear-gradient(135deg, #FFF5F4 0%, #FFF0EE 100%);
   border-radius: 8px;
   margin-bottom: 12px;
+  border-left: 3px solid var(--color-accent);
 }
 
 .store-card__actions {
@@ -695,6 +893,36 @@ ul {
   margin-bottom: 32px;
 }
 
+/* メールCTA */
+.contact__general {
+  margin-bottom: 32px;
+}
+
+.contact__general p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+.contact__email {
+  display: inline-block;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  letter-spacing: 0.03em;
+  transition: all var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+}
+
+.contact__email:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 188, 212, 0.4);
+  color: #fff;
+}
+
 .contact__links {
   display: flex;
   flex-direction: column;
@@ -711,12 +939,14 @@ ul {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition: all var(--transition);
+  border-left: 3px solid transparent;
 }
 
 .contact__link:hover {
   transform: translateX(4px);
   box-shadow: var(--shadow-hover);
   color: var(--color-primary);
+  border-left-color: var(--color-primary);
 }
 
 .contact__link-name {
@@ -759,6 +989,7 @@ ul {
   font-weight: 500;
   color: var(--color-text);
   transition: all var(--transition);
+  border: 1px solid transparent;
 }
 
 .contact__sns-item svg {
@@ -769,17 +1000,33 @@ ul {
   transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
   color: #E4405F;
+  border-color: rgba(228, 64, 95, 0.2);
 }
 
 /* --- Footer --- */
 .footer {
   background: #004D56;
   color: rgba(255, 255, 255, 0.8);
-  padding: 48px 0 32px;
+  padding: 0 0 32px;
+  position: relative;
+}
+
+.footer__gradient-line {
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent), #FFD54F, var(--color-primary));
+  background-size: 200% 100%;
+  animation: gradientLine 4s ease infinite;
+}
+
+@keyframes gradientLine {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
 }
 
 .footer__inner {
   text-align: center;
+  padding-top: 48px;
 }
 
 .footer__logo {
@@ -807,8 +1054,8 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.8);
@@ -818,7 +1065,7 @@ ul {
 .footer__sns-link:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .footer__nav {
@@ -866,7 +1113,7 @@ ul {
 .contact__links .contact__link {
   opacity: 0;
   transform: translateX(-20px);
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow var(--transition), color var(--transition);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow var(--transition), color var(--transition), border-left-color var(--transition);
 }
 
 .contact__links .contact__link.is-visible {
@@ -1156,11 +1403,27 @@ ul {
     font-size: 1rem;
   }
 
+  .hero__bubble:nth-child(1) { width: 80px; height: 80px; }
+  .hero__bubble:nth-child(2) { width: 50px; height: 50px; }
+  .hero__bubble:nth-child(3) { width: 40px; height: 40px; }
+  .hero__bubble:nth-child(4) { width: 60px; height: 60px; }
+  .hero__bubble:nth-child(5) { display: none; }
+  .hero__bubble:nth-child(6) { display: none; }
+
+  /* Wave */
+  .wave-divider svg {
+    height: 40px;
+  }
+
   /* Store Cards */
   .stores__grid {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  .store-card__emoji {
+    font-size: 3rem;
   }
 
   /* Access */
@@ -1212,7 +1475,6 @@ ul {
   .footer__nav {
     gap: 16px;
   }
-}
 
   /* Company */
   .company__table th,

@@ -62,4 +62,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     animateObserver.observe(el);
   });
+
+  // カウントアップアニメーション
+  const countObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.getAttribute('data-count'), 10);
+          if (isNaN(target)) return;
+
+          const duration = target > 100 ? 1500 : 800;
+          const start = performance.now();
+
+          const animate = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            // easeOutCubic
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.round(eased * target);
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            }
+          };
+
+          el.textContent = '0';
+          requestAnimationFrame(animate);
+          countObserver.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll('[data-count]').forEach(el => {
+    countObserver.observe(el);
+  });
 });

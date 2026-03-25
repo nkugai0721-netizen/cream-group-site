@@ -257,6 +257,14 @@
   <!-- ========== Hero ========== -->
   <section class="hero" id="hero" aria-label="メインビジュアル">
     <!-- 写真準備後: <div class="hero__bg" style="background-image: url('images/hero.jpg');"></div> -->
+    <div class="hero__bubbles">
+      <div class="hero__bubble"></div>
+      <div class="hero__bubble"></div>
+      <div class="hero__bubble"></div>
+      <div class="hero__bubble"></div>
+      <div class="hero__bubble"></div>
+      <div class="hero__bubble"></div>
+    </div>
     <div class="hero__overlay"></div>
     <div class="hero__content">
       <p class="hero__sub">Okinawa &amp; Ishigaki Island</p>
@@ -268,6 +276,13 @@
       <span></span>
     </div>
   </section>
+
+  <!-- Hero → About ウェーブ -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+    </svg>
+  </div>
 
   <main id="main">
     <!-- ========== About ========== -->
@@ -293,21 +308,31 @@
           </div>
           <div class="about__stats">
             <div class="about__stat" data-animate>
-              <span class="about__stat-number">5</span>
+              <span class="about__stat-icon" aria-hidden="true">&#x1F3EA;</span>
+              <span class="about__stat-number" data-count="5">5</span>
               <span class="about__stat-label">店舗</span>
             </div>
             <div class="about__stat" data-animate>
-              <span class="about__stat-number">2</span>
+              <span class="about__stat-icon" aria-hidden="true">&#x1F3DD;</span>
+              <span class="about__stat-number" data-count="2">2</span>
               <span class="about__stat-label">エリア</span>
             </div>
             <div class="about__stat" data-animate>
-              <span class="about__stat-number">2021</span>
+              <span class="about__stat-icon" aria-hidden="true">&#x1F4C5;</span>
+              <span class="about__stat-number" data-count="2021">2021</span>
               <span class="about__stat-label">設立</span>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- About → Stores ウェーブ -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#F8FFFE"/>
+      </svg>
+    </div>
 
     <!-- ========== Stores ========== -->
     <section class="stores section" id="stores" aria-label="店舗紹介">
@@ -320,6 +345,8 @@
           <article class="store-card" data-animate>
             <a href="stores/senbero.html" class="store-card__link">
               <div class="store-card__image" style="background: linear-gradient(135deg, #FF9A56 0%, #FF6F61 100%);">
+                <!-- 写真追加時: <img src="images/stores/senbero.jpg" alt="せんべろ風土" loading="lazy"> -->
+                <span class="store-card__emoji" aria-hidden="true">&#x1F37A;</span>
                 <span class="store-card__badge">居酒屋</span>
               </div>
             </a>
@@ -362,6 +389,8 @@
           <article class="store-card" data-animate>
             <a href="stores/garage.html" class="store-card__link">
               <div class="store-card__image" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">
+                <!-- 写真追加時: <img src="images/stores/garage.jpg" alt="SAN DRIP GARAGE" loading="lazy"> -->
+                <span class="store-card__emoji" aria-hidden="true">&#x1F32E;</span>
                 <span class="store-card__badge">タコス &amp; バル</span>
               </div>
             </a>
@@ -404,6 +433,8 @@
           <article class="store-card" data-animate>
             <a href="stores/leje.html" class="store-card__link">
               <div class="store-card__image" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
+                <!-- 写真追加時: <img src="images/stores/leje.jpg" alt="Leje 石垣島" loading="lazy"> -->
+                <span class="store-card__emoji" aria-hidden="true">&#x1F3B0;</span>
                 <span class="store-card__badge">シーシャ &amp; カジノバー</span>
               </div>
             </a>
@@ -446,6 +477,8 @@
           <article class="store-card" data-animate>
             <a href="stores/chacky.html" class="store-card__link">
               <div class="store-card__image" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                <!-- 写真追加時: <img src="images/stores/chacky.jpg" alt="スナックちゃっきー" loading="lazy"> -->
+                <span class="store-card__emoji" aria-hidden="true">&#x1F3A4;</span>
                 <span class="store-card__badge">スナック</span>
               </div>
             </a>
@@ -480,6 +513,8 @@
           <article class="store-card" data-animate>
             <a href="stores/shitahaku.html" class="store-card__link">
               <div class="store-card__image" style="background: linear-gradient(135deg, #FCCB90 0%, #D57EEB 100%);">
+                <!-- 写真追加時: <img src="images/stores/shitahaku.jpg" alt="喫茶シタハク" loading="lazy"> -->
+                <span class="store-card__emoji" aria-hidden="true">&#x2615;</span>
                 <span class="store-card__badge">カフェ</span>
               </div>
             </a>
@@ -508,6 +543,13 @@
         </div>
       </div>
     </section>
+
+    <!-- Stores → Company ウェーブ -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,30 C360,0 720,60 1080,20 C1260,8 1380,40 1440,25 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
 
     <!-- ========== Company ========== -->
     <section class="company section" id="company" aria-label="会社概要">
@@ -551,6 +593,13 @@
       </div>
     </section>
 
+    <!-- Company → Access ウェーブ -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,40 C480,0 960,60 1440,20 L1440,60 L0,60 Z" fill="#F8FFFE"/>
+      </svg>
+    </div>
+
     <!-- ========== Access ========== -->
     <section class="access section" id="access" aria-label="アクセス">
       <div class="container">
@@ -589,6 +638,13 @@
         </div>
       </div>
     </section>
+
+    <!-- Access → Contact ウェーブ -->
+    <div class="wave-divider">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+        <path d="M0,20 C360,60 720,0 1080,40 C1260,50 1380,20 1440,30 L1440,60 L0,60 Z" fill="#FFFFFF"/>
+      </svg>
+    </div>
 
     <!-- ========== Contact ========== -->
     <section class="contact section" id="contact" aria-label="お問い合わせ">
@@ -643,6 +699,7 @@
 
   <!-- ========== Footer ========== -->
   <footer class="footer">
+    <div class="footer__gradient-line"></div>
     <div class="container">
       <div class="footer__inner">
         <p class="footer__logo">CREAM OF THE CROP</p>
