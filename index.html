@@ -3,14 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CREAM OF THE CROP | 沖縄の飲食グループ</title>
-  <meta name="description" content="沖縄で5店舗を展開する飲食グループ CREAM OF THE CROP。せんべろ風土、SAN DRIP GARAGE、Leje石垣島、スナックちゃっきー、喫茶シタハク。">
+  <title>CREAM OF THE CROP | 沖縄・石垣島の飲食グループ</title>
+  <meta name="description" content="沖縄・石垣島で5店舗を展開する飲食グループ CREAM OF THE CROP。せんべろ風土、SAN DRIP GARAGE、Leje石垣島、スナックちゃっきー、喫茶シタハク。居酒屋・タコスバル・シーシャバー・スナック・カフェを運営。">
+  <meta name="keywords" content="石垣島 居酒屋,石垣島 バー,石垣島 飲食店,沖縄 飲食グループ,美崎町,せんべろ,タコス,シーシャ,スナック,カフェ,八重瀬町">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cream-okinawa.com/">
 
   <!-- OGP -->
-  <meta property="og:title" content="CREAM OF THE CROP | 沖縄の飲食グループ">
-  <meta property="og:description" content="沖縄で5店舗を展開する飲食グループ。石垣島と沖縄本島で、居酒屋・タコスバル・シーシャバー・スナック・カフェを運営しています。">
+  <meta property="og:title" content="CREAM OF THE CROP | 沖縄・石垣島の飲食グループ">
+  <meta property="og:description" content="沖縄・石垣島で5店舗を展開する飲食グループ。居酒屋・タコスバル・シーシャバー・スナック・カフェを運営しています。">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cream-okinawa.com/">
+  <meta property="og:site_name" content="CREAM OF THE CROP">
   <meta property="og:locale" content="ja_JP">
+  <!-- og:image は写真準備後に追加 -->
+  <!-- <meta property="og:image" content="https://cream-okinawa.com/images/ogp.jpg"> -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CREAM OF THE CROP | 沖縄・石垣島の飲食グループ">
+  <meta name="twitter:description" content="沖縄・石垣島で5店舗を展開する飲食グループ。居酒屋からカフェまで、あなたの「もう一軒」を届けます。">
+  <!-- <meta name="twitter:image" content="https://cream-okinawa.com/images/ogp.jpg"> -->
+
+  <!-- Favicon（画像準備後に差し替え） -->
+  <!-- <link rel="icon" href="/images/favicon.ico" type="image/x-icon"> -->
+  <!-- <link rel="apple-touch-icon" href="/images/apple-touch-icon.png"> -->
+
+  <!-- Google Analytics（GA4）- 測定ID取得後にコメント解除 -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <!-- Google Search Console 認証（メタタグ取得後にコメント解除） -->
+  <!-- <meta name="google-site-verification" content="XXXXXXXXXXXXXXXX"> -->
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,16 +49,203 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- 構造化データ: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "CREAM OF THE CROP",
+    "url": "https://cream-okinawa.com",
+    "description": "沖縄・石垣島で5店舗を展開する飲食グループ",
+    "foundingDate": "2021",
+    "founder": {
+      "@type": "Person",
+      "name": "久貝直哉"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "石垣市",
+      "addressRegion": "沖縄県",
+      "addressCountry": "JP"
+    },
+    "sameAs": [
+      "https://www.instagram.com/senberofudo/",
+      "https://www.instagram.com/san_drip_garage/",
+      "https://www.instagram.com/leje.ishigaki/"
+    ]
+  }
+  </script>
+
+  <!-- 構造化データ: 各店舗 LocalBusiness -->
+  <script type="application/ld+json">
+  [
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "せんべろ風土",
+      "description": "石垣島の昼飲み居酒屋。1,000円せんべろセット（ドリンク3杯＋日替わり小鉢）が名物。",
+      "url": "https://cream-okinawa.com/stores/senbero.html",
+      "telephone": "+81-980-87-0799",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美崎町8-9",
+        "addressLocality": "石垣市",
+        "addressRegion": "沖縄県",
+        "postalCode": "907-0012",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.3396,
+        "longitude": 124.1575
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "14:00",
+        "closes": "24:00"
+      },
+      "servesCuisine": "居酒屋",
+      "priceRange": "¥1,000〜¥3,000",
+      "numberOfEmployees": {"@type": "QuantitativeValue", "value": 36, "unitText": "席"},
+      "sameAs": "https://www.instagram.com/senberofudo/",
+      "parentOrganization": {"@type": "Organization", "name": "CREAM OF THE CROP"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "SAN DRIP GARAGE",
+      "description": "石垣島のタコス＆バル。石垣牛タコスとドリンク100種以上。テイクアウト・Uber Eats対応。",
+      "url": "https://cream-okinawa.com/stores/garage.html",
+      "telephone": "+81-980-87-6261",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美崎町10",
+        "addressLocality": "石垣市",
+        "addressRegion": "沖縄県",
+        "postalCode": "907-0012",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.3400,
+        "longitude": 124.1570
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:30",
+        "closes": "21:00"
+      },
+      "servesCuisine": "タコス,バル",
+      "priceRange": "¥1,000〜¥4,000",
+      "sameAs": "https://www.instagram.com/san_drip_garage/",
+      "parentOrganization": {"@type": "Organization", "name": "CREAM OF THE CROP"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "Leje 石垣島",
+      "description": "石垣島のシーシャ＆カジノバー。非日常のエンターテインメント空間。飲み放題2h 3,000円〜。",
+      "url": "https://cream-okinawa.com/stores/leje.html",
+      "telephone": "+81-980-87-6259",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美崎町3",
+        "addressLocality": "石垣市",
+        "addressRegion": "沖縄県",
+        "postalCode": "907-0012",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.3388,
+        "longitude": 124.1565
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "17:00",
+        "closes": "02:00"
+      },
+      "priceRange": "¥3,000〜¥6,000",
+      "sameAs": "https://www.instagram.com/leje.ishigaki/",
+      "parentOrganization": {"@type": "Organization", "name": "CREAM OF THE CROP"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "スナックちゃっきー",
+      "description": "石垣島のアットホームなスナック。カラオケ完備、キャスト在籍。島の夜をもっと楽しく。",
+      "url": "https://cream-okinawa.com/stores/chacky.html",
+      "telephone": "+81-90-7453-4007",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "美崎町11-3 海邦マックスビル1F",
+        "addressLocality": "石垣市",
+        "addressRegion": "沖縄県",
+        "postalCode": "907-0012",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.3402,
+        "longitude": 124.1578
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "20:00",
+        "closes": "02:00"
+      },
+      "priceRange": "¥3,000〜¥5,000",
+      "parentOrganization": {"@type": "Organization", "name": "CREAM OF THE CROP"}
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "喫茶シタハク",
+      "description": "沖縄本島・八重瀬町のゆったりカフェ。こだわりのコーヒーと穏やかな朝を届けます。",
+      "url": "https://cream-okinawa.com/stores/shitahaku.html",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "志多伯255-2",
+        "addressLocality": "八重瀬町",
+        "addressRegion": "沖縄県",
+        "postalCode": "901-0401",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 26.1300,
+        "longitude": 127.7350
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "15:00"
+      },
+      "servesCuisine": "カフェ",
+      "priceRange": "¥500〜¥1,500",
+      "parentOrganization": {"@type": "Organization", "name": "CREAM OF THE CROP"}
+    }
+  ]
+  </script>
 </head>
 <body>
+  <!-- スキップリンク -->
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
   <!-- ========== Header ========== -->
   <header class="header" id="header">
     <div class="header__inner">
-      <a href="#" class="header__logo">CREAM OF THE CROP</a>
-      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く">
+      <a href="/" class="header__logo">CREAM OF THE CROP</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="header__nav" id="nav">
+      <nav class="header__nav" id="nav" aria-label="メインナビゲーション">
         <a href="#about" class="header__link">About</a>
         <a href="#stores" class="header__link">Stores</a>
         <a href="#access" class="header__link">Access</a>
@@ -37,277 +255,346 @@
   </header>
 
   <!-- ========== Hero ========== -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" aria-label="メインビジュアル">
+    <!-- 写真準備後: <div class="hero__bg" style="background-image: url('images/hero.jpg');"></div> -->
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <p class="hero__sub">Okinawa, Japan</p>
+      <p class="hero__sub">Okinawa &amp; Ishigaki Island</p>
       <h1 class="hero__title">CREAM OF<br>THE CROP</h1>
       <p class="hero__tagline">沖縄から届ける、食とエンターテインメント</p>
       <a href="#stores" class="hero__cta">店舗を見る</a>
     </div>
-  </section>
-
-  <!-- ========== About ========== -->
-  <section class="about section" id="about">
-    <div class="container">
-      <h2 class="section__title">About Us</h2>
-      <p class="section__subtitle">私たちについて</p>
-      <div class="about__content">
-        <div class="about__text">
-          <p>
-            CREAM OF THE CROPは、沖縄県で5つの飲食店を展開するグループです。
-            石垣島の繁華街・美崎町を中心に4店舗、沖縄本島・八重瀬町に1店舗を構えています。
-          </p>
-          <p>
-            「来てくれた人に、最高の時間を届けたい」——
-            その想いのもと、昼飲みが楽しめる居酒屋から、深夜のエンターテインメントまで、
-            さまざまなシーンに寄り添う店舗を運営しています。
-          </p>
-          <p>
-            地元の方も、旅行で訪れた方も。
-            沖縄での「もう一軒」を、私たちが届けます。
-          </p>
-        </div>
-        <div class="about__stats">
-          <div class="about__stat">
-            <span class="about__stat-number">5</span>
-            <span class="about__stat-label">店舗</span>
-          </div>
-          <div class="about__stat">
-            <span class="about__stat-number">2</span>
-            <span class="about__stat-label">エリア</span>
-          </div>
-        </div>
-      </div>
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span></span>
     </div>
   </section>
 
-  <!-- ========== Stores ========== -->
-  <section class="stores section" id="stores">
-    <div class="container">
-      <h2 class="section__title">Our Stores</h2>
-      <p class="section__subtitle">店舗紹介</p>
-
-      <div class="stores__grid">
-        <!-- せんべろ風土 -->
-        <article class="store-card">
-          <div class="store-card__image" style="background: linear-gradient(135deg, #FF9A56 0%, #FF6F61 100%);">
-            <span class="store-card__badge">居酒屋</span>
+  <main id="main">
+    <!-- ========== About ========== -->
+    <section class="about section" id="about" aria-label="私たちについて">
+      <div class="container">
+        <h2 class="section__title">About Us</h2>
+        <p class="section__subtitle">私たちについて</p>
+        <div class="about__content">
+          <div class="about__text">
+            <p>
+              <strong>CREAM OF THE CROP</strong>は、2021年に設立された沖縄県の飲食グループです。
+              石垣島の繁華街・美崎町を中心に4店舗、沖縄本島・八重瀬町に1店舗を構えています。
+            </p>
+            <p>
+              「来てくれた人に、最高の時間を届けたい」——
+              その想いのもと、昼飲みが楽しめる居酒屋から、深夜のエンターテインメントまで、
+              さまざまなシーンに寄り添う店舗を運営しています。
+            </p>
+            <p>
+              地元の方も、旅行で訪れた方も。
+              沖縄での「もう一軒」を、私たちが届けます。
+            </p>
           </div>
-          <div class="store-card__body">
-            <h3 class="store-card__name">せんべろ風土</h3>
-            <p class="store-card__concept">気軽に立ち寄れる島酒場。昼飲み・はしご酒・地元の味を楽しむ。</p>
-            <div class="store-card__info">
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>石垣市美崎町8-9</span>
+          <div class="about__stats">
+            <div class="about__stat" data-animate>
+              <span class="about__stat-number" data-count="5">5</span>
+              <span class="about__stat-label">店舗</span>
+            </div>
+            <div class="about__stat" data-animate>
+              <span class="about__stat-number" data-count="2">2</span>
+              <span class="about__stat-label">エリア</span>
+            </div>
+            <div class="about__stat" data-animate>
+              <span class="about__stat-number" data-count="2021">2021</span>
+              <span class="about__stat-label">設立</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Stores ========== -->
+    <section class="stores section" id="stores" aria-label="店舗紹介">
+      <div class="container">
+        <h2 class="section__title">Our Stores</h2>
+        <p class="section__subtitle">店舗紹介</p>
+
+        <div class="stores__grid">
+          <!-- せんべろ風土 -->
+          <article class="store-card" data-animate>
+            <a href="stores/senbero.html" class="store-card__link">
+              <div class="store-card__image" style="background: linear-gradient(135deg, #FF9A56 0%, #FF6F61 100%);">
+                <!-- 写真準備後: <img src="images/stores/senbero.jpg" alt="せんべろ風土の店内" loading="lazy" width="400" height="240"> -->
+                <span class="store-card__badge">居酒屋</span>
               </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>14:00〜24:00</span>
+            </a>
+            <div class="store-card__body">
+              <h3 class="store-card__name"><a href="stores/senbero.html">せんべろ風土</a></h3>
+              <p class="store-card__concept">気軽に立ち寄れる島酒場。昼飲み・はしご酒・地元の味を楽しむ。</p>
+              <div class="store-card__info">
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>石垣市美崎町8-9</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>14:00〜24:00</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                  <span>36席</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:0980870799" class="store-card__tel">0980-87-0799</a>
+                </div>
               </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                <span>36席</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span>0980-87-0799</span>
+              <p class="store-card__highlight">名物：1,000円せんべろセット（ドリンク3杯＋日替わり小鉢）</p>
+              <div class="store-card__actions">
+                <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="store-card__sns" aria-label="せんべろ風土のInstagram">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  @senberofudo
+                </a>
+                <a href="https://maps.google.com/?q=せんべろ風土+石垣島" target="_blank" rel="noopener" class="store-card__map-link" aria-label="Googleマップで見る">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  地図を見る
+                </a>
               </div>
             </div>
-            <p class="store-card__highlight">名物：1,000円せんべろセット（ドリンク3杯＋日替わり小鉢）</p>
-            <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="store-card__sns">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              @senberofudo
+          </article>
+
+          <!-- SAN DRIP GARAGE -->
+          <article class="store-card" data-animate>
+            <a href="stores/garage.html" class="store-card__link">
+              <div class="store-card__image" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">
+                <span class="store-card__badge">タコス &amp; バル</span>
+              </div>
+            </a>
+            <div class="store-card__body">
+              <h3 class="store-card__name"><a href="stores/garage.html">SAN DRIP GARAGE</a></h3>
+              <p class="store-card__concept">港を望むオールタイムダイニング。石垣牛タコスとドリンク100種。</p>
+              <div class="store-card__info">
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>石垣市美崎町10</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>10:30〜21:00</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                  <span>42席</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:0980876261" class="store-card__tel">0980-87-6261</a>
+                </div>
+              </div>
+              <p class="store-card__highlight">テイクアウト対応 / Uber Eats対応</p>
+              <div class="store-card__actions">
+                <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="store-card__sns" aria-label="SAN DRIP GARAGEのInstagram">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  @san_drip_garage
+                </a>
+                <a href="https://maps.google.com/?q=SAN+DRIP+GARAGE+石垣島" target="_blank" rel="noopener" class="store-card__map-link" aria-label="Googleマップで見る">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  地図を見る
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Leje石垣島 -->
+          <article class="store-card" data-animate>
+            <a href="stores/leje.html" class="store-card__link">
+              <div class="store-card__image" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
+                <span class="store-card__badge">シーシャ &amp; カジノバー</span>
+              </div>
+            </a>
+            <div class="store-card__body">
+              <h3 class="store-card__name"><a href="stores/leje.html">Leje 石垣島</a></h3>
+              <p class="store-card__concept">非日常のエンターテインメント空間。シーシャ・カジノゲーム・飲み放題。</p>
+              <div class="store-card__info">
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>石垣市美崎町3</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>17:00〜26:00</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                  <span>60席</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:0980876259" class="store-card__tel">0980-87-6259</a>
+                </div>
+              </div>
+              <p class="store-card__highlight">毎週木曜 ポーカートーナメント開催 / 飲み放題2h 3,000円〜</p>
+              <div class="store-card__actions">
+                <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="store-card__sns" aria-label="Leje石垣島のInstagram">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  @leje.ishigaki
+                </a>
+                <a href="https://maps.google.com/?q=Leje+石垣島" target="_blank" rel="noopener" class="store-card__map-link" aria-label="Googleマップで見る">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  地図を見る
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- スナックちゃっきー -->
+          <article class="store-card" data-animate>
+            <a href="stores/chacky.html" class="store-card__link">
+              <div class="store-card__image" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
+                <span class="store-card__badge">スナック</span>
+              </div>
+            </a>
+            <div class="store-card__body">
+              <h3 class="store-card__name"><a href="stores/chacky.html">スナックちゃっきー</a></h3>
+              <p class="store-card__concept">島の夜をもっと楽しく。アットホームなスナックで至福のひとときを。</p>
+              <div class="store-card__info">
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>石垣市美崎町11-3 海邦マックスビル1F</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>20:00〜26:00</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <a href="tel:09074534007" class="store-card__tel">090-7453-4007</a>
+                </div>
+              </div>
+              <p class="store-card__highlight">カラオケ完備 / キャスト在籍</p>
+              <div class="store-card__actions">
+                <a href="https://maps.google.com/?q=スナックちゃっきー+石垣島" target="_blank" rel="noopener" class="store-card__map-link" aria-label="Googleマップで見る">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  地図を見る
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 喫茶シタハク -->
+          <article class="store-card" data-animate>
+            <a href="stores/shitahaku.html" class="store-card__link">
+              <div class="store-card__image" style="background: linear-gradient(135deg, #FCCB90 0%, #D57EEB 100%);">
+                <span class="store-card__badge">カフェ</span>
+              </div>
+            </a>
+            <div class="store-card__body">
+              <h3 class="store-card__name"><a href="stores/shitahaku.html">喫茶シタハク</a></h3>
+              <p class="store-card__concept">沖縄本島・八重瀬町のゆったりカフェ。こだわりの一杯と穏やかな朝を。</p>
+              <div class="store-card__info">
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>島尻郡八重瀬町志多伯255-2</span>
+                </div>
+                <div class="store-card__detail">
+                  <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <span>7:00〜15:00</span>
+                </div>
+              </div>
+              <p class="store-card__highlight">モーニング対応 / こだわりコーヒー</p>
+              <div class="store-card__actions">
+                <a href="https://maps.google.com/?q=喫茶シタハク+八重瀬町" target="_blank" rel="noopener" class="store-card__map-link" aria-label="Googleマップで見る">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  地図を見る
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Access ========== -->
+    <section class="access section" id="access" aria-label="アクセス">
+      <div class="container">
+        <h2 class="section__title">Access</h2>
+        <p class="section__subtitle">アクセス</p>
+        <div class="access__content">
+          <div class="access__text">
+            <h3 class="access__area-title">石垣島エリア（4店舗）</h3>
+            <p>せんべろ風土・SAN DRIP GARAGE・Leje・スナックちゃっきーは、石垣島の繁華街<strong>美崎町</strong>に集中しています。</p>
+            <div class="access__info">
+              <h4>石垣島 アクセス</h4>
+              <ul>
+                <li>石垣港離島ターミナルから徒歩約5分</li>
+                <li>石垣空港からタクシーで約30分</li>
+                <li>バスターミナルから徒歩約3分</li>
+              </ul>
+            </div>
+            <h3 class="access__area-title" style="margin-top: 24px;">沖縄本島エリア（1店舗）</h3>
+            <p>喫茶シタハクは、沖縄本島南部・<strong>八重瀬町</strong>にあります。</p>
+            <div class="access__info">
+              <h4>喫茶シタハク アクセス</h4>
+              <ul>
+                <li>那覇空港から車で約30分</li>
+                <li>八重瀬町志多伯255-2</li>
+              </ul>
+            </div>
+          </div>
+          <div class="access__map">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2285.5!2d124.1565!3d24.3395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3457e8c5b4a5c5d1%3A0x0!2z576O5bSO55S6!5e0!3m2!1sja!2sjp!4v1"
+              width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="石垣島美崎町の地図">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Contact ========== -->
+    <section class="contact section" id="contact" aria-label="お問い合わせ">
+      <div class="container">
+        <h2 class="section__title">Contact</h2>
+        <p class="section__subtitle">お問い合わせ</p>
+        <div class="contact__content">
+          <p class="contact__lead">各店舗へのお問い合わせは、お電話またはInstagramのダイレクトメッセージをご利用ください。</p>
+          <div class="contact__links">
+            <a href="tel:0980870799" class="contact__link">
+              <span class="contact__link-name">せんべろ風土</span>
+              <span class="contact__link-handle">0980-87-0799</span>
+            </a>
+            <a href="tel:0980876261" class="contact__link">
+              <span class="contact__link-name">SAN DRIP GARAGE</span>
+              <span class="contact__link-handle">0980-87-6261</span>
+            </a>
+            <a href="tel:0980876259" class="contact__link">
+              <span class="contact__link-name">Leje 石垣島</span>
+              <span class="contact__link-handle">0980-87-6259</span>
+            </a>
+            <a href="tel:09074534007" class="contact__link">
+              <span class="contact__link-name">スナックちゃっきー</span>
+              <span class="contact__link-handle">090-7453-4007</span>
             </a>
           </div>
-        </article>
-
-        <!-- SAN DRIP GARAGE -->
-        <article class="store-card">
-          <div class="store-card__image" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);">
-            <span class="store-card__badge">タコス &amp; バル</span>
-          </div>
-          <div class="store-card__body">
-            <h3 class="store-card__name">SAN DRIP GARAGE</h3>
-            <p class="store-card__concept">港を望むオールタイムダイニング。石垣牛タコスとドリンク100種。</p>
-            <div class="store-card__info">
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>石垣市美崎町10</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>10:30〜21:00</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                <span>42席</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span>0980-87-6261</span>
-              </div>
+          <div class="contact__sns-links">
+            <p class="contact__sns-lead">InstagramのDMからもお気軽にどうぞ</p>
+            <div class="contact__sns-grid">
+              <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="contact__sns-item">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>せんべろ風土</span>
+              </a>
+              <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="contact__sns-item">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>GARAGE</span>
+              </a>
+              <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="contact__sns-item">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>Leje</span>
+              </a>
             </div>
-            <p class="store-card__highlight">テイクアウト対応 / Uber Eats対応</p>
-            <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="store-card__sns">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              @san_drip_garage
-            </a>
-          </div>
-        </article>
-
-        <!-- Leje石垣島 -->
-        <article class="store-card">
-          <div class="store-card__image" style="background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);">
-            <span class="store-card__badge">シーシャ &amp; カジノバー</span>
-          </div>
-          <div class="store-card__body">
-            <h3 class="store-card__name">Leje 石垣島</h3>
-            <p class="store-card__concept">非日常のエンターテインメント空間。シーシャ・カジノゲーム・飲み放題。</p>
-            <div class="store-card__info">
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>石垣市美崎町3</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>17:00〜26:00</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-                <span>60席</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span>0980-87-6259</span>
-              </div>
-            </div>
-            <p class="store-card__highlight">毎週木曜 ポーカートーナメント開催 / 飲み放題2h 3,000円〜</p>
-            <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="store-card__sns">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              @leje.ishigaki
-            </a>
-          </div>
-        </article>
-
-        <!-- スナックちゃっきー -->
-        <article class="store-card">
-          <div class="store-card__image" style="background: linear-gradient(135deg, #F093FB 0%, #F5576C 100%);">
-            <span class="store-card__badge">スナック</span>
-          </div>
-          <div class="store-card__body">
-            <h3 class="store-card__name">スナックちゃっきー</h3>
-            <p class="store-card__concept">島の夜をもっと楽しく。アットホームなスナックで至福のひとときを。</p>
-            <div class="store-card__info">
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>石垣市美崎町11-3 海邦マックスビル1F</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>20:00〜26:00</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span>090-7453-4007</span>
-              </div>
-            </div>
-            <p class="store-card__highlight">カラオケ完備 / キャスト在籍</p>
-          </div>
-        </article>
-
-        <!-- 喫茶シタハク -->
-        <article class="store-card">
-          <div class="store-card__image" style="background: linear-gradient(135deg, #FCCB90 0%, #D57EEB 100%);">
-            <span class="store-card__badge">カフェ</span>
-          </div>
-          <div class="store-card__body">
-            <h3 class="store-card__name">喫茶シタハク</h3>
-            <p class="store-card__concept">沖縄本島・八重瀬町のゆったりカフェ。こだわりの一杯と穏やかな朝を。</p>
-            <div class="store-card__info">
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                <span>島尻郡八重瀬町志多伯255-2</span>
-              </div>
-              <div class="store-card__detail">
-                <svg class="store-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>7:00〜15:00</span>
-              </div>
-            </div>
-            <p class="store-card__highlight">モーニング対応 / こだわりコーヒー</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== Access ========== -->
-  <section class="access section" id="access">
-    <div class="container">
-      <h2 class="section__title">Access</h2>
-      <p class="section__subtitle">アクセス</p>
-      <div class="access__content">
-        <div class="access__text">
-          <h3 class="access__area-title">石垣島エリア（4店舗）</h3>
-          <p>せんべろ風土・SAN DRIP GARAGE・Leje・スナックちゃっきーは、石垣島の繁華街<strong>美崎町</strong>に集中しています。</p>
-          <div class="access__info">
-            <h3>石垣島 アクセス</h3>
-            <ul>
-              <li>石垣港離島ターミナルから徒歩約5分</li>
-              <li>石垣空港からタクシーで約30分</li>
-              <li>バスターミナルから徒歩約3分</li>
-            </ul>
-          </div>
-          <h3 class="access__area-title" style="margin-top: 24px;">沖縄本島エリア（1店舗）</h3>
-          <p>喫茶シタハクは、沖縄本島南部・<strong>八重瀬町</strong>にあります。</p>
-          <div class="access__info">
-            <h3>喫茶シタハク アクセス</h3>
-            <ul>
-              <li>那覇空港から車で約30分</li>
-              <li>八重瀬町志多伯255-2</li>
-            </ul>
           </div>
         </div>
-        <div class="access__map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3596.5!2d124.155!3d24.34!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z576O5bSO55S6!5e0!3m2!1sja!2sjp!4v1"
-            width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ========== Contact ========== -->
-  <section class="contact section" id="contact">
-    <div class="container">
-      <h2 class="section__title">Contact</h2>
-      <p class="section__subtitle">お問い合わせ</p>
-      <div class="contact__content">
-        <p class="contact__lead">各店舗へのお問い合わせは、お電話またはInstagramのダイレクトメッセージをご利用ください。</p>
-        <div class="contact__links">
-          <a href="tel:0980870799" class="contact__link">
-            <span class="contact__link-name">せんべろ風土</span>
-            <span class="contact__link-handle">0980-87-0799</span>
-          </a>
-          <a href="tel:0980876261" class="contact__link">
-            <span class="contact__link-name">SAN DRIP GARAGE</span>
-            <span class="contact__link-handle">0980-87-6261</span>
-          </a>
-          <a href="tel:0980876259" class="contact__link">
-            <span class="contact__link-name">Leje 石垣島</span>
-            <span class="contact__link-handle">0980-87-6259</span>
-          </a>
-          <a href="tel:09074534007" class="contact__link">
-            <span class="contact__link-name">スナックちゃっきー</span>
-            <span class="contact__link-handle">090-7453-4007</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- ========== Footer ========== -->
   <footer class="footer">
@@ -315,7 +602,24 @@
       <div class="footer__inner">
         <p class="footer__logo">CREAM OF THE CROP</p>
         <p class="footer__address">沖縄県石垣市美崎町 / 沖縄県島尻郡八重瀬町</p>
-        <p class="footer__links"><a href="privacy-policy.html" style="color:#999;text-decoration:none;font-size:0.85rem;">プライバシーポリシー</a></p>
+        <div class="footer__sns">
+          <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" aria-label="せんべろ風土 Instagram" class="footer__sns-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" aria-label="SAN DRIP GARAGE Instagram" class="footer__sns-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" aria-label="Leje石垣島 Instagram" class="footer__sns-link">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <a href="#about">About</a>
+          <a href="#stores">Stores</a>
+          <a href="#access">Access</a>
+          <a href="#contact">Contact</a>
+          <a href="privacy-policy.html">プライバシーポリシー</a>
+        </nav>
         <p class="footer__copy">&copy; 2026 CREAM OF THE CROP. All rights reserved.</p>
       </div>
     </div>

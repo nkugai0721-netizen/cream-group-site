@@ -11,41 +11,55 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ハンバーガーメニュー
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('active');
-    nav.classList.toggle('open');
-  });
-
-  // ナビリンククリックでメニューを閉じる
-  nav.querySelectorAll('.header__link').forEach(link => {
-    link.addEventListener('click', () => {
-      menuBtn.classList.remove('active');
-      nav.classList.remove('open');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuBtn.classList.toggle('active');
+      nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
     });
-  });
+
+    // ナビリンククリックでメニューを閉じる
+    nav.querySelectorAll('.header__link').forEach(link => {
+      link.addEventListener('click', () => {
+        menuBtn.classList.remove('active');
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'メニューを開く');
+      });
+    });
+  }
 
   // スクロールアニメーション（Intersection Observer）
-  const observer = new IntersectionObserver(
+  const animateObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          observer.unobserve(entry.target);
+          animateObserver.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.1 }
+    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
-  document.querySelectorAll('.store-card, .about__stat, .contact__link').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+  // data-animate 属性を持つ要素を監視
+  document.querySelectorAll('[data-animate]').forEach(el => {
+    animateObserver.observe(el);
   });
 
-  // is-visible クラスのスタイル適用
-  const style = document.createElement('style');
-  style.textContent = '.is-visible { opacity: 1 !important; transform: translateY(0) !important; }';
-  document.head.appendChild(style);
+  // Contactリンクのアニメーション
+  document.querySelectorAll('.contact__link').forEach(el => {
+    animateObserver.observe(el);
+  });
+
+  // About stat のアニメーション
+  document.querySelectorAll('.about__stat').forEach(el => {
+    if (!el.hasAttribute('data-animate')) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
+    animateObserver.observe(el);
+  });
 });

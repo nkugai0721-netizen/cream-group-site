@@ -4,24 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プライバシーポリシー | CREAM OF THE CROP</title>
+  <meta name="description" content="CREAM OF THE CROP のプライバシーポリシー。個人情報の取り扱いについてご説明します。">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://cream-okinawa.com/privacy-policy.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .policy { max-width: 800px; margin: 120px auto 60px; padding: 0 20px; }
-    .policy h1 { font-size: 1.8rem; margin-bottom: 2rem; border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
-    .policy h2 { font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.8rem; }
-    .policy p, .policy li { line-height: 1.8; color: #444; }
+    .policy { max-width: 800px; margin: 120px auto 60px; padding: 0 24px; }
+    .policy h1 { font-size: 1.8rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-primary-dark); padding-bottom: 0.5rem; color: var(--color-primary-dark); }
+    .policy h2 { font-size: 1.15rem; margin-top: 2rem; margin-bottom: 0.8rem; color: var(--color-text); }
+    .policy p, .policy li { line-height: 1.8; color: var(--color-text-light); }
     .policy ul { padding-left: 1.5em; }
-    .policy .back-link { display: inline-block; margin-top: 2rem; color: #c8a96e; text-decoration: none; }
-    .policy .back-link:hover { text-decoration: underline; }
+    .policy li { list-style: disc; margin-bottom: 4px; }
+    .policy .back-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 2rem; color: var(--color-primary); font-weight: 500; transition: color var(--transition); }
+    .policy .back-link:hover { color: var(--color-primary-dark); }
   </style>
 </head>
 <body>
   <header class="header" id="header">
     <div class="header__inner">
-      <a href="index.html" class="header__logo">CREAM OF THE CROP</a>
+      <a href="/" class="header__logo">CREAM OF THE CROP</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="nav" aria-label="メインナビゲーション">
+        <a href="/#about" class="header__link">About</a>
+        <a href="/#stores" class="header__link">Stores</a>
+        <a href="/#access" class="header__link">Access</a>
+        <a href="/#contact" class="header__link">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -82,16 +95,22 @@
 
     <p style="margin-top: 2rem; color: #999; font-size: 0.9rem;">制定日：2026年3月23日</p>
 
-    <a href="index.html" class="back-link">&larr; トップページに戻る</a>
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+      トップページに戻る
+    </a>
   </main>
 
   <footer class="footer">
     <div class="container">
       <div class="footer__inner">
         <p class="footer__logo">CREAM OF THE CROP</p>
+        <p class="footer__address">沖縄県石垣市美崎町 / 沖縄県島尻郡八重瀬町</p>
         <p class="footer__copy">&copy; 2026 CREAM OF THE CROP. All rights reserved.</p>
       </div>
     </div>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
