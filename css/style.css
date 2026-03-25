@@ -642,6 +642,46 @@ ul {
   box-shadow: var(--shadow);
 }
 
+/* --- Company --- */
+.company__table-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--color-bg-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.company__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company__table th,
+.company__table td {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.company__table tr:last-child th,
+.company__table tr:last-child td {
+  border-bottom: none;
+}
+
+.company__table th {
+  width: 140px;
+  background: var(--color-bg-alt);
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.company__table td {
+  color: var(--color-text-light);
+}
+
 /* --- Contact --- */
 .contact__content {
   text-align: center;
@@ -1171,6 +1211,25 @@ ul {
   /* Footer */
   .footer__nav {
     gap: 16px;
+  }
+}
+
+  /* Company */
+  .company__table th,
+  .company__table td {
+    display: block;
+    width: 100%;
+    padding: 8px 20px;
+  }
+  .company__table th {
+    padding-top: 16px;
+    padding-bottom: 4px;
+    border-bottom: none;
+    font-size: 0.8rem;
+    color: var(--color-primary-dark);
+  }
+  .company__table td {
+    padding-bottom: 16px;
   }
 }
 
