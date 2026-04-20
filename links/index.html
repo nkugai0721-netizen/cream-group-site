@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>CREAM OF THE CROP | 石垣島</title>
+<meta name="description" content="株式会社CREAM OF THE CROP - 石垣島の飲食グループ。せんべろ風土・SAN DRIP GARAGE・Leje・スナックちゃっきー・喫茶シタハクの公式リンク集。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --white: #fff;
+    --white-90: rgba(255,255,255,0.9);
+    --white-70: rgba(255,255,255,0.7);
+    --white-50: rgba(255,255,255,0.5);
+    --white-20: rgba(255,255,255,0.2);
+    --white-15: rgba(255,255,255,0.15);
+    --white-10: rgba(255,255,255,0.1);
+    --white-05: rgba(255,255,255,0.05);
+    --accent: #e8c97a;
+    --accent-dim: rgba(232,201,122,0.3);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 300;
+    color: var(--white);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background: #0a0a0a;
+  }
+
+  /* ===== ヒーロー ===== */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      url('https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&q=80')
+      center center / cover no-repeat;
+    z-index: 0;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.08) 0%,
+      rgba(0,0,0,0.02) 30%,
+      rgba(0,0,0,0.25) 60%,
+      rgba(0,0,0,0.8) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 24px 56px;
+    max-width: 480px;
+    width: 100%;
+  }
+
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--white-70);
+    margin-bottom: 8px;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
+  }
+
+  .hero-title .script {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 56px;
+    display: block;
+    margin-top: -4px;
+  }
+
+  .hero-location {
+    font-size: 11px;
+    letter-spacing: 6px;
+    color: var(--white-50);
+    margin-top: 16px;
+    text-transform: uppercase;
+  }
+
+  .hero-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--white-50);
+    margin: 20px auto;
+  }
+
+  .hero-tagline {
+    font-size: 13px;
+    color: var(--white-70);
+    letter-spacing: 2px;
+    font-weight: 300;
+  }
+
+  .scroll-hint {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 24px;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-hint span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--white-50);
+    margin-bottom: 4px;
+  }
+
+  .scroll-hint .arrow {
+    font-size: 14px;
+    color: var(--white-50);
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+  }
+
+  /* ===== 店舗セクション ===== */
+  .stores-section {
+    position: relative;
+    padding: 48px 0 0;
+    background: #0a0a0a;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 28px;
+    padding: 0 24px;
+  }
+
+  .section-header .label {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--white-50);
+    margin-bottom: 6px;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 6px;
+    color: var(--white-90);
+  }
+
+  /* ===== カルーセル ===== */
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding: 0;
+  }
+
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ===== スワイプカード ===== */
+  .swipe-card {
+    flex: 0 0 86%;
+    max-width: 400px;
+    scroll-snap-align: center;
+    position: relative;
+    height: 520px;
+    border-radius: 24px;
+    overflow: hidden;
+    margin: 0 7%;
+    flex-shrink: 0;
+  }
+
+  .swipe-card:first-child {
+    margin-left: 7%;
+  }
+
+  .swipe-card:last-child {
+    margin-right: 7%;
+  }
+
+  /* 背景写真 */
+  .swipe-card .card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .swipe-card:hover .card-bg {
+    transform: scale(1.05);
+  }
+
+  /* 2枚分割背景 */
+  .card-bg-split {
+    display: flex;
+    background: none !important;
+  }
+
+  .card-bg-half {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* グラデーションオーバーレイ */
+  .swipe-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(0,0,0,0.1) 0%,
+      rgba(0,0,0,0.15) 30%,
+      rgba(0,0,0,0.5) 55%,
+      rgba(0,0,0,0.88) 80%,
+      rgba(0,0,0,0.95) 100%
+    );
+    z-index: 1;
+  }
+
+  /* カード下部のアクセントライン */
+  .swipe-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--card-accent, var(--white-20));
+    z-index: 3;
+    opacity: 0.7;
+  }
+
+  /* カード別カラー */
+  .swipe-card[data-store="senbero"]   { --card-accent: #f5a623; }
+  .swipe-card[data-store="garage"]    { --card-accent: #6cb2eb; }
+  .swipe-card[data-store="leje"]      { --card-accent: #a882ff; }
+  .swipe-card[data-store="chucky"]    { --card-accent: #ff82ab; }
+  .swipe-card[data-store="shitahaku"] { --card-accent: #8ec8a0; }
+
+  /* カードコンテンツ */
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 28px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* ナンバリング */
+  .card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    color: var(--card-accent, var(--white-50));
+    letter-spacing: 2px;
+    opacity: 0.8;
+  }
+
+  /* 店舗名 */
+  .card-store-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 28px;
+    letter-spacing: 2px;
+    color: var(--white);
+    line-height: 1.2;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  }
+
+  .card-store-genre {
+    font-size: 11px;
+    color: var(--white-50);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: -8px;
+  }
+
+  /* 店舗説明 */
+  .card-desc {
+    font-size: 13px;
+    color: var(--white-70);
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+  }
+
+  /* SNSアイコンボタン */
+  .card-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .card-link-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+  }
+
+  .card-link-btn:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .card-link-btn:active {
+    transform: translateY(0) scale(0.97);
+  }
+
+  .card-link-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  .card-link-btn.ig {
+    background: linear-gradient(135deg, rgba(131,58,180,0.35), rgba(253,29,29,0.25), rgba(247,119,55,0.25));
+    border-color: rgba(253,29,29,0.2);
+  }
+
+  .card-link-btn.tt {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .card-link-btn.x {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .card-link-btn.th {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .card-link-btn.map {
+    background: rgba(52,168,83,0.25);
+    border-color: rgba(52,168,83,0.2);
+  }
+
+  /* ===== ドットインジケーター ===== */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px 0 8px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--white-20);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .dot.active {
+    width: 24px;
+    border-radius: 4px;
+    background: var(--white-70);
+  }
+
+  /* スワイプヒント */
+  .swipe-hint {
+    text-align: center;
+    padding: 8px 0 0;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--white-20);
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+
+  .swipe-hint.hidden {
+    opacity: 0;
+  }
+
+  /* ===== エリアマップ ===== */
+  .map-section {
+    max-width: 400px;
+    margin: 24px auto 0;
+    padding: 0 28px;
+  }
+
+  .map-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--white-10);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--white-70);
+    font-size: 13px;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+  }
+
+  .map-link:hover {
+    background: var(--white-10);
+    color: var(--white);
+  }
+
+  .map-link svg {
+    width: 18px;
+    height: 18px;
+    opacity: 0.7;
+  }
+
+  /* ===== フッター ===== */
+  .footer {
+    text-align: center;
+    padding: 40px 24px 56px;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .footer .brand-small {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--white-50);
+    margin-bottom: 8px;
+  }
+
+  .footer .company {
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+
+  .footer .address {
+    font-size: 10px;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* ===== ヒーローアニメーション ===== */
+  .hero-content > * {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroFadeIn 0.8s ease-out forwards;
+  }
+  .hero-sub { animation-delay: 0.2s; }
+  .hero-title { animation-delay: 0.4s; }
+  .hero-location { animation-delay: 0.6s; }
+  .hero-divider { animation-delay: 0.7s; }
+  .hero-tagline { animation-delay: 0.8s; }
+
+  @keyframes heroFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* カルーセルフェードイン */
+  .stores-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .stores-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ヒーロー ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-sub">time to enjoy</div>
+    <h1 class="hero-title">
+      CREAM
+      <span class="script">of the Crop</span>
+    </h1>
+    <div class="hero-location">Ishigaki Island, Okinawa</div>
+    <div class="hero-divider"></div>
+    <div class="hero-tagline">石垣島の夜を、もっと楽しく。</div>
+  </div>
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <div class="arrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"><path d="M6 9l6 6 6-6"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 店舗セクション ===== -->
+<section class="stores-section">
+
+  <div class="section-header">
+    <div class="label">— our stores —</div>
+    <h2>STORES</h2>
+  </div>
+
+  <div class="carousel" id="carousel">
+
+    <!-- 1. せんべろ風土 -->
+    <div class="swipe-card" data-store="senbero">
+      <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1554502078-ef0fc409efce?w=800&q=80')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-number">01 / 05</div>
+        <h3 class="card-store-name">せんべろ風土</h3>
+        <div class="card-store-genre">大衆居酒屋</div>
+        <p class="card-desc">📍 沖縄県石垣市美崎町8-9 石垣島ヴィレッジ<br>🕐 14:00〜24:00</p>
+        <div class="card-links">
+          <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="card-link-btn ig">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@senbero12345" target="_blank" rel="noopener" class="card-link-btn tt">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            TikTok
+          </a>
+          <a href="https://maps.google.com/?q=せんべろ風土+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            Map
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. SAN DRIP GARAGE -->
+    <div class="swipe-card" data-store="garage">
+      <div class="card-bg" style="background-image:url('images/garage.jpg')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-number">02 / 05</div>
+        <h3 class="card-store-name">SAN DRIP<br>GARAGE</h3>
+        <div class="card-store-genre">タコス＆タコライス</div>
+        <p class="card-desc">📍 沖縄県石垣市美崎町10<br>🕐 8:00〜24:00</p>
+        <div class="card-links">
+          <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="card-link-btn ig">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@san.drip.garage" target="_blank" rel="noopener" class="card-link-btn tt">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            TikTok
+          </a>
+          <a href="https://maps.google.com/?q=SAN+DRIP+GARAGE+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            Map
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Leje -->
+    <div class="swipe-card" data-store="leje">
+      <div class="card-bg card-bg-split">
+        <div class="card-bg-half" style="background-image:url('images/leje1.jpg')"></div>
+        <div class="card-bg-half" style="background-image:url('images/leje2.jpg')"></div>
+      </div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-number">03 / 05</div>
+        <h3 class="card-store-name">Leje 石垣島</h3>
+        <div class="card-store-genre">アミューズメントカジノ＆シーシャバー</div>
+        <p class="card-desc">📍 沖縄県石垣市美崎町3 サンライトビル2F<br>🕐 17:00〜26:00</p>
+        <div class="card-links">
+          <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="card-link-btn ig">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@leje.isg" target="_blank" rel="noopener" class="card-link-btn tt">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            TikTok
+          </a>
+          <a href="https://x.com/leje_ishigaki" target="_blank" rel="noopener" class="card-link-btn x">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X
+          </a>
+          <a href="https://www.threads.net/@leje.ishigaki" target="_blank" rel="noopener" class="card-link-btn th">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.276 3.242-.896 1.088-2.19 1.678-3.794 1.678h-.04c-1.136-.008-2.088-.38-2.75-1.073-.636-.665-.985-1.582-.985-2.586 0-2.226 1.683-3.878 3.92-3.878.6 0 1.142.104 1.618.312l-.146 2.143c-.263-.114-.562-.172-.873-.172-1.14 0-2.4.792-2.4 1.595 0 .418.144.752.416 1.002.298.273.738.42 1.27.424 1.872 0 2.827-1.474 2.979-4.248l.036-.652.646.107c1.724.286 3.03.972 3.876 2.037 1.076 1.353 1.4 3.2.886 5.063-.863 3.134-3.666 4.893-7.804 4.923z"/></svg>
+            Threads
+          </a>
+          <a href="https://maps.google.com/?q=Leje+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            Map
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. スナックちゃっきー -->
+    <div class="swipe-card" data-store="chucky">
+      <div class="card-bg" style="background-image:url('images/chucky.jpg')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-number">04 / 05</div>
+        <h3 class="card-store-name">スナック<br>ちゃっきー</h3>
+        <div class="card-store-genre">スナック</div>
+        <p class="card-desc">📍 沖縄県石垣市美崎町11-3 海邦マックスビル1F<br>🕐 8:00〜25:00</p>
+        <div class="card-links">
+          <a href="https://www.instagram.com/snack_chucky_ishigakizima/" target="_blank" rel="noopener" class="card-link-btn ig">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.tiktok.com/@snack_chucky_071" target="_blank" rel="noopener" class="card-link-btn tt">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            TikTok
+          </a>
+          <a href="https://maps.google.com/?q=スナックちゃっきー+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            Map
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 喫茶シタハク -->
+    <div class="swipe-card" data-store="shitahaku">
+      <div class="card-bg" style="background-image:url('images/shitahaku.jpg')"></div>
+      <div class="card-overlay"></div>
+      <div class="card-content">
+        <div class="card-number">05 / 05</div>
+        <h3 class="card-store-name">喫茶シタハク</h3>
+        <div class="card-store-genre">喫茶店</div>
+        <p class="card-desc">📍 沖縄県島尻郡八重瀬町志多伯255-2<br>🕐 7:00〜15:00</p>
+        <div class="card-links">
+          <a href="https://www.instagram.com/kissa.shitahaku/" target="_blank" rel="noopener" class="card-link-btn ig">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://maps.google.com/?q=喫茶シタハク+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            Map
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ドットインジケーター -->
+  <div class="carousel-dots" id="dots">
+    <button class="dot active" data-index="0"></button>
+    <button class="dot" data-index="1"></button>
+    <button class="dot" data-index="2"></button>
+    <button class="dot" data-index="3"></button>
+    <button class="dot" data-index="4"></button>
+  </div>
+
+  <div class="swipe-hint" id="swipeHint">SWIPE →</div>
+
+  <!-- エリアマップ -->
+  <div class="map-section">
+    <a href="https://maps.google.com/?q=沖縄県石垣市美崎町8-9" target="_blank" rel="noopener" class="map-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16"/><path d="M16 6v16"/></svg>
+      <span>美崎町エリア — Google Map で見る</span>
+    </a>
+  </div>
+
+  <!-- フッター -->
+  <div class="footer">
+    <div class="brand-small">CREAM OF THE CROP</div>
+    <div class="company">株式会社 CREAM OF THE CROP</div>
+    <div class="address">〒907-0012 沖縄県石垣市美崎町8-9</div>
+  </div>
+
+</section>
+
+<script>
+// カルーセル＆ドット連動
+const carousel = document.getElementById('carousel');
+const dots = document.querySelectorAll('.dot');
+const cards = document.querySelectorAll('.swipe-card');
+const hint = document.getElementById('swipeHint');
+let hintHidden = false;
+
+function updateDots() {
+  const scrollLeft = carousel.scrollLeft;
+  const cardWidth = cards[0].offsetWidth;
+  const gap = scrollLeft / cardWidth;
+  const index = Math.round(gap);
+
+  dots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+
+  // スワイプヒントを最初のスクロールで非表示
+  if (!hintHidden && scrollLeft > 30) {
+    hint.classList.add('hidden');
+    hintHidden = true;
+  }
+}
+
+carousel.addEventListener('scroll', updateDots, { passive: true });
+
+// ドットクリックでスクロール
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    const index = parseInt(dot.dataset.index);
+    cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  });
+});
+
+// セクションフェードイン
+const sectionObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.stores-section').forEach(s => sectionObs.observe(s));
+</script>
+
+</body>
+</html>
