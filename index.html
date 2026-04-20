@@ -87,6 +87,7 @@
     --white-05: rgba(255,255,255,0.05);
     --accent: #e8c97a;
     --accent-dim: rgba(232,201,122,0.3);
+    --gold: #e8c97a;
   }
 
   html { scroll-behavior: smooth; }
@@ -157,21 +158,51 @@
     background: none;
     border: none;
     cursor: pointer;
-    padding: 8px;
-    z-index: 101;
+    padding: 8px 0;
+    z-index: 201;
+    transition: opacity 0.3s;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .header__menu-btn:active {
+    opacity: 0.7;
   }
 
   .header__menu-btn span {
     display: block;
-    width: 22px;
-    height: 1.5px;
+    width: 28px;
+    height: 2px;
+    background: var(--white);
+    margin: 4px 0;
+    transition: transform 0.3s, opacity 0.3s, background 0.3s;
+  }
+
+  .header--scrolled .header__menu-btn span {
     background: var(--gold);
-    margin: 5px 0;
-    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .header__menu-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--white-70);
+    margin-top: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .header--scrolled .header__menu-label {
+    color: var(--gold);
+  }
+
+  .header__menu-btn.active span {
+    background: var(--gold);
   }
 
   .header__menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4.5px, 4.5px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
 
   .header__menu-btn.active span:nth-child(2) {
@@ -179,7 +210,11 @@
   }
 
   .header__menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4.5px, -4.5px);
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .header__menu-btn.active .header__menu-label {
+    display: none;
   }
 
   @media (max-width: 768px) {
@@ -187,32 +222,46 @@
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(10, 10, 10, 0.97);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      z-index: 200;
+      background: #0a0a0a;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 28px;
       opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
+      visibility: hidden;
+      transition: opacity 0.35s ease, visibility 0.35s;
     }
 
     .header__nav.open {
       opacity: 1;
-      pointer-events: auto;
+      visibility: visible;
     }
 
     .header__nav .header__link {
-      font-size: 18px;
-      letter-spacing: 0.15em;
+      display: block;
+      font-size: 24px;
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.9);
+      padding: 12px 32px;
+      text-align: center;
+      border-bottom: 1px solid transparent;
+      transition: color 0.3s, border-color 0.3s;
+    }
+
+    .header__nav .header__link:hover,
+    .header__nav .header__link:active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
     }
 
     .header__menu-btn {
-      display: block;
+      display: flex;
+      z-index: 201;
     }
   }
 
@@ -230,11 +279,12 @@
 
   .hero-bg {
     position: absolute;
-    inset: 0;
+    inset: -20%;
     background:
       url('https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&q=80')
       center center / cover no-repeat;
     z-index: 0;
+    will-change: transform;
   }
 
   .hero-bg::after {
@@ -722,13 +772,41 @@
   .resort-section {
     background: #f5f0e8;
     color: #1e3a5f;
-    padding: 80px 24px;
+    padding: 100px 24px;
     position: relative;
+    overflow: hidden;
+  }
+
+  /* セクションスクロールアニメーション */
+  .resort-section .section-title,
+  .resort-section .section-sub,
+  .resort-section .resort-container > *:not(.section-title):not(.section-sub) {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .resort-section.in-view .section-title {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .resort-section.in-view .section-sub {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.15s;
+  }
+
+  .resort-section.in-view .resort-container > *:not(.section-title):not(.section-sub) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
   }
 
   .resort-section .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 5vw, 42px);
+    font-size: clamp(32px, 6vw, 48px);
     font-weight: 600;
     letter-spacing: 0.06em;
     color: #0e7490;
@@ -742,46 +820,105 @@
     letter-spacing: 0.15em;
     color: #0ea5e9;
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 56px;
   }
 
   .resort-container {
     max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
 
   /* ===== About セクション ===== */
-  .about-content {
+  .resort-section#about {
+    padding: 0;
+    background: #f5f0e8;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resort-section#about::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=60') center center / cover no-repeat;
+    opacity: 0.12;
+    z-index: 0;
+  }
+
+  .resort-section#about > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .resort-section#about .resort-container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .about-split {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: start;
+    grid-template-columns: 55% 45%;
+    min-height: 600px;
+  }
+
+  .about-photo {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+    background: #f5f0e8;
+  }
+
+  .about-body .section-title {
+    text-align: left !important;
+    font-size: clamp(36px, 5vw, 64px);
+    margin-bottom: 24px;
+  }
+
+  .about-body .about-lead {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1e3a5f;
+    line-height: 1.8;
+    margin-bottom: 24px;
   }
 
   .about-text p {
     font-size: 15px;
     line-height: 2;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: #2d4a6f;
   }
 
   .about-text strong {
     color: #0e7490;
+    font-weight: 500;
   }
 
-  .about-stats {
+  .about-stats-row {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 32px;
-    background: rgba(14, 165, 233, 0.06);
-    border-radius: 16px;
-    border: 1px solid rgba(14, 165, 233, 0.15);
+    gap: 40px;
+    margin-top: 36px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(14, 116, 144, 0.15);
   }
 
   .about-stat {
     text-align: center;
-    padding: 16px 0;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s, transform 0.6s;
@@ -795,44 +932,108 @@
   .about-stat-number {
     display: block;
     font-family: 'Playfair Display', serif;
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
-    color: #0ea5e9;
+    color: #0e7490;
     line-height: 1;
     margin-bottom: 4px;
   }
 
   .about-stat-label {
-    font-size: 13px;
+    font-size: 12px;
     color: #6b8aad;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
   }
 
-  .about-divider {
-    width: 48px;
-    height: 2px;
-    background: linear-gradient(90deg, #0ea5e9, #f97316);
-    margin: 48px auto 0;
-    border-radius: 1px;
+  /* ===== 特徴カード（写真背景3カラム） ===== */
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .feature-card {
+    position: relative;
+    min-height: 360px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 36px 28px;
+  }
+
+  .feature-card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .feature-card:hover .feature-card-bg {
+    transform: scale(1.06);
+  }
+
+  .feature-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.85) 100%);
+    z-index: 1;
+  }
+
+  .feature-card-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+
+  .feature-card-title {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .feature-card-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.8);
   }
 
   @media (max-width: 768px) {
-    .about-content {
+    .about-split {
       grid-template-columns: 1fr;
-      gap: 32px;
+      min-height: auto;
     }
 
-    .about-stats {
-      flex-direction: row;
+    .about-photo {
+      height: 300px;
+    }
+
+    .about-body {
+      padding: 48px 24px;
+    }
+
+    .about-body .section-title {
+      text-align: center !important;
+    }
+
+    .about-stats-row {
       justify-content: space-around;
     }
 
-    .about-stat {
-      padding: 12px 8px;
+    .about-stat-number {
+      font-size: 32px;
     }
 
-    .about-stat-number {
-      font-size: 36px;
+    .feature-cards {
+      grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+      min-height: 280px;
     }
 
     .resort-section {
@@ -842,7 +1043,23 @@
 
   /* ===== News セクション ===== */
   .news-section {
-    background: #eee8da;
+    background: linear-gradient(175deg, #eee8da 0%, #e8e2d4 50%, #ebe5d7 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .news-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=1200&q=60') center center / cover no-repeat;
+    opacity: 0.10;
+    z-index: 0;
+  }
+
+  .news-section > * {
+    position: relative;
+    z-index: 1;
   }
 
   .news-list {
@@ -857,17 +1074,11 @@
     gap: 20px;
     padding: 24px 0;
     border-bottom: 1px solid rgba(14, 116, 144, 0.12);
-    text-decoration: none;
     color: inherit;
-    transition: background 0.2s;
   }
 
   .news-item:first-child {
     border-top: 1px solid rgba(14, 116, 144, 0.12);
-  }
-
-  .news-item:hover {
-    background: rgba(14, 165, 233, 0.04);
   }
 
   .news-date {
@@ -924,6 +1135,23 @@
   /* ===== Recruit セクション ===== */
   .recruit-section {
     background: #f5f0e8;
+    padding-bottom: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .recruit-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=60') center bottom / cover no-repeat;
+    opacity: 0.18;
+    z-index: 0;
+  }
+
+  .recruit-section > * {
+    position: relative;
+    z-index: 1;
   }
 
   .recruit-lead {
@@ -935,68 +1163,28 @@
     margin: 0 auto 48px;
   }
 
-  .recruit-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-bottom: 48px;
-  }
-
-  .recruit-card {
-    background: white;
-    border-radius: 12px;
-    padding: 28px 24px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(14, 116, 144, 0.06);
-    border: 1px solid rgba(14, 165, 233, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .recruit-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(14, 116, 144, 0.1);
-  }
-
-  .recruit-card-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-
-  .recruit-card-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    font-weight: 600;
-    color: #0e7490;
-    margin-bottom: 8px;
-  }
-
-  .recruit-card-desc {
-    font-size: 13px;
-    color: #6b8aad;
-    line-height: 1.7;
-  }
-
   .recruit-cta {
     text-align: center;
+    margin-bottom: 60px;
   }
 
   .recruit-btn {
     display: inline-block;
-    padding: 14px 48px;
+    padding: 16px 56px;
     background: linear-gradient(135deg, #0ea5e9, #0e7490);
     color: white;
     text-decoration: none;
     border-radius: 40px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
-    letter-spacing: 0.05em;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.25);
+    letter-spacing: 0.08em;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.25);
   }
 
   .recruit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(14, 165, 233, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.35);
   }
 
   .recruit-note {
@@ -1006,97 +1194,150 @@
     margin-top: 16px;
   }
 
-  @media (max-width: 768px) {
-    .recruit-cards {
-      grid-template-columns: 1fr;
-    }
-  }
-
   /* ===== Contact セクション ===== */
   .contact-section {
-    background: #eee8da;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=1200&q=60') center center / cover no-repeat;
+    opacity: 0.10;
+    z-index: 0;
+  }
+
+  .contact-section > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-section .section-title,
+  .contact-section .section-sub {
+    color: rgba(255,255,255,0.95);
   }
 
   .contact-lead {
     text-align: center;
-    font-size: 15px;
-    color: #2d4a6f;
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
     line-height: 1.8;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .contact-general {
     text-align: center;
-    margin-bottom: 40px;
-    padding: 28px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(14, 116, 144, 0.06);
+    margin-bottom: 56px;
+    padding: 44px 36px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(232,201,122,0.15);
+    border-radius: 4px;
   }
 
   .contact-general-label {
     font-size: 13px;
-    color: #6b8aad;
-    margin-bottom: 8px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
   }
 
   .contact-email {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: #0e7490;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold);
     text-decoration: none;
-    letter-spacing: 0.03em;
-    transition: color 0.2s;
+    letter-spacing: 0.05em;
+    transition: color 0.3s;
   }
 
   .contact-email:hover {
-    color: #0ea5e9;
+    color: #fff;
   }
 
+  /* 店舗コンタクトカード（写真背景） */
   .contact-stores {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-bottom: 56px;
   }
 
   .contact-store {
+    position: relative;
+    min-height: 280px;
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px 20px;
-    background: white;
-    border-radius: 10px;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px 24px;
     text-decoration: none;
-    color: #1e3a5f;
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(14, 165, 233, 0.08);
+    color: #fff;
   }
 
-  .contact-store:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(14, 116, 144, 0.08);
+  .contact-store-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+  }
+
+  .contact-store:hover .contact-store-bg {
+    transform: scale(1.05);
+  }
+
+  .contact-store-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.88) 100%);
+    z-index: 1;
+  }
+
+  .contact-store-content {
+    position: relative;
+    z-index: 2;
   }
 
   .contact-store-name {
-    font-size: 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
     font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
   }
 
   .contact-store-tel {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    color: #0ea5e9;
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
   }
 
+  .contact-store-type {
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Instagram DM */
   .contact-sns {
     text-align: center;
   }
 
   .contact-sns-lead {
-    font-size: 13px;
-    color: #6b8aad;
-    margin-bottom: 16px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
   }
 
   .contact-sns-grid {
@@ -1110,30 +1351,41 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 10px 20px;
-    background: white;
-    border-radius: 24px;
+    padding: 12px 24px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 0;
     text-decoration: none;
-    color: #1e3a5f;
+    color: rgba(255,255,255,0.8);
     font-size: 13px;
-    border: 1px solid rgba(14, 165, 233, 0.12);
-    transition: background 0.2s, border-color 0.2s;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
   }
 
   .contact-sns-item:hover {
-    background: rgba(14, 165, 233, 0.06);
-    border-color: #0ea5e9;
+    background: rgba(232,201,122,0.1);
+    border-color: var(--gold);
+    color: var(--gold);
   }
 
   .contact-sns-item svg {
     width: 18px;
     height: 18px;
-    fill: #0ea5e9;
+    fill: var(--gold);
+  }
+
+  @media (max-width: 1024px) {
+    .contact-stores {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (max-width: 768px) {
     .contact-stores {
       grid-template-columns: 1fr;
+    }
+    .contact-store {
+      min-height: 200px;
     }
   }
 
@@ -1283,6 +1535,7 @@
   </nav>
   <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
     <span></span><span></span><span></span>
+    <div class="header__menu-label">Menu</div>
   </button>
 </header>
 
@@ -1484,43 +1737,73 @@
 <!-- ===== About ===== -->
 <section class="resort-section" id="about">
   <div class="resort-container">
-    <h2 class="section-title">About Us</h2>
-    <p class="section-sub">— who we are —</p>
 
-    <div class="about-content">
-      <div class="about-text">
-        <p>
-          <strong>CREAM OF THE CROP</strong>は、2021年に設立された沖縄県の飲食グループです。
-          石垣島の繁華街・美崎町を中心に4店舗、沖縄本島・八重瀬町に1店舗を構えています。
-        </p>
-        <p>
-          「来てくれた人に、最高の時間を届けたい」——
-          その想いのもと、昼飲みが楽しめる居酒屋から、深夜のエンターテインメントまで、
-          さまざまなシーンに寄り添う店舗を運営しています。
-        </p>
-        <p>
-          地元の方も、旅行で訪れた方も。
-          沖縄での「もう一軒」を、私たちが届けます。
-        </p>
+    <!-- 写真左 + テキスト右の分割レイアウト -->
+    <div class="about-split">
+      <div class="about-photo">
+        <img src="images/about-senbero.jpg" alt="せんべろ風土の店内" loading="lazy">
       </div>
-
-      <div class="about-stats">
-        <div class="about-stat" data-animate>
-          <span class="about-stat-number" data-count="5">0</span>
-          <span class="about-stat-label">店舗</span>
+      <div class="about-body">
+        <h2 class="section-title">About Us</h2>
+        <p class="about-lead">
+          唯一無二の"島時間"を、<br>特別な場所で。
+        </p>
+        <div class="about-text">
+          <p>
+            <strong>CREAM OF THE CROP</strong>は、沖縄・石垣島の飲食グループです。
+            美崎町を中心に4店舗、沖縄本島・八重瀬町に1店舗を展開しています。
+          </p>
+          <p>
+            昼飲みが楽しめる居酒屋から、深夜のエンターテインメントまで。
+            「来てくれた人に、最高の時間を届けたい」——
+            その想いで、さまざまなシーンに寄り添う店舗を運営しています。
+          </p>
         </div>
-        <div class="about-stat" data-animate>
-          <span class="about-stat-number" data-count="2">0</span>
-          <span class="about-stat-label">エリア</span>
-        </div>
-        <div class="about-stat" data-animate>
-          <span class="about-stat-number" data-count="2021">0</span>
-          <span class="about-stat-label">設立</span>
+        <div class="about-stats-row">
+          <div class="about-stat" data-animate>
+            <span class="about-stat-number" data-count="5">0</span>
+            <span class="about-stat-label">店舗</span>
+          </div>
+          <div class="about-stat" data-animate>
+            <span class="about-stat-number" data-count="2">0</span>
+            <span class="about-stat-label">エリア</span>
+          </div>
+          <div class="about-stat" data-animate>
+            <span class="about-stat-number" data-count="2021">0</span>
+            <span class="about-stat-label">設立</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="about-divider"></div>
+    <!-- 特徴3カラム（写真背景カード） -->
+    <div class="feature-cards">
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background-image:url('images/about-garage-food.jpg')"></div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">島のすべてを<br>味わえる5店舗</h3>
+          <p class="feature-card-desc">昼飲み居酒屋、タコス、シーシャバー、スナック、カフェ。朝から深夜まで、あなたの「もう一軒」が見つかります。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background-image:url('images/about-leje-table.jpg')"></div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">地元客も観光客も<br>楽しめる空間</h3>
+          <p class="feature-card-desc">石垣島に暮らす人も、旅で訪れた人も。どちらにも居心地のいい、島ならではのおもてなしを大切にしています。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card-bg" style="background-image:url('images/shitahaku.jpg')"></div>
+        <div class="feature-card-overlay"></div>
+        <div class="feature-card-content">
+          <h3 class="feature-card-title">沖縄本島にも展開<br>八重瀬町・喫茶シタハク</h3>
+          <p class="feature-card-desc">石垣島だけでなく、沖縄本島にも拠点を広げています。こだわりのコーヒーと穏やかな朝をお届けします。</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1531,21 +1814,21 @@
     <p class="section-sub">— what's new —</p>
 
     <div class="news-list">
-      <a href="#" class="news-item">
+      <div class="news-item">
         <span class="news-date">2026.04.20</span>
         <span class="news-tag news-tag--info">お知らせ</span>
         <span class="news-title">公式ホームページをリニューアルしました</span>
-      </a>
-      <a href="#" class="news-item">
+      </div>
+      <div class="news-item">
+        <span class="news-date">2026.04.20</span>
+        <span class="news-tag news-tag--store">店舗</span>
+        <span class="news-title">全店舗の詳細ページを公開しました</span>
+      </div>
+      <div class="news-item">
         <span class="news-date">2026.04.01</span>
         <span class="news-tag news-tag--store">店舗</span>
         <span class="news-title">全店舗のTikTokアカウントを開設しました</span>
-      </a>
-      <a href="#" class="news-item">
-        <span class="news-date">2026.03.15</span>
-        <span class="news-tag news-tag--event">イベント</span>
-        <span class="news-title">石垣島まつり2026に出店します</span>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -1562,32 +1845,37 @@
       チームの一員として成長できる環境があります。
     </p>
 
-    <div class="recruit-cards">
-      <div class="recruit-card">
-        <div class="recruit-card-icon">🍽</div>
-        <div class="recruit-card-title">ホール / キッチン</div>
-        <p class="recruit-card-desc">各店舗での接客・調理スタッフ。未経験OK、丁寧に教えます。</p>
-      </div>
-      <div class="recruit-card">
-        <div class="recruit-card-icon">🏠</div>
-        <div class="recruit-card-title">寮完備</div>
-        <p class="recruit-card-desc">石垣島に寮をご用意。引っ越し費用の心配なく島暮らしをスタート。</p>
-      </div>
-      <div class="recruit-card">
-        <div class="recruit-card-icon">🌴</div>
-        <div class="recruit-card-title">島暮らしの魅力</div>
-        <p class="recruit-card-desc">青い海と星空に囲まれた生活。休日はダイビングやSUPも。</p>
-      </div>
-      <div class="recruit-card">
-        <div class="recruit-card-icon">📈</div>
-        <div class="recruit-card-title">キャリアアップ</div>
-        <p class="recruit-card-desc">店長・エリアマネージャーへのステップも。成長を全力でサポート。</p>
-      </div>
-    </div>
-
     <div class="recruit-cta">
       <a href="mailto:info@cream-okinawa.com?subject=採用に関するお問い合わせ" class="recruit-btn">応募・お問い合わせ</a>
       <p class="recruit-note">メールまたはお電話にてお気軽にご連絡ください</p>
+    </div>
+  </div>
+
+  <!-- 写真背景3カラムカード -->
+  <div class="feature-cards">
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-senbero.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">経験豊富なスタッフによる<br>運営体制</h3>
+        <p class="feature-card-desc">全国の飲食店で経験を積んだスタッフが在籍。先輩が丁寧に教えるので、未経験の方も安心してスタートできます。</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-chucky.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">チームワーク重視の<br>仕組みづくり</h3>
+        <p class="feature-card-desc">一人ひとりの成長をサポート。店長・エリアマネージャーへのキャリアアップも。スタッフの「得意」を活かせる環境です。</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-leje.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">安心して始められる<br>リゾートライフ</h3>
+        <p class="feature-card-desc">地方からの応募も大歓迎。交通費・引越し費用は会社が負担し、完全個室の寮を完備。リゾートバイトとしても働ける環境です。</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1601,39 +1889,54 @@
     <p class="contact-lead">各店舗へのお問い合わせは、お電話・Instagram DM・メールをご利用ください。</p>
 
     <div class="contact-general">
-      <p class="contact-general-label">グループ全体へのお問い合わせ</p>
+      <p class="contact-general-label">General Inquiry</p>
       <a href="mailto:info@cream-okinawa.com" class="contact-email">info@cream-okinawa.com</a>
     </div>
+  </div>
 
-    <div class="contact-stores">
-      <a href="tel:0980870799" class="contact-store">
-        <div>
-          <div class="contact-store-name">せんべろ風土</div>
-          <div class="contact-store-tel">0980-87-0799</div>
-        </div>
-      </a>
-      <a href="tel:0980876261" class="contact-store">
-        <div>
-          <div class="contact-store-name">SAN DRIP GARAGE</div>
-          <div class="contact-store-tel">0980-87-6261</div>
-        </div>
-      </a>
-      <a href="tel:0980876259" class="contact-store">
-        <div>
-          <div class="contact-store-name">Leje 石垣島</div>
-          <div class="contact-store-tel">0980-87-6259</div>
-        </div>
-      </a>
-      <a href="tel:09074534007" class="contact-store">
-        <div>
-          <div class="contact-store-name">スナックちゃっきー</div>
-          <div class="contact-store-tel">090-7453-4007</div>
-        </div>
-      </a>
-    </div>
+  <!-- 店舗コンタクトカード（写真背景4カラム） -->
+  <div class="contact-stores">
+    <a href="tel:0980870799" class="contact-store">
+      <div class="contact-store-bg" style="background-image:url('images/contact-senbero.jpg')"></div>
+      <div class="contact-store-overlay"></div>
+      <div class="contact-store-content">
+        <div class="contact-store-type">Izakaya</div>
+        <div class="contact-store-name">せんべろ風土</div>
+        <div class="contact-store-tel">0980-87-0799</div>
+      </div>
+    </a>
+    <a href="tel:0980876261" class="contact-store">
+      <div class="contact-store-bg" style="background-image:url('images/contact-garage.jpg')"></div>
+      <div class="contact-store-overlay"></div>
+      <div class="contact-store-content">
+        <div class="contact-store-type">Dining Bar</div>
+        <div class="contact-store-name">SAN DRIP GARAGE</div>
+        <div class="contact-store-tel">0980-87-6261</div>
+      </div>
+    </a>
+    <a href="tel:0980876259" class="contact-store">
+      <div class="contact-store-bg" style="background-image:url('images/contact-leje.jpg')"></div>
+      <div class="contact-store-overlay"></div>
+      <div class="contact-store-content">
+        <div class="contact-store-type">Amusement Casino</div>
+        <div class="contact-store-name">Leje 石垣島</div>
+        <div class="contact-store-tel">0980-87-6259</div>
+      </div>
+    </a>
+    <a href="tel:09074534007" class="contact-store">
+      <div class="contact-store-bg" style="background-image:url('images/contact-chucky.jpg')"></div>
+      <div class="contact-store-overlay"></div>
+      <div class="contact-store-content">
+        <div class="contact-store-type">Snack Bar</div>
+        <div class="contact-store-name">スナックちゃっきー</div>
+        <div class="contact-store-tel">090-7453-4007</div>
+      </div>
+    </a>
+  </div>
 
+  <div class="resort-container" style="padding-top:48px;">
     <div class="contact-sns">
-      <p class="contact-sns-lead">InstagramのDMからもお気軽にどうぞ</p>
+      <p class="contact-sns-lead">Instagram DMからもお気軽にどうぞ</p>
       <div class="contact-sns-grid">
         <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="contact-sns-item">
           <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
@@ -1698,115 +2001,7 @@
   </div>
 </footer>
 
-<script>
-// ヘッダー: スクロール時の背景変化
-const header = document.getElementById('header');
-const menuBtn = document.getElementById('menuBtn');
-const nav = document.getElementById('nav');
-
-window.addEventListener('scroll', () => {
-  header.classList.toggle('header--scrolled', window.scrollY > 50);
-}, { passive: true });
-
-// ハンバーガーメニュー
-menuBtn.addEventListener('click', () => {
-  const isOpen = menuBtn.classList.toggle('active');
-  nav.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', isOpen);
-  menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
-});
-
-nav.querySelectorAll('.header__link').forEach(link => {
-  link.addEventListener('click', () => {
-    menuBtn.classList.remove('active');
-    nav.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.setAttribute('aria-label', 'メニューを開く');
-  });
-});
-
-// カルーセル＆ドット連動
-const carousel = document.getElementById('carousel');
-const dots = document.querySelectorAll('.dot');
-const cards = document.querySelectorAll('.swipe-card');
-const hint = document.getElementById('swipeHint');
-let hintHidden = false;
-
-function updateDots() {
-  const scrollLeft = carousel.scrollLeft;
-  const cardWidth = cards[0].offsetWidth;
-  const gap = scrollLeft / cardWidth;
-  const index = Math.round(gap);
-
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
-  });
-
-  // スワイプヒントを最初のスクロールで非表示
-  if (!hintHidden && scrollLeft > 30) {
-    hint.classList.add('hidden');
-    hintHidden = true;
-  }
-}
-
-carousel.addEventListener('scroll', updateDots, { passive: true });
-
-// ドットクリックでスクロール
-dots.forEach(dot => {
-  dot.addEventListener('click', () => {
-    const index = parseInt(dot.dataset.index);
-    cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-  });
-});
-
-// セクションフェードイン
-const sectionObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.stores-section').forEach(s => sectionObs.observe(s));
-
-// About: フェードインアニメーション
-const aboutObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      aboutObs.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-
-document.querySelectorAll('[data-animate]').forEach(el => aboutObs.observe(el));
-
-// About: カウントアップアニメーション
-const countObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.getAttribute('data-count'), 10);
-      if (isNaN(target)) return;
-      const duration = target > 100 ? 1500 : 800;
-      const start = performance.now();
-      const animate = (now) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target);
-        if (progress < 1) requestAnimationFrame(animate);
-      };
-      el.textContent = '0';
-      requestAnimationFrame(animate);
-      countObs.unobserve(el);
-    }
-  });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
-</script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
