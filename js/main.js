@@ -1,4 +1,4 @@
-/* CREAM GROUP - メインスクリプト v3 */
+/* CREAM GROUP - メインスクリプト v4 */
 
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('open');
       menuBtn.setAttribute('aria-expanded', isOpen);
       menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+      // メニューオープン時はbodyスクロールを防ぐ
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     nav.querySelectorAll('.header__link').forEach(link => {
@@ -25,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         nav.classList.remove('open');
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.setAttribute('aria-label', 'メニューを開く');
+        document.body.style.overflow = '';
       });
     });
   }
 
-  // スクロールアニメーション
+  // スクロールアニメーション（data-animate属性）
   const animateObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -46,8 +49,21 @@ document.addEventListener('DOMContentLoaded', () => {
     animateObserver.observe(el);
   });
 
-  document.querySelectorAll('.contact__link').forEach(el => {
-    animateObserver.observe(el);
+  // リゾートセクションのスクロールフェードイン
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.resort-section').forEach(el => {
+    sectionObserver.observe(el);
   });
 
   // カウントアップアニメーション
@@ -85,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     countObserver.observe(el);
   });
 
-  // ===== カルーセル（モバイル） =====
+  // ===== カルーセル =====
   const carousel = document.getElementById('carousel');
   const dots = document.querySelectorAll('.dot');
   const cards = document.querySelectorAll('.swipe-card');
@@ -127,12 +143,29 @@ document.addEventListener('DOMContentLoaded', () => {
     const storeObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('visible');
           storeObs.unobserve(entry.target);
         }
       });
     }, { threshold: 0.05 });
     storeObs.observe(storesSection);
+  }
+
+  // ヒーローパララックス効果（軽量）
+  const heroBg = document.querySelector('.hero-bg');
+  if (heroBg) {
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          if (scrollY < window.innerHeight) {
+            heroBg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.05)`;
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
   }
 });
