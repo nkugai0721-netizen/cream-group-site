@@ -1011,6 +1011,131 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* ===== Contact セクション ===== */
+  .contact-section {
+    background: #eee8da;
+  }
+
+  .contact-lead {
+    text-align: center;
+    font-size: 15px;
+    color: #2d4a6f;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+
+  .contact-general {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 28px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(14, 116, 144, 0.06);
+  }
+
+  .contact-general-label {
+    font-size: 13px;
+    color: #6b8aad;
+    margin-bottom: 8px;
+  }
+
+  .contact-email {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: #0e7490;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+
+  .contact-email:hover {
+    color: #0ea5e9;
+  }
+
+  .contact-stores {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .contact-store {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #1e3a5f;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid rgba(14, 165, 233, 0.08);
+  }
+
+  .contact-store:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(14, 116, 144, 0.08);
+  }
+
+  .contact-store-name {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .contact-store-tel {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: #0ea5e9;
+  }
+
+  .contact-sns {
+    text-align: center;
+  }
+
+  .contact-sns-lead {
+    font-size: 13px;
+    color: #6b8aad;
+    margin-bottom: 16px;
+  }
+
+  .contact-sns-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .contact-sns-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 24px;
+    text-decoration: none;
+    color: #1e3a5f;
+    font-size: 13px;
+    border: 1px solid rgba(14, 165, 233, 0.12);
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .contact-sns-item:hover {
+    background: rgba(14, 165, 233, 0.06);
+    border-color: #0ea5e9;
+  }
+
+  .contact-sns-item svg {
+    width: 18px;
+    height: 18px;
+    fill: #0ea5e9;
+  }
+
+  @media (max-width: 768px) {
+    .contact-stores {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1338,6 +1463,66 @@
     <div class="recruit-cta">
       <a href="mailto:info@cream-okinawa.com?subject=採用に関するお問い合わせ" class="recruit-btn">応募・お問い合わせ</a>
       <p class="recruit-note">メールまたはお電話にてお気軽にご連絡ください</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="resort-section contact-section" id="contact">
+  <div class="resort-container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-sub">— get in touch —</p>
+
+    <p class="contact-lead">各店舗へのお問い合わせは、お電話・Instagram DM・メールをご利用ください。</p>
+
+    <div class="contact-general">
+      <p class="contact-general-label">グループ全体へのお問い合わせ</p>
+      <a href="mailto:info@cream-okinawa.com" class="contact-email">info@cream-okinawa.com</a>
+    </div>
+
+    <div class="contact-stores">
+      <a href="tel:0980870799" class="contact-store">
+        <div>
+          <div class="contact-store-name">せんべろ風土</div>
+          <div class="contact-store-tel">0980-87-0799</div>
+        </div>
+      </a>
+      <a href="tel:0980876261" class="contact-store">
+        <div>
+          <div class="contact-store-name">SAN DRIP GARAGE</div>
+          <div class="contact-store-tel">0980-87-6261</div>
+        </div>
+      </a>
+      <a href="tel:0980876259" class="contact-store">
+        <div>
+          <div class="contact-store-name">Leje 石垣島</div>
+          <div class="contact-store-tel">0980-87-6259</div>
+        </div>
+      </a>
+      <a href="tel:09074534007" class="contact-store">
+        <div>
+          <div class="contact-store-name">スナックちゃっきー</div>
+          <div class="contact-store-tel">090-7453-4007</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-sns">
+      <p class="contact-sns-lead">InstagramのDMからもお気軽にどうぞ</p>
+      <div class="contact-sns-grid">
+        <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="contact-sns-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>せんべろ風土</span>
+        </a>
+        <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="contact-sns-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>GARAGE</span>
+        </a>
+        <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="contact-sns-item">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Leje</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
