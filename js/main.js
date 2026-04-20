@@ -1,4 +1,4 @@
-/* CREAM GROUP - メインスクリプト */
+/* CREAM GROUP - メインスクリプト v3 */
 
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.getElementById('header');
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // スクロール時のヘッダー影
   window.addEventListener('scroll', () => {
     header.classList.toggle('header--scrolled', window.scrollY > 50);
-  });
+  }, { passive: true });
 
   // ハンバーガーメニュー
   if (menuBtn && nav) {
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
       menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
     });
 
-    // ナビリンククリックでメニューを閉じる
     nav.querySelectorAll('.header__link').forEach(link => {
       link.addEventListener('click', () => {
         menuBtn.classList.remove('active');
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // スクロールアニメーション（Intersection Observer）
+  // スクロールアニメーション
   const animateObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -43,23 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
   );
 
-  // data-animate 属性を持つ要素を監視
   document.querySelectorAll('[data-animate]').forEach(el => {
     animateObserver.observe(el);
   });
 
-  // Contactリンクのアニメーション
   document.querySelectorAll('.contact__link').forEach(el => {
-    animateObserver.observe(el);
-  });
-
-  // About stat のアニメーション
-  document.querySelectorAll('.about__stat').forEach(el => {
-    if (!el.hasAttribute('data-animate')) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    }
     animateObserver.observe(el);
   });
 
@@ -78,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const animate = (now) => {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            // easeOutCubic
             const eased = 1 - Math.pow(1 - progress, 3);
             el.textContent = Math.round(eased * target);
             if (progress < 1) {
@@ -98,4 +84,55 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-count]').forEach(el => {
     countObserver.observe(el);
   });
+
+  // ===== カルーセル（モバイル） =====
+  const carousel = document.getElementById('carousel');
+  const dots = document.querySelectorAll('.dot');
+  const cards = document.querySelectorAll('.swipe-card');
+  const hint = document.getElementById('swipeHint');
+
+  if (carousel && cards.length > 0) {
+    let hintHidden = false;
+
+    function updateDots() {
+      const scrollLeft = carousel.scrollLeft;
+      const cardWidth = cards[0].offsetWidth;
+      const index = Math.round(scrollLeft / cardWidth);
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+
+      if (!hintHidden && scrollLeft > 30) {
+        if (hint) hint.classList.add('hidden');
+        hintHidden = true;
+      }
+    }
+
+    carousel.addEventListener('scroll', updateDots, { passive: true });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const index = parseInt(dot.dataset.index);
+        if (cards[index]) {
+          cards[index].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      });
+    });
+  }
+
+  // ストアセクションのフェードイン
+  const storesSection = document.querySelector('.stores-section');
+  if (storesSection) {
+    const storeObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          storeObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.05 });
+    storeObs.observe(storesSection);
+  }
 });
