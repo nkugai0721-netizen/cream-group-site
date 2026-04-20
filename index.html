@@ -100,6 +100,119 @@
     background: #0a0a0a;
   }
 
+  /* ===== ヘッダー ===== */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .header--scrolled {
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(232, 201, 122, 0.1);
+  }
+
+  .header__logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: 28px;
+  }
+
+  .header__link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    transition: color 0.25s;
+    text-transform: uppercase;
+  }
+
+  .header__link:hover {
+    color: var(--gold);
+  }
+
+  .header__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 101;
+  }
+
+  .header__menu-btn span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--gold);
+    margin: 5px 0;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .header__menu-btn.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4.5px, 4.5px);
+  }
+
+  .header__menu-btn.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__menu-btn.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(4.5px, -4.5px);
+  }
+
+  @media (max-width: 768px) {
+    .header__nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 10, 10, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .header__nav.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .header__nav .header__link {
+      font-size: 18px;
+      letter-spacing: 0.15em;
+    }
+
+    .header__menu-btn {
+      display: block;
+    }
+  }
+
   /* ===== ヒーロー ===== */
   .hero {
     position: relative;
@@ -597,6 +710,21 @@
 </head>
 <body>
 
+<!-- ===== ヘッダー ===== -->
+<header class="header" id="header">
+  <a href="#" class="header__logo">CREAM OF THE CROP</a>
+  <nav class="header__nav" id="nav">
+    <a href="#about" class="header__link">About</a>
+    <a href="#stores" class="header__link">Stores</a>
+    <a href="#news" class="header__link">News</a>
+    <a href="#recruit" class="header__link">Recruit</a>
+    <a href="#contact" class="header__link">Contact</a>
+  </nav>
+  <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
 <!-- ===== ヒーロー ===== -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -619,7 +747,7 @@
 </section>
 
 <!-- ===== 店舗セクション ===== -->
-<section class="stores-section">
+<section class="stores-section" id="stores">
 
   <div class="section-header">
     <div class="label">— our stores —</div>
@@ -796,6 +924,32 @@
 </section>
 
 <script>
+// ヘッダー: スクロール時の背景変化
+const header = document.getElementById('header');
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('header--scrolled', window.scrollY > 50);
+}, { passive: true });
+
+// ハンバーガーメニュー
+menuBtn.addEventListener('click', () => {
+  const isOpen = menuBtn.classList.toggle('active');
+  nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', isOpen);
+  menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+});
+
+nav.querySelectorAll('.header__link').forEach(link => {
+  link.addEventListener('click', () => {
+    menuBtn.classList.remove('active');
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.setAttribute('aria-label', 'メニューを開く');
+  });
+});
+
 // カルーセル＆ドット連動
 const carousel = document.getElementById('carousel');
 const dots = document.querySelectorAll('.dot');
