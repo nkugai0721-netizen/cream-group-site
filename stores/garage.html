@@ -34,9 +34,8 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
   <!-- 構造化データ: Restaurant -->
   <script type="application/ld+json">
@@ -76,8 +75,267 @@
     }
   }
   </script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #e8c97a;
+  --bg: #0a0a0a;
+  --accent: #6cb2eb;
+  --white: #fff;
+  --white-90: rgba(255,255,255,0.9);
+  --white-70: rgba(255,255,255,0.7);
+  --white-50: rgba(255,255,255,0.5);
+  --white-20: rgba(255,255,255,0.2);
+  --white-15: rgba(255,255,255,0.15);
+  --white-10: rgba(255,255,255,0.1);
+  --white-05: rgba(255,255,255,0.05);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  color: var(--white);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.8;
+}
+
+a { color: var(--gold); text-decoration: none; transition: opacity 0.3s; }
+a:hover { opacity: 0.8; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: auto;
+  background: var(--gold); color: #000; padding: 8px 16px; z-index: 10000;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+
+/* ===== Header ===== */
+.header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 0 24px; height: 64px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--white-10);
+  transition: background 0.3s;
+}
+.header.scrolled { background: rgba(10,10,10,0.95); }
+.header__inner {
+  max-width: 1200px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header__logo {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.05em;
+}
+.header__nav { display: flex; gap: 32px; }
+.header__link {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--white-70); letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.header__link:hover { color: var(--gold); opacity: 1; }
+
+/* ===== Hamburger ===== */
+.header__menu-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 24px; position: relative; z-index: 1001;
+}
+.header__menu-btn span {
+  display: block; width: 100%; height: 2px; background: var(--white);
+  position: absolute; left: 0; transition: all 0.3s;
+}
+.header__menu-btn span:nth-child(1) { top: 0; }
+.header__menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.header__menu-btn span:nth-child(3) { bottom: 0; }
+.header__menu-btn.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.header__menu-btn.active span:nth-child(2) { opacity: 0; }
+.header__menu-btn.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ===== Hero ===== */
+.store-hero {
+  position: relative; min-height: 70vh; display: flex;
+  align-items: center; justify-content: center; text-align: center;
+  overflow: hidden; margin-top: 64px;
+}
+.store-hero__bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+}
+.store-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.85) 100%);
+}
+.store-hero__content { position: relative; z-index: 2; padding: 60px 24px; }
+.store-hero__badge {
+  display: inline-block; padding: 6px 20px; border: 1px solid var(--accent);
+  color: var(--accent); font-size: 13px; font-weight: 400;
+  letter-spacing: 0.15em; border-radius: 50px; margin-bottom: 20px;
+}
+.store-hero__name {
+  font-family: 'Playfair Display', serif; font-size: clamp(36px, 6vw, 56px);
+  font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px;
+  color: var(--white);
+}
+.store-hero__concept {
+  font-size: 15px; color: var(--white-70); max-width: 500px; margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ===== Sections ===== */
+.container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+.store-section { padding: 80px 0; }
+.store-section + .store-section { border-top: 1px solid var(--white-10); }
+
+.section__title {
+  font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600;
+  color: var(--gold); text-align: center; letter-spacing: 0.1em; margin-bottom: 4px;
+}
+.section__subtitle {
+  font-size: 12px; color: var(--white-50); text-align: center;
+  letter-spacing: 0.2em; margin-bottom: 48px;
+}
+
+/* ===== Info Grid ===== */
+.store-info-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+}
+.store-info-item {
+  background: var(--white-05); border: 1px solid var(--white-10);
+  border-radius: 12px; padding: 28px 24px; text-align: center;
+  transition: border-color 0.3s;
+}
+.store-info-item:hover { border-color: var(--accent); }
+.store-info-item__icon {
+  width: 28px; height: 28px; color: var(--accent); margin-bottom: 12px;
+}
+.store-info-item__label {
+  display: block; font-size: 11px; color: var(--white-50);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 8px;
+}
+.store-info-item__value {
+  display: block; font-size: 16px; color: var(--white-90); font-weight: 400;
+}
+.store-info-item__value a { color: var(--white-90); }
+.store-info-item__value a:hover { color: var(--accent); }
+
+/* ===== Concept ===== */
+.store-concept__text { max-width: 700px; margin: 0 auto; }
+.store-concept__text p {
+  font-size: 15px; color: var(--white-70); line-height: 2; margin-bottom: 24px;
+}
+.store-concept__text p:last-child { margin-bottom: 0; }
+
+/* ===== Map ===== */
+.access__map {
+  border-radius: 12px; overflow: hidden; border: 1px solid var(--white-10);
+  margin-bottom: 40px;
+}
+.access__map iframe { display: block; width: 100%; height: 400px; border: 0; filter: invert(0.9) hue-rotate(180deg); }
+
+/* ===== CTA ===== */
+.store-cta {
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+  margin-top: 40px;
+}
+.store-cta__btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 32px; border-radius: 50px; font-size: 14px;
+  font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s;
+  text-decoration: none;
+}
+.store-cta__btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.store-cta__btn--outline {
+  border: 1px solid var(--white-20); color: var(--white);
+  background: transparent;
+}
+.store-cta__btn--outline:hover { border-color: var(--accent); color: var(--accent); opacity: 1; }
+.store-cta__btn--primary {
+  background: var(--accent); color: #000; border: 1px solid var(--accent);
+}
+.store-cta__btn--primary:hover { background: #5a9ed6; border-color: #5a9ed6; opacity: 1; }
+
+/* ===== Store Nav ===== */
+.store-nav {
+  padding: 60px 0; border-top: 1px solid var(--white-10);
+  background: var(--white-05);
+}
+.store-nav__title {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--white-50); text-align: center; letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 32px;
+}
+.store-nav__grid {
+  display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+}
+.store-nav__item {
+  display: flex; align-items: center; gap: 10px; color: var(--white-70);
+  font-size: 14px; transition: color 0.3s;
+}
+.store-nav__item:hover { color: var(--white); opacity: 1; }
+.store-nav__dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 60px 0 32px; border-top: 1px solid var(--white-10);
+  background: var(--bg);
+}
+.footer__inner { text-align: center; }
+.footer__logo {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.footer__company {
+  font-size: 11px; color: var(--white-50); letter-spacing: 0.1em; margin-bottom: 6px;
+}
+.footer__address {
+  font-size: 12px; color: var(--white-50); margin-bottom: 20px;
+}
+.footer__sns {
+  display: flex; justify-content: center; gap: 16px; margin-bottom: 24px;
+}
+.footer__sns-link { color: var(--white-50); transition: color 0.3s; }
+.footer__sns-link:hover { color: var(--gold); opacity: 1; }
+.footer__nav {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.footer__nav a {
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  color: var(--white-50); letter-spacing: 0.08em;
+}
+.footer__nav a:hover { color: var(--gold); opacity: 1; }
+.footer__copy {
+  font-size: 11px; color: var(--white-20); letter-spacing: 0.05em;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .header__nav {
+    position: fixed; inset: 0; background: rgba(10,10,10,0.98);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .header__nav.open { opacity: 1; pointer-events: auto; }
+  .header__nav .header__link { font-size: 18px; }
+  .header__menu-btn { display: block; }
+
+  .store-hero { min-height: 60vh; }
+  .store-info-grid { grid-template-columns: 1fr; }
+  .store-section { padding: 60px 0; }
+  .store-nav__grid { flex-direction: column; align-items: center; gap: 20px; }
+  .footer__nav { gap: 16px; }
+}
+</style>
 </head>
-<body class="store-detail">
+<body>
   <!-- スキップリンク -->
   <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
 
@@ -91,20 +349,21 @@
       <nav class="header__nav" id="nav" aria-label="メインナビゲーション">
         <a href="../#about" class="header__link">About</a>
         <a href="../#stores" class="header__link">Stores</a>
-        <a href="../#access" class="header__link">Access</a>
+        <a href="../#news" class="header__link">News</a>
+        <a href="../#recruit" class="header__link">Recruit</a>
         <a href="../#contact" class="header__link">Contact</a>
       </nav>
     </div>
   </header>
 
   <!-- ========== Store Hero ========== -->
-  <section class="store-hero" style="background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%);" aria-label="SAN DRIP GARAGE メインビジュアル">
-    <!-- 写真準備後: <div class="store-hero__bg" style="background-image: url('../images/stores/garage-hero.jpg');"></div> -->
+  <section class="store-hero" aria-label="SAN DRIP GARAGE メインビジュアル">
+    <div class="store-hero__bg" style="background-image: url('../images/garage.jpg');"></div>
     <div class="store-hero__overlay"></div>
     <div class="store-hero__content">
-      <span class="store-hero__badge">タコス &amp; バル</span>
+      <span class="store-hero__badge">タコス＆バル</span>
       <h1 class="store-hero__name">SAN DRIP GARAGE</h1>
-      <p class="store-hero__concept">港を望むオールタイムダイニング。石垣牛タコスとドリンク100種。</p>
+      <p class="store-hero__concept">石垣牛タコスとドリンク100種以上。朝10:30から楽しめるオールタイムダイニング。</p>
     </div>
   </section>
 
@@ -131,9 +390,9 @@
             <span class="store-info-item__value"><a href="tel:0980876261">0980-87-6261</a></span>
           </div>
           <div class="store-info-item">
-            <svg class="store-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
-            <span class="store-info-item__label">席数</span>
-            <span class="store-info-item__value">42席</span>
+            <svg class="store-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <span class="store-info-item__label">価格帯</span>
+            <span class="store-info-item__value">¥1,000〜¥4,000</span>
           </div>
         </div>
       </div>
@@ -145,9 +404,9 @@
         <h2 class="section__title">Concept</h2>
         <p class="section__subtitle">こだわり</p>
         <div class="store-concept__text">
-          <p>港を望むロケーションのオールタイムダイニング。看板メニューの石垣牛タコスをはじめ、ドリンクは100種類以上をラインナップ。朝10:30からオープンしているので、モーニングがわりにも、ランチにも、夕方のアペロタイムにも。</p>
-          <p>テイクアウトやUber Eatsにも対応しているので、ホテルでのんびり過ごしたい日にも使いやすい。石垣島の旅のどんなシーンにもフィットする、自由なダイニングです。</p>
-          <p>開放的な店内から眺める石垣の港の景色とともに、ここでしか味わえない石垣牛タコスをぜひ一度お試しください。</p>
+          <p>石垣島の美崎町に佇むタコス＆バル。石垣牛を使ったオリジナルタコスと100種以上のドリンクが自慢。朝10:30からオープンしているので、ランチやカフェ利用にも最適です。</p>
+          <p>テイクアウトやUber Eatsにも対応。ビーチに持っていくもよし、ホテルで楽しむもよし。石垣島の味を気軽にお届けします。</p>
+          <p>開放的な店内はリゾート感たっぷり。一人でもグループでも、肩肘張らずに楽しめるカジュアルな空間です。</p>
         </div>
       </div>
     </section>
@@ -160,7 +419,7 @@
         <div class="access__map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d124.1570!3d24.3400!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zU0FOIERSSVAgR0FSQUdF!5e0!3m2!1sja!2sjp!4v1"
-            width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
+            width="100%" height="400" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="SAN DRIP GARAGEの地図">
           </iframe>
@@ -184,22 +443,22 @@
   <!-- ========== 他店舗への回遊 ========== -->
   <section class="store-nav" aria-label="他の店舗を見る">
     <div class="container">
-      <p class="store-nav__title">他の店舗を見る</p>
+      <p class="store-nav__title">Other Stores</p>
       <div class="store-nav__grid">
         <a href="senbero.html" class="store-nav__item">
-          <span class="store-nav__dot" style="background: #FF9A56;"></span>
+          <span class="store-nav__dot" style="background: #f5a623;"></span>
           <span class="store-nav__name">せんべろ風土</span>
         </a>
         <a href="leje.html" class="store-nav__item">
-          <span class="store-nav__dot" style="background: #667EEA;"></span>
+          <span class="store-nav__dot" style="background: #a882ff;"></span>
           <span class="store-nav__name">Leje 石垣島</span>
         </a>
         <a href="chacky.html" class="store-nav__item">
-          <span class="store-nav__dot" style="background: #F093FB;"></span>
+          <span class="store-nav__dot" style="background: #ff82ab;"></span>
           <span class="store-nav__name">スナックちゃっきー</span>
         </a>
         <a href="shitahaku.html" class="store-nav__item">
-          <span class="store-nav__dot" style="background: #FCCB90;"></span>
+          <span class="store-nav__dot" style="background: #8ec8a0;"></span>
           <span class="store-nav__name">喫茶シタハク</span>
         </a>
       </div>
@@ -211,6 +470,7 @@
     <div class="container">
       <div class="footer__inner">
         <p class="footer__logo">CREAM OF THE CROP</p>
+        <p class="footer__company">株式会社CREAM OF THE CROP</p>
         <p class="footer__address">沖縄県石垣市美崎町 / 沖縄県島尻郡八重瀬町</p>
         <div class="footer__sns">
           <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" aria-label="せんべろ風土 Instagram" class="footer__sns-link">
@@ -226,7 +486,8 @@
         <nav class="footer__nav" aria-label="フッターナビゲーション">
           <a href="../#about">About</a>
           <a href="../#stores">Stores</a>
-          <a href="../#access">Access</a>
+          <a href="../#news">News</a>
+          <a href="../#recruit">Recruit</a>
           <a href="../#contact">Contact</a>
           <a href="../privacy-policy.html">プライバシーポリシー</a>
         </nav>
@@ -235,6 +496,30 @@
     </div>
   </footer>
 
-  <script src="../js/main.js"></script>
+  <script>
+    // Header scroll behavior
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Hamburger menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+    menuBtn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuBtn.classList.toggle('active');
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    });
+    nav.querySelectorAll('.header__link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'メニューを開く');
+      });
+    });
+  </script>
 </body>
 </html>
