@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Column | CREAM OF THE CROP</title>
+  <meta name="description" content="CREAM OF THE CROP代表による飲食経営コラム。石垣島での飲食店運営、AI活用、採用、SNS運用などのリアルな知見を発信中。">
+  <link rel="canonical" href="https://cream-okinawa.com/blog.html">
+
+  <!-- Google Analytics（GA4） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YDJ19GBTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2YDJ19GBTM');
+  </script>
+
+  <!-- OGP -->
+  <meta property="og:title" content="Blog & Column | CREAM OF THE CROP">
+  <meta property="og:description" content="飲食経営のリアルな知見を発信。石垣島5店舗の経営者が書くコラム。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cream-okinawa.com/blog.html">
+  <meta property="og:site_name" content="CREAM OF THE CROP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #e8c97a;
+  --bg: #0a0a0a;
+  --accent: #0ea5e9;
+  --accent-dark: #0e7490;
+  --white: #fff;
+  --white-90: rgba(255,255,255,0.9);
+  --white-70: rgba(255,255,255,0.7);
+  --white-50: rgba(255,255,255,0.5);
+  --white-20: rgba(255,255,255,0.2);
+  --white-10: rgba(255,255,255,0.1);
+  --white-05: rgba(255,255,255,0.05);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  color: var(--white);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.8;
+}
+
+a { color: var(--gold); text-decoration: none; transition: opacity 0.3s; }
+a:hover { opacity: 0.8; }
+
+/* ===== Header ===== */
+.header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 0 24px; height: 64px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--white-10);
+}
+.header__inner {
+  max-width: 1200px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header__logo {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.05em;
+}
+.header__nav { display: flex; gap: 32px; }
+.header__link {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--white-70); letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.header__link:hover { color: var(--gold); opacity: 1; }
+.header__link--active { color: var(--gold); }
+
+/* ===== Hamburger ===== */
+.header__menu-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 24px; position: relative; z-index: 1001;
+}
+.header__menu-btn span {
+  display: block; width: 100%; height: 2px; background: var(--white);
+  position: absolute; left: 0; transition: all 0.3s;
+}
+.header__menu-btn span:nth-child(1) { top: 0; }
+.header__menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.header__menu-btn span:nth-child(3) { bottom: 0; }
+.header__menu-btn.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.header__menu-btn.active span:nth-child(2) { opacity: 0; }
+.header__menu-btn.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ===== Hero ===== */
+.blog-hero {
+  margin-top: 64px; padding: 80px 24px 60px; text-align: center;
+  background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(20,20,30,1) 100%);
+}
+.blog-hero__sub {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.blog-hero__title {
+  font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px;
+}
+.blog-hero__lead {
+  font-size: 14px; color: var(--white-50); max-width: 480px; margin: 0 auto;
+}
+
+/* ===== Blog Grid ===== */
+.blog-container { max-width: 960px; margin: 0 auto; padding: 60px 24px 80px; }
+
+.blog-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+}
+
+/* ===== Blog Card ===== */
+.blog-card {
+  background: var(--white-05); border: 1px solid var(--white-10);
+  border-radius: 12px; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+  display: flex; flex-direction: column;
+}
+.blog-card:hover {
+  border-color: var(--accent); transform: translateY(-4px);
+}
+.blog-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.blog-card__meta {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+}
+.blog-card__date { font-size: 12px; color: var(--white-50); letter-spacing: 0.05em; }
+.blog-card__tag {
+  display: inline-block; padding: 2px 10px; border-radius: 12px;
+  font-size: 10px; letter-spacing: 0.08em; font-weight: 500;
+}
+.blog-card__tag--restaurant { background: rgba(249,115,22,0.12); color: #f97316; }
+.blog-card__tag--story { background: rgba(139,92,246,0.12); color: #8b5cf6; }
+.blog-card__tag--ai { background: rgba(14,165,233,0.12); color: #0ea5e9; }
+.blog-card__tag--business { background: rgba(16,185,129,0.12); color: #10b981; }
+.blog-card__tag--paid { background: rgba(232,201,122,0.15); color: var(--gold); }
+
+.blog-card__title {
+  font-size: 16px; font-weight: 400; color: var(--white-90);
+  line-height: 1.6; margin-bottom: 12px; flex: 1;
+  letter-spacing: 0.02em;
+}
+.blog-card__excerpt {
+  font-size: 13px; color: var(--white-50); line-height: 1.7;
+  margin-bottom: 16px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.blog-card__link {
+  font-size: 13px; color: var(--accent); letter-spacing: 0.05em;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.blog-card__link:hover { opacity: 1; color: var(--gold); }
+
+/* ===== Note CTA ===== */
+.note-cta {
+  text-align: center; padding: 48px 24px;
+  border-top: 1px solid var(--white-10);
+}
+.note-cta__text { font-size: 14px; color: var(--white-50); margin-bottom: 20px; }
+.note-cta__btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 36px; border: 1px solid var(--white-20);
+  border-radius: 40px; color: var(--white-70); font-size: 14px;
+  letter-spacing: 0.05em; transition: all 0.3s;
+}
+.note-cta__btn:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
+
+/* ===== Footer ===== */
+.footer {
+  padding: 60px 0 32px; border-top: 1px solid var(--white-10); background: var(--bg);
+}
+.footer__inner { text-align: center; }
+.footer__logo {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.footer__company { font-size: 11px; color: var(--white-50); letter-spacing: 0.1em; margin-bottom: 20px; }
+.footer__nav {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.footer__nav a {
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  color: var(--white-50); letter-spacing: 0.08em;
+}
+.footer__nav a:hover { color: var(--gold); opacity: 1; }
+.footer__copy { font-size: 11px; color: var(--white-20); letter-spacing: 0.05em; }
+
+/* ===== Fade-in ===== */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .header__nav {
+    position: fixed; inset: 0; background: rgba(10,10,10,0.98);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .header__nav.open { opacity: 1; pointer-events: auto; }
+  .header__nav .header__link { font-size: 18px; }
+  .header__menu-btn { display: block; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-hero { padding: 60px 24px 40px; }
+  .footer__nav { gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+  <!-- ========== Header ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="./" class="header__logo">CREAM OF THE CROP</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="nav" aria-label="メインナビゲーション">
+        <a href="about.html" class="header__link">About</a>
+        <a href="./#stores" class="header__link">Stores</a>
+        <a href="recruit.html" class="header__link">Recruit</a>
+        <a href="./#news" class="header__link">News</a>
+        <a href="blog.html" class="header__link header__link--active">Blog</a>
+        <a href="./#contact" class="header__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Hero ========== -->
+  <section class="blog-hero">
+    <p class="blog-hero__sub">Blog & Column</p>
+    <h1 class="blog-hero__title">代表コラム</h1>
+    <p class="blog-hero__lead">石垣島で5店舗を経営するリアルな知見を、noteで発信しています。</p>
+  </section>
+
+  <!-- ========== Blog Grid ========== -->
+  <main class="blog-container">
+    <div class="blog-grid">
+
+      <!-- BLOG_INSERT_POINT -->
+      <a href="https://note.com/naoya6939/n/nb2b53016741e" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.21</span>
+            <span class="blog-card__tag blog-card__tag--restaurant">飲食経営</span>
+          </div>
+          <h2 class="blog-card__title">採用難、台風、観光シーズンの波。石垣島で飲食店を10年やってわかったこと</h2>
+          <p class="blog-card__excerpt">コロナ禍で独立し、離島で5店舗を展開するまでのリアル。地元6割・観光4割の構造を作るまで。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n6e39da51fc26" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.12</span>
+            <span class="blog-card__tag blog-card__tag--ai">AI・DX</span>
+          </div>
+          <h2 class="blog-card__title">来店1回目から360日後まで全自動。飲食店2店舗のLINE CRM設計図を公開する</h2>
+          <p class="blog-card__excerpt">ダイニーを導入したのにリピーターが増えない。LINE公式のCRM設計で解決した全プロセス。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n768dc93018d0" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.07</span>
+            <span class="blog-card__tag blog-card__tag--ai">AI・DX</span>
+          </div>
+          <h2 class="blog-card__title">Claude Codeに"経営スタイル"を教え続けたら、勝手に最適化が回り出した（後編）</h2>
+          <p class="blog-card__excerpt">パイプライン6本・外部連携6つ。朝ルーティン15分→2分。テキストファイル60本の集積で何が変わったか。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n58c00ccace0a" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.05</span>
+            <span class="blog-card__tag blog-card__tag--paid">有料記事</span>
+          </div>
+          <h2 class="blog-card__title">5店舗の数字を"1画面"にまとめた。飲食店ダッシュボードの作り方とAIへの聞き方</h2>
+          <p class="blog-card__excerpt">FL比率の判断基準、日報→CSV→メール→API連携4方式、人件費勤怠自動化、AIプロンプト6本。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n8408cd49107e" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.04</span>
+            <span class="blog-card__tag blog-card__tag--ai">AI・DX</span>
+          </div>
+          <h2 class="blog-card__title">Claude Codeに"経営スタイル"を教え続けたら、勝手に最適化が回り出した（前編）</h2>
+          <p class="blog-card__excerpt">毎朝AIに自己紹介していた。CLAUDE.mdが5行→278行→154行に育つまでの48日間の記録。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n24256bfb6f97" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.04.02</span>
+            <span class="blog-card__tag blog-card__tag--ai">AI・DX</span>
+          </div>
+          <h2 class="blog-card__title">「前回何を決めたっけ？」がなくなった日。会議AIを自分で作った飲食店の話</h2>
+          <p class="blog-card__excerpt">議事録を取ったことがなかった。月1,900円の自作AIで会議の文脈が蓄積されるようになった。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n60a42825b253" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.31</span>
+            <span class="blog-card__tag blog-card__tag--ai">AI・DX</span>
+          </div>
+          <h2 class="blog-card__title">日報のExcel手入力を"2日でゼロ"にした。飲食店オーナーのAI活用、仕組みの裏側</h2>
+          <p class="blog-card__excerpt">Talknote→GAS→ダッシュボード。スマレジ人件費・レシピ原価・SNS反応まで自動集約。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n8dedbed4c591" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.28</span>
+            <span class="blog-card__tag blog-card__tag--restaurant">飲食経営</span>
+          </div>
+          <h2 class="blog-card__title">売上・原価・SNS反応。"数字の見せ方"を変えただけで飲食店の現場が変わった話</h2>
+          <p class="blog-card__excerpt">Excelの収支表を共有しても翌日の行動は変わらなかった。見せ方を変えたら目の色が変わった。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n31055beedd10" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.26</span>
+            <span class="blog-card__tag blog-card__tag--restaurant">飲食経営</span>
+          </div>
+          <h2 class="blog-card__title">SNS運用を外注するな。飲食店は"中の人"が最強だ</h2>
+          <p class="blog-card__excerpt">月10万で外注した結果、反応ゼロ。内製に切り替えたら効率差10倍以上。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/nacbf86f44088" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.17</span>
+            <span class="blog-card__tag blog-card__tag--story">ストーリー</span>
+          </div>
+          <h2 class="blog-card__title">ChatGPTしか使ったことがなかった飲食店オーナーが30日でAIを5つ使いこなすようになった全記録</h2>
+          <p class="blog-card__excerpt">AI未経験から30日間で業務自動化に至った記録。始めるのに専門知識はいらない。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n2a190b849053" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.14</span>
+            <span class="blog-card__tag blog-card__tag--story">ストーリー</span>
+          </div>
+          <h2 class="blog-card__title">なぜ2つの資格を取ったのか。飲食店10年で気づいた「必要な専門家」</h2>
+          <p class="blog-card__excerpt">中小企業診断士と行政書士。現場経験から逆算して取った2つの資格の理由。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/nc330b842af52" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.13</span>
+            <span class="blog-card__tag blog-card__tag--restaurant">飲食経営</span>
+          </div>
+          <h2 class="blog-card__title">"美味しいだけ"では生き残れない。2026年、飲食店の体験価値</h2>
+          <p class="blog-card__excerpt">料理のクオリティだけでは差別化できない時代。体験価値をどう設計するか。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+      <a href="https://note.com/naoya6939/n/n904fe3b8fe71" target="_blank" rel="noopener" class="blog-card fade-in">
+        <div class="blog-card__body">
+          <div class="blog-card__meta">
+            <span class="blog-card__date">2026.03.10</span>
+            <span class="blog-card__tag blog-card__tag--restaurant">飲食経営</span>
+          </div>
+          <h2 class="blog-card__title">アルバイト定着率を上げる、初日研修完全マニュアル</h2>
+          <p class="blog-card__excerpt">採用してもすぐ辞める原因は初日にある。Whyを伝える研修で定着率が変わった。</p>
+          <span class="blog-card__link">noteで読む &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- note導線 -->
+    <div class="note-cta">
+      <p class="note-cta__text">全ての記事はnoteで公開しています</p>
+      <a href="https://note.com/naoya6939" target="_blank" rel="noopener" class="note-cta__btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        noteで全記事を見る
+      </a>
+    </div>
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="blog-container" style="padding:0 24px;">
+      <div class="footer__inner">
+        <p class="footer__logo">CREAM OF THE CROP</p>
+        <p class="footer__company">株式会社CREAM OF THE CROP</p>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <a href="about.html">About</a>
+          <a href="./#stores">Stores</a>
+          <a href="recruit.html">Recruit</a>
+          <a href="./#news">News</a>
+          <a href="blog.html">Blog</a>
+          <a href="./#contact">Contact</a>
+          <a href="privacy-policy.html">プライバシーポリシー</a>
+        </nav>
+        <p class="footer__copy">&copy; 2026 CREAM OF THE CROP. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.classList.toggle('active');
+        nav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('.header__link').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    // フェードイン
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+  });
+  </script>
+</body>
+</html>
