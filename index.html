@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CREAM OF THE CROP | 石垣島</title>
 <meta name="description" content="株式会社CREAM OF THE CROP - 石垣島の飲食グループ。せんべろ風土・SAN DRIP GARAGE・Leje・スナックちゃっきー・喫茶シタハクの公式リンク集。">
 <meta name="keywords" content="石垣島 居酒屋,石垣島 バー,石垣島 飲食店,沖縄 飲食グループ,美崎町,せんべろ,タコス,シーシャ,スナック,カフェ,八重瀬町">
@@ -16,11 +16,13 @@
 <meta property="og:url" content="https://cream-okinawa.com/">
 <meta property="og:site_name" content="CREAM OF THE CROP">
 <meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://cream-okinawa.com/images/senbero.jpg">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CREAM OF THE CROP | 沖縄・石垣島の飲食グループ">
 <meta name="twitter:description" content="沖縄・石垣島で5店舗を展開する飲食グループ。居酒屋からカフェまで、あなたの「もう一軒」を届けます。">
+<meta name="twitter:image" content="https://cream-okinawa.com/images/senbero.jpg">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -72,1605 +74,8 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --white: #fff;
-    --white-90: rgba(255,255,255,0.9);
-    --white-70: rgba(255,255,255,0.7);
-    --white-50: rgba(255,255,255,0.5);
-    --white-20: rgba(255,255,255,0.2);
-    --white-15: rgba(255,255,255,0.15);
-    --white-10: rgba(255,255,255,0.1);
-    --white-05: rgba(255,255,255,0.05);
-    --accent: #e8c97a;
-    --accent-dim: rgba(232,201,122,0.3);
-    --gold: #e8c97a;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 300;
-    color: var(--white);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    background: #0a0a0a;
-  }
-
-  /* ===== ヘッダー ===== */
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    padding: 16px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgba(10, 10, 10, 0.4);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
-  }
-
-  .header--scrolled {
-    background: rgba(10, 10, 10, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 1px 0 rgba(232, 201, 122, 0.1);
-  }
-
-  .header__logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    color: var(--gold);
-    text-decoration: none;
-  }
-
-  .header__nav {
-    display: flex;
-    gap: 28px;
-  }
-
-  .header__link {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.65);
-    text-decoration: none;
-    transition: color 0.25s;
-    text-transform: uppercase;
-  }
-
-  .header__link:hover {
-    color: var(--gold);
-  }
-
-  .header__menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px 0;
-    z-index: 201;
-    transition: opacity 0.3s;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-
-  .header__menu-btn:active {
-    opacity: 0.7;
-  }
-
-  .header__menu-btn span {
-    display: block;
-    width: 28px;
-    height: 2px;
-    background: var(--white);
-    margin: 4px 0;
-    transition: transform 0.3s, opacity 0.3s, background 0.3s;
-  }
-
-  .header--scrolled .header__menu-btn span {
-    background: var(--gold);
-  }
-
-  .header__menu-label {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 9px;
-    letter-spacing: 2px;
-    color: var(--white-70);
-    margin-top: 2px;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
-
-  .header--scrolled .header__menu-label {
-    color: var(--gold);
-  }
-
-  .header__menu-btn.active span {
-    background: var(--gold);
-  }
-
-  .header__menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .header__menu-btn.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .header__menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  .header__menu-btn.active .header__menu-label {
-    display: none;
-  }
-
-  @media (max-width: 768px) {
-    .header__nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      height: 100dvh;
-      z-index: 200;
-      background: #0a0a0a;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 28px;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.35s ease, visibility 0.35s;
-    }
-
-    .header__nav.open {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .header__nav .header__link {
-      display: block;
-      font-size: 24px;
-      font-family: 'Playfair Display', serif;
-      letter-spacing: 0.2em;
-      color: rgba(255,255,255,0.9);
-      padding: 12px 32px;
-      text-align: center;
-      border-bottom: 1px solid transparent;
-      transition: color 0.3s, border-color 0.3s;
-    }
-
-    .header__nav .header__link:hover,
-    .header__nav .header__link:active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-
-    .header__menu-btn {
-      display: flex;
-      z-index: 201;
-    }
-  }
-
-  /* ===== ヒーロー ===== */
-  .hero {
-    position: relative;
-    height: 100vh;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    overflow: hidden;
-  }
-
-  .hero-bg {
-    position: absolute;
-    inset: -20%;
-    background:
-      url('https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&q=80')
-      center center / cover no-repeat;
-    z-index: 0;
-    will-change: transform;
-  }
-
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0.55) 0%,
-      rgba(0,0,0,0.15) 18%,
-      rgba(0,0,0,0.02) 30%,
-      rgba(0,0,0,0.25) 60%,
-      rgba(0,0,0,0.8) 100%
-    );
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 0 24px 56px;
-    max-width: 480px;
-    width: 100%;
-  }
-
-  .hero-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 300;
-    font-size: 16px;
-    letter-spacing: 3px;
-    color: var(--white-70);
-    margin-bottom: 8px;
-  }
-
-  .hero-title {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    font-size: 42px;
-    letter-spacing: 2px;
-    color: var(--white);
-    line-height: 1.1;
-    margin-bottom: 6px;
-    text-shadow: 0 2px 30px rgba(0,0,0,0.5);
-  }
-
-  .hero-title .script {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 56px;
-    display: block;
-    margin-top: -4px;
-  }
-
-  .hero-location {
-    font-size: 11px;
-    letter-spacing: 6px;
-    color: var(--white-50);
-    margin-top: 16px;
-    text-transform: uppercase;
-  }
-
-  .hero-divider {
-    width: 32px;
-    height: 1px;
-    background: var(--white-50);
-    margin: 20px auto;
-  }
-
-  .hero-tagline {
-    font-size: 13px;
-    color: var(--white-70);
-    letter-spacing: 2px;
-    font-weight: 300;
-  }
-
-  .scroll-hint {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding-bottom: 24px;
-    animation: bounce 2s infinite;
-  }
-
-  .scroll-hint span {
-    display: block;
-    font-size: 9px;
-    letter-spacing: 4px;
-    color: var(--white-50);
-    margin-bottom: 4px;
-  }
-
-  .scroll-hint .arrow {
-    font-size: 14px;
-    color: var(--white-50);
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
-  }
-
-  /* ===== 店舗セクション ===== */
-  .stores-section {
-    position: relative;
-    padding: 48px 0 0;
-    background: #0a0a0a;
-  }
-
-  .section-header {
-    text-align: center;
-    margin-bottom: 28px;
-    padding: 0 24px;
-  }
-
-  .section-header .label {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--white-50);
-    margin-bottom: 6px;
-  }
-
-  .section-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    font-size: 22px;
-    letter-spacing: 6px;
-    color: var(--white-90);
-  }
-
-  /* ===== カルーセル ===== */
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 0;
-    padding: 0;
-  }
-
-  .carousel::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* ===== スワイプカード ===== */
-  .swipe-card {
-    flex: 0 0 86%;
-    max-width: 400px;
-    scroll-snap-align: center;
-    position: relative;
-    height: 520px;
-    border-radius: 24px;
-    overflow: hidden;
-    margin: 0 7%;
-    flex-shrink: 0;
-  }
-
-  .swipe-card:first-child {
-    margin-left: 7%;
-  }
-
-  .swipe-card:last-child {
-    margin-right: 7%;
-  }
-
-  /* 背景写真 */
-  .swipe-card .card-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .swipe-card:hover .card-bg {
-    transform: scale(1.05);
-  }
-
-  /* 2枚分割背景 */
-  .card-bg-split {
-    display: flex;
-    background: none !important;
-  }
-
-  .card-bg-half {
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* グラデーションオーバーレイ */
-  .swipe-card .card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0,0,0,0.1) 0%,
-      rgba(0,0,0,0.15) 30%,
-      rgba(0,0,0,0.5) 55%,
-      rgba(0,0,0,0.88) 80%,
-      rgba(0,0,0,0.95) 100%
-    );
-    z-index: 1;
-  }
-
-  /* カード下部のアクセントライン */
-  .swipe-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--card-accent, var(--white-20));
-    z-index: 3;
-    opacity: 0.7;
-  }
-
-  /* カード別カラー */
-  .swipe-card[data-store="senbero"]   { --card-accent: #f5a623; }
-  .swipe-card[data-store="garage"]    { --card-accent: #6cb2eb; }
-  .swipe-card[data-store="leje"]      { --card-accent: #a882ff; }
-  .swipe-card[data-store="chucky"]    { --card-accent: #ff82ab; }
-  .swipe-card[data-store="shitahaku"] { --card-accent: #8ec8a0; }
-
-  /* カードコンテンツ */
-  .card-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    padding: 28px 24px 28px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  /* ナンバリング */
-  .card-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 13px;
-    color: var(--card-accent, var(--white-50));
-    letter-spacing: 2px;
-    opacity: 0.8;
-  }
-
-  /* 店舗名 */
-  .card-store-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
-    font-size: 28px;
-    letter-spacing: 2px;
-    color: var(--white);
-    line-height: 1.2;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
-  }
-
-  .card-store-genre {
-    font-size: 11px;
-    color: var(--white-50);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: -8px;
-  }
-
-  /* 店舗説明 */
-  .card-desc {
-    font-size: 13px;
-    color: var(--white-70);
-    line-height: 1.7;
-    letter-spacing: 0.5px;
-  }
-
-  /* SNSアイコンボタン */
-  .card-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .card-link-btn {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 16px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    text-decoration: none;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-  }
-
-  .card-link-btn:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.25);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  }
-
-  .card-link-btn:active {
-    transform: translateY(0) scale(0.97);
-  }
-
-  .card-link-btn svg {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-  }
-
-  /* 店舗詳細リンクボタン */
-  .card-detail-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--card-accent, rgba(255,255,255,0.2));
-    border-radius: 12px;
-    text-decoration: none;
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-    margin-left: auto;
-  }
-
-  .card-detail-btn:hover {
-    background: var(--card-accent, rgba(255,255,255,0.3));
-    color: #000;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  }
-
-  .card-detail-btn span {
-    font-size: 14px;
-    transition: transform 0.3s;
-  }
-
-  .card-detail-btn:hover span {
-    transform: translateX(4px);
-  }
-
-  .card-link-btn.ig {
-    background: linear-gradient(135deg, rgba(131,58,180,0.35), rgba(253,29,29,0.25), rgba(247,119,55,0.25));
-    border-color: rgba(253,29,29,0.2);
-  }
-
-  .card-link-btn.tt {
-    background: rgba(255,255,255,0.08);
-  }
-
-  .card-link-btn.x {
-    background: rgba(255,255,255,0.08);
-  }
-
-  .card-link-btn.th {
-    background: rgba(255,255,255,0.08);
-  }
-
-  .card-link-btn.map {
-    background: rgba(52,168,83,0.25);
-    border-color: rgba(52,168,83,0.2);
-  }
-
-  /* ===== ドットインジケーター ===== */
-  .carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding: 24px 0 8px;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--white-20);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: all 0.3s;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-  .dot.active {
-    width: 24px;
-    border-radius: 4px;
-    background: var(--white-70);
-  }
-
-  /* スワイプヒント */
-  .swipe-hint {
-    text-align: center;
-    padding: 8px 0 0;
-    font-size: 10px;
-    letter-spacing: 3px;
-    color: var(--white-20);
-    opacity: 1;
-    transition: opacity 0.5s;
-  }
-
-  .swipe-hint.hidden {
-    opacity: 0;
-  }
-
-  /* ===== エリアマップ ===== */
-  .map-section {
-    max-width: 400px;
-    margin: 24px auto 0;
-    padding: 0 28px;
-  }
-
-  .map-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 15px;
-    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--white-10);
-    border-radius: 16px;
-    text-decoration: none;
-    color: var(--white-70);
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-  }
-
-  .map-link:hover {
-    background: var(--white-10);
-    color: var(--white);
-  }
-
-  .map-link svg {
-    width: 18px;
-    height: 18px;
-    opacity: 0.7;
-  }
-
-  /* ===== フッター ===== */
-  .footer {
-    text-align: center;
-    padding: 40px 24px 56px;
-    max-width: 480px;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .footer .brand-small {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: var(--white-50);
-    margin-bottom: 8px;
-  }
-
-  .footer .company {
-    font-size: 10px;
-    color: rgba(255,255,255,0.25);
-    letter-spacing: 1px;
-    margin-bottom: 2px;
-  }
-
-  .footer .address {
-    font-size: 10px;
-    color: rgba(255,255,255,0.2);
-  }
-
-  /* ===== ヒーローアニメーション ===== */
-  .hero-content > * {
-    opacity: 0;
-    transform: translateY(16px);
-    animation: heroFadeIn 0.8s ease-out forwards;
-  }
-  .hero-sub { animation-delay: 0.2s; }
-  .hero-title { animation-delay: 0.4s; }
-  .hero-location { animation-delay: 0.6s; }
-  .hero-divider { animation-delay: 0.7s; }
-  .hero-tagline { animation-delay: 0.8s; }
-
-  @keyframes heroFadeIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* カルーセルフェードイン */
-  .stores-section {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .stores-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ===== ダーク→リゾート グラデーション遷移 ===== */
-  .transition-gradient {
-    height: 200px;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a2332 30%, #f5f0e8 100%);
-    position: relative;
-  }
-
-  /* ===== リゾート風セクション共通 ===== */
-  .resort-section {
-    background: #f5f0e8;
-    color: #1e3a5f;
-    padding: 100px 24px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  /* セクションスクロールアニメーション */
-  .resort-section .section-title,
-  .resort-section .section-sub,
-  .resort-section .resort-container > *:not(.section-title):not(.section-sub) {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .resort-section.in-view .section-title {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .resort-section.in-view .section-sub {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.15s;
-  }
-
-  .resort-section.in-view .resort-container > *:not(.section-title):not(.section-sub) {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.3s;
-  }
-
-  .resort-section .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 6vw, 48px);
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: #0e7490;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-
-  .resort-section .section-sub {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    letter-spacing: 0.15em;
-    color: #0ea5e9;
-    text-align: center;
-    margin-bottom: 56px;
-  }
-
-  .resort-container {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ===== About セクション ===== */
-  .resort-section#about {
-    padding: 0;
-    background: #f5f0e8;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .resort-section#about::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=60') center center / cover no-repeat;
-    opacity: 0.12;
-    z-index: 0;
-  }
-
-  .resort-section#about > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .resort-section#about .resort-container {
-    max-width: 100%;
-    padding: 0;
-  }
-
-  .about-split {
-    display: grid;
-    grid-template-columns: 55% 45%;
-    min-height: 600px;
-  }
-
-  .about-photo {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-
-  .about-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 60px;
-    background: #f5f0e8;
-  }
-
-  .about-body .section-title {
-    text-align: left !important;
-    font-size: clamp(36px, 5vw, 64px);
-    margin-bottom: 24px;
-  }
-
-  .about-body .about-lead {
-    font-size: 18px;
-    font-weight: 500;
-    color: #1e3a5f;
-    line-height: 1.8;
-    margin-bottom: 24px;
-  }
-
-  .about-text p {
-    font-size: 15px;
-    line-height: 2;
-    margin-bottom: 16px;
-    color: #2d4a6f;
-  }
-
-  .about-text strong {
-    color: #0e7490;
-    font-weight: 500;
-  }
-
-  .about-stats-row {
-    display: flex;
-    gap: 40px;
-    margin-top: 36px;
-    padding-top: 32px;
-    border-top: 1px solid rgba(14, 116, 144, 0.15);
-  }
-
-  .about-stat {
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s, transform 0.6s;
-  }
-
-  .about-stat.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .about-stat-number {
-    display: block;
-    font-family: 'Playfair Display', serif;
-    font-size: 42px;
-    font-weight: 700;
-    color: #0e7490;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .about-stat-label {
-    font-size: 12px;
-    color: #6b8aad;
-    letter-spacing: 0.1em;
-  }
-
-  /* ===== 特徴カード（写真背景3カラム） ===== */
-  .feature-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-  }
-
-  .feature-card {
-    position: relative;
-    min-height: 360px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 36px 28px;
-  }
-
-  .feature-card-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .feature-card:hover .feature-card-bg {
-    transform: scale(1.06);
-  }
-
-  .feature-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.85) 100%);
-    z-index: 1;
-  }
-
-  .feature-card-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-  }
-
-  .feature-card-title {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-bottom: 12px;
-    line-height: 1.5;
-  }
-
-  .feature-card-desc {
-    font-size: 13px;
-    line-height: 1.8;
-    color: rgba(255,255,255,0.8);
-  }
-
-  @media (max-width: 768px) {
-    .about-split {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .about-photo {
-      height: 300px;
-    }
-
-    .about-body {
-      padding: 48px 24px;
-    }
-
-    .about-body .section-title {
-      text-align: center !important;
-    }
-
-    .about-stats-row {
-      justify-content: space-around;
-    }
-
-    .about-stat-number {
-      font-size: 32px;
-    }
-
-    .feature-cards {
-      grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-      min-height: 280px;
-    }
-
-    .resort-section {
-      padding: 60px 20px;
-    }
-  }
-
-  /* ===== News セクション ===== */
-  .news-section {
-    background: linear-gradient(175deg, #eee8da 0%, #e8e2d4 50%, #ebe5d7 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .news-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=1200&q=60') center center / cover no-repeat;
-    opacity: 0.10;
-    z-index: 0;
-  }
-
-  .news-section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .news-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .news-item {
-    display: flex;
-    align-items: baseline;
-    gap: 20px;
-    padding: 24px 0;
-    border-bottom: 1px solid rgba(14, 116, 144, 0.12);
-    color: inherit;
-  }
-
-  .news-item:first-child {
-    border-top: 1px solid rgba(14, 116, 144, 0.12);
-  }
-
-  .news-date {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: #0ea5e9;
-    letter-spacing: 0.05em;
-    flex-shrink: 0;
-    min-width: 90px;
-  }
-
-  .news-tag {
-    display: inline-block;
-    font-size: 11px;
-    padding: 2px 10px;
-    border-radius: 20px;
-    letter-spacing: 0.05em;
-    flex-shrink: 0;
-  }
-
-  .news-tag--info {
-    background: rgba(14, 165, 233, 0.12);
-    color: #0e7490;
-  }
-
-  .news-tag--store {
-    background: rgba(249, 115, 22, 0.12);
-    color: #c2410c;
-  }
-
-  .news-tag--event {
-    background: rgba(16, 185, 129, 0.12);
-    color: #047857;
-  }
-
-  .news-tag--column {
-    background: rgba(139, 92, 246, 0.12);
-    color: #7c3aed;
-  }
-
-  .news-link {
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .news-link:hover {
-    color: #0e7490;
-  }
-
-  .news-title {
-    font-size: 15px;
-    color: #1e3a5f;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .news-item {
-      flex-wrap: wrap;
-      gap: 8px 12px;
-    }
-
-    .news-title {
-      width: 100%;
-      font-size: 14px;
-    }
-  }
-
-  /* ===== Recruit セクション ===== */
-  .recruit-section {
-    background: #f5f0e8;
-    padding-bottom: 0;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .recruit-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=60') center bottom / cover no-repeat;
-    opacity: 0.18;
-    z-index: 0;
-  }
-
-  .recruit-section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .recruit-lead {
-    text-align: center;
-    font-size: 16px;
-    line-height: 2;
-    color: #2d4a6f;
-    max-width: 640px;
-    margin: 0 auto 48px;
-  }
-
-  .recruit-cta {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .recruit-btn {
-    display: inline-block;
-    padding: 16px 56px;
-    background: linear-gradient(135deg, #0ea5e9, #0e7490);
-    color: white;
-    text-decoration: none;
-    border-radius: 40px;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 20px rgba(14, 165, 233, 0.25);
-  }
-
-  .recruit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.35);
-  }
-
-  .recruit-note {
-    text-align: center;
-    font-size: 13px;
-    color: #6b8aad;
-    margin-top: 16px;
-  }
-
-  /* ===== Contact セクション ===== */
-  .contact-section {
-    background: #0a0a0a;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .contact-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=1200&q=60') center center / cover no-repeat;
-    opacity: 0.10;
-    z-index: 0;
-  }
-
-  .contact-section > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  .contact-section .section-title,
-  .contact-section .section-sub {
-    color: rgba(255,255,255,0.95);
-  }
-
-  .contact-lead {
-    text-align: center;
-    font-size: 16px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.8;
-    margin-bottom: 48px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact-general {
-    text-align: center;
-    margin-bottom: 56px;
-    padding: 44px 36px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(232,201,122,0.15);
-    border-radius: 4px;
-  }
-
-  .contact-general-label {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-
-  .contact-email {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px;
-    color: var(--gold);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-  }
-
-  .contact-email:hover {
-    color: #fff;
-  }
-
-  /* 店舗コンタクトカード（写真背景） */
-  .contact-stores {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    margin-bottom: 56px;
-  }
-
-  .contact-store {
-    position: relative;
-    min-height: 280px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 28px 24px;
-    text-decoration: none;
-    color: #fff;
-  }
-
-  .contact-store-bg {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s ease;
-  }
-
-  .contact-store:hover .contact-store-bg {
-    transform: scale(1.05);
-  }
-
-  .contact-store-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.88) 100%);
-    z-index: 1;
-  }
-
-  .contact-store-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .contact-store-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    margin-bottom: 8px;
-  }
-
-  .contact-store-tel {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-  }
-
-  .contact-store-type {
-    font-size: 11px;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-  }
-
-  /* Instagram DM */
-  .contact-sns {
-    text-align: center;
-  }
-
-  .contact-sns-lead {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    margin-bottom: 20px;
-    letter-spacing: 0.05em;
-  }
-
-  .contact-sns-grid {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .contact-sns-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 0;
-    text-decoration: none;
-    color: rgba(255,255,255,0.8);
-    font-size: 13px;
-    letter-spacing: 0.05em;
-    transition: all 0.3s;
-  }
-
-  .contact-sns-item:hover {
-    background: rgba(232,201,122,0.1);
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-
-  .contact-sns-item svg {
-    width: 18px;
-    height: 18px;
-    fill: var(--gold);
-  }
-
-  @media (max-width: 1024px) {
-    .contact-stores {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .contact-stores {
-      grid-template-columns: 1fr;
-    }
-    .contact-store {
-      min-height: 200px;
-    }
-  }
-
-  /* ===== フッター ===== */
-  .site-footer {
-    background: #0a0a0a;
-    color: rgba(255,255,255,0.6);
-    padding: 60px 24px 32px;
-  }
-
-  .site-footer__gradient {
-    height: 3px;
-    background: linear-gradient(90deg, #e8c97a 0%, #0ea5e9 50%, #f97316 100%);
-  }
-
-  .site-footer__upper {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 40px;
-  }
-
-  .site-footer__brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  .site-footer__company {
-    font-size: 12px;
-    margin-bottom: 4px;
-  }
-
-  .site-footer__address {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .site-footer__email {
-    font-size: 12px;
-    margin-top: 8px;
-  }
-
-  .site-footer__email a {
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .site-footer__email a:hover {
-    color: var(--gold);
-  }
-
-  .site-footer__heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-  }
-
-  .site-footer__nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .site-footer__nav a {
-    font-size: 13px;
-    color: rgba(255,255,255,0.5);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .site-footer__nav a:hover {
-    color: var(--gold);
-  }
-
-  /* SNS: 店舗ごとのグリッド */
-  .site-footer__sns-section {
-    max-width: 1000px;
-    margin: 48px auto 0;
-    padding-top: 32px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-  }
-
-  .site-footer__sns-heading {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    color: var(--gold);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 28px;
-  }
-
-  .site-footer__stores-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 24px;
-  }
-
-  .site-footer__store {
-    text-align: center;
-  }
-
-  .site-footer__store-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 4px;
-    letter-spacing: 0.02em;
-  }
-
-  .site-footer__store-type {
-    font-size: 10px;
-    color: rgba(255,255,255,0.3);
-    margin-bottom: 10px;
-  }
-
-  .site-footer__store-links {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .site-footer__store-links a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid rgba(232, 201, 122, 0.15);
-    transition: border-color 0.2s, background 0.2s;
-  }
-
-  .site-footer__store-links a:hover {
-    border-color: var(--gold);
-    background: rgba(232, 201, 122, 0.08);
-  }
-
-  .site-footer__store-links svg {
-    width: 14px;
-    height: 14px;
-    fill: rgba(255,255,255,0.5);
-  }
-
-  /* 会社公式セクション */
-  .site-footer__official {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 28px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.04);
-  }
-
-  .site-footer__official a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: rgba(255,255,255,0.45);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .site-footer__official a:hover {
-    color: var(--gold);
-  }
-
-  .site-footer__official svg {
-    width: 16px;
-    height: 16px;
-    fill: rgba(255,255,255,0.45);
-    flex-shrink: 0;
-  }
-
-  .site-footer__official a:hover svg {
-    fill: var(--gold);
-  }
-
-  .site-footer__bottom {
-    max-width: 1000px;
-    margin: 40px auto 0;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 12px;
-  }
-
-  .site-footer__bottom a {
-    color: rgba(255,255,255,0.4);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .site-footer__bottom a:hover {
-    color: var(--gold);
-  }
-
-  @media (max-width: 768px) {
-    .site-footer__upper {
-      grid-template-columns: 1fr;
-      gap: 32px;
-      text-align: center;
-    }
-
-    .site-footer__stores-grid {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .site-footer__stores-grid > :last-child:nth-child(odd) {
-      grid-column: 1 / -1;
-    }
-
-    .site-footer__official {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .site-footer__bottom {
-      flex-direction: column;
-      gap: 8px;
-      text-align: center;
-    }
-  }
-</style>
 </head>
 <body>
 
@@ -1733,15 +138,15 @@
         <p class="card-desc">📍 沖縄県石垣市美崎町8-9 石垣島ヴィレッジ<br>🕐 14:00〜24:00<br>📞 0980-87-0799</p>
         <div class="card-links">
           <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="card-link-btn ig">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
           <a href="https://www.tiktok.com/@senbero12345" target="_blank" rel="noopener" class="card-link-btn tt">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
             TikTok
           </a>
           <a href="https://maps.google.com/?q=せんべろ風土+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <svg role="img" aria-label="Map" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
           <a href="stores/senbero.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
@@ -1760,15 +165,15 @@
         <p class="card-desc">📍 沖縄県石垣市美崎町10<br>🕐 8:00〜24:00<br>📞 0980-87-6261</p>
         <div class="card-links">
           <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="card-link-btn ig">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
           <a href="https://www.tiktok.com/@san.drip.garage" target="_blank" rel="noopener" class="card-link-btn tt">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
             TikTok
           </a>
           <a href="https://maps.google.com/?q=SAN+DRIP+GARAGE+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <svg role="img" aria-label="Map" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
           <a href="stores/garage.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
@@ -1790,23 +195,23 @@
         <p class="card-desc">📍 沖縄県石垣市美崎町3 サンライトビル2F<br>🕐 17:00〜26:00<br>📞 0980-87-6259</p>
         <div class="card-links">
           <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="card-link-btn ig">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
           <a href="https://www.tiktok.com/@leje.isg" target="_blank" rel="noopener" class="card-link-btn tt">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
             TikTok
           </a>
           <a href="https://x.com/leje_ishigaki" target="_blank" rel="noopener" class="card-link-btn x">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <svg role="img" aria-label="X" viewBox="0 0 24 24" fill="white"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
             X
           </a>
           <a href="https://www.threads.net/@leje.ishigaki" target="_blank" rel="noopener" class="card-link-btn th">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.276 3.242-.896 1.088-2.19 1.678-3.794 1.678h-.04c-1.136-.008-2.088-.38-2.75-1.073-.636-.665-.985-1.582-.985-2.586 0-2.226 1.683-3.878 3.92-3.878.6 0 1.142.104 1.618.312l-.146 2.143c-.263-.114-.562-.172-.873-.172-1.14 0-2.4.792-2.4 1.595 0 .418.144.752.416 1.002.298.273.738.42 1.27.424 1.872 0 2.827-1.474 2.979-4.248l.036-.652.646.107c1.724.286 3.03.972 3.876 2.037 1.076 1.353 1.4 3.2.886 5.063-.863 3.134-3.666 4.893-7.804 4.923z"/></svg>
+            <svg role="img" aria-label="Threads" viewBox="0 0 24 24" fill="white"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.276 3.242-.896 1.088-2.19 1.678-3.794 1.678h-.04c-1.136-.008-2.088-.38-2.75-1.073-.636-.665-.985-1.582-.985-2.586 0-2.226 1.683-3.878 3.92-3.878.6 0 1.142.104 1.618.312l-.146 2.143c-.263-.114-.562-.172-.873-.172-1.14 0-2.4.792-2.4 1.595 0 .418.144.752.416 1.002.298.273.738.42 1.27.424 1.872 0 2.827-1.474 2.979-4.248l.036-.652.646.107c1.724.286 3.03.972 3.876 2.037 1.076 1.353 1.4 3.2.886 5.063-.863 3.134-3.666 4.893-7.804 4.923z"/></svg>
             Threads
           </a>
           <a href="https://maps.google.com/?q=Leje+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <svg role="img" aria-label="Map" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
           <a href="stores/leje.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
@@ -1825,15 +230,15 @@
         <p class="card-desc">📍 沖縄県石垣市美崎町11-3 海邦マックスビル1F<br>🕐 8:00〜25:00<br>📞 090-7453-4007</p>
         <div class="card-links">
           <a href="https://www.instagram.com/snack_chucky_ishigakizima/" target="_blank" rel="noopener" class="card-link-btn ig">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
           <a href="https://www.tiktok.com/@snack_chucky_071" target="_blank" rel="noopener" class="card-link-btn tt">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.49a8.28 8.28 0 004.77 1.52V7.56a4.84 4.84 0 01-1-.87z"/></svg>
             TikTok
           </a>
           <a href="https://maps.google.com/?q=スナックちゃっきー+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <svg role="img" aria-label="Map" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
           <a href="stores/chacky.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
@@ -1852,11 +257,11 @@
         <p class="card-desc">📍 沖縄県島尻郡八重瀬町志多伯255-2<br>🕐 7:00〜15:00</p>
         <div class="card-links">
           <a href="https://www.instagram.com/kissa.shitahaku/" target="_blank" rel="noopener" class="card-link-btn ig">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             Instagram
           </a>
           <a href="https://maps.google.com/?q=喫茶シタハク+石垣島" target="_blank" rel="noopener" class="card-link-btn map">
-            <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+            <svg role="img" aria-label="Map" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
           <a href="stores/shitahaku.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
@@ -2119,23 +524,23 @@
       <p class="contact-sns-lead">Instagram DMからもお気軽にどうぞ</p>
       <div class="contact-sns-grid">
         <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" class="contact-sns-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           <span>せんべろ風土</span>
         </a>
         <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" class="contact-sns-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           <span>GARAGE</span>
         </a>
         <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" class="contact-sns-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           <span>Leje</span>
         </a>
         <a href="https://www.instagram.com/snack_chucky_ishigakizima/" target="_blank" rel="noopener" class="contact-sns-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           <span>ちゃっきー</span>
         </a>
         <a href="https://www.instagram.com/kissa.shitahaku/" target="_blank" rel="noopener" class="contact-sns-item">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           <span>喫茶シタハク</span>
         </a>
       </div>
@@ -2193,10 +598,10 @@
         <div class="site-footer__store-type">大衆居酒屋</div>
         <div class="site-footer__store-links">
           <a href="https://www.instagram.com/senberofudo/" target="_blank" rel="noopener" aria-label="せんべろ風土 Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@senbero12345" target="_blank" rel="noopener" aria-label="せんべろ風土 TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
           </a>
         </div>
       </div>
@@ -2207,10 +612,10 @@
         <div class="site-footer__store-type">タコス&タコライス</div>
         <div class="site-footer__store-links">
           <a href="https://www.instagram.com/san_drip_garage/" target="_blank" rel="noopener" aria-label="GARAGE Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@san.drip.garage" target="_blank" rel="noopener" aria-label="GARAGE TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
           </a>
         </div>
       </div>
@@ -2221,16 +626,16 @@
         <div class="site-footer__store-type">アミューズメントカジノ&シーシャ</div>
         <div class="site-footer__store-links">
           <a href="https://www.instagram.com/leje.ishigaki/" target="_blank" rel="noopener" aria-label="Leje Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@leje.isg" target="_blank" rel="noopener" aria-label="Leje TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
           </a>
           <a href="https://x.com/leje_ishigaki" target="_blank" rel="noopener" aria-label="Leje X" title="X (Twitter)">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <svg role="img" aria-label="X" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
           </a>
           <a href="https://www.threads.net/@leje.ishigaki" target="_blank" rel="noopener" aria-label="Leje Threads" title="Threads">
-            <svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.711-.18 1.2-.635 2.148-1.36 2.822-.928.863-2.2 1.302-3.783 1.302-2.04 0-3.592-.711-4.498-2.059-.661-.984-.994-2.244-.994-3.75 0-2.907 1.82-5.142 4.239-5.142 1.613 0 2.87.737 3.655 2.135.383.684.619 1.49.704 2.394l-.002.001c.496.166.953.381 1.357.646 1.463.96 2.24 2.46 2.24 4.2 0 .037 0 .073-.002.11.038.463.01.934-.084 1.398-.507 2.553-2.063 4.2-4.537 5.027-1.308.437-2.79.663-4.413.676z"/></svg>
+            <svg role="img" aria-label="Threads" viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.086.718 5.496 2.057 7.164 1.432 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.711-.18 1.2-.635 2.148-1.36 2.822-.928.863-2.2 1.302-3.783 1.302-2.04 0-3.592-.711-4.498-2.059-.661-.984-.994-2.244-.994-3.75 0-2.907 1.82-5.142 4.239-5.142 1.613 0 2.87.737 3.655 2.135.383.684.619 1.49.704 2.394l-.002.001c.496.166.953.381 1.357.646 1.463.96 2.24 2.46 2.24 4.2 0 .037 0 .073-.002.11.038.463.01.934-.084 1.398-.507 2.553-2.063 4.2-4.537 5.027-1.308.437-2.79.663-4.413.676z"/></svg>
           </a>
         </div>
       </div>
@@ -2241,10 +646,10 @@
         <div class="site-footer__store-type">スナック</div>
         <div class="site-footer__store-links">
           <a href="https://www.instagram.com/snack_chucky_ishigakizima/" target="_blank" rel="noopener" aria-label="ちゃっきー Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
           <a href="https://www.tiktok.com/@snack_chucky_071" target="_blank" rel="noopener" aria-label="ちゃっきー TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
+            <svg role="img" aria-label="TikTok" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.84 4.84 0 01-1-.15z"/></svg>
           </a>
         </div>
       </div>
@@ -2255,7 +660,7 @@
         <div class="site-footer__store-type">喫茶店（八重瀬町）</div>
         <div class="site-footer__store-links">
           <a href="https://www.instagram.com/kissa.shitahaku/" target="_blank" rel="noopener" aria-label="喫茶シタハク Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg role="img" aria-label="Instagram" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
       </div>
@@ -2265,15 +670,15 @@
     <!-- 会社公式SNS -->
     <div class="site-footer__official">
       <a href="https://note.com/naoya6939" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+        <svg role="img" aria-label="note" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
         note（代表コラム）
       </a>
       <a href="blog.html">
-        <svg viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>
+        <svg role="img" aria-label="Blog" viewBox="0 0 24 24"><path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/></svg>
         Blog
       </a>
       <a href="mailto:info@cream-okinawa.com">
-        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <svg role="img" aria-label="Email" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         お問い合わせ
       </a>
     </div>

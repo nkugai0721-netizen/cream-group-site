@@ -23,241 +23,26 @@
   <meta property="og:url" content="https://cream-okinawa.com/blog.html">
   <meta property="og:site_name" content="CREAM OF THE CROP">
   <meta property="og:locale" content="ja_JP">
+  <meta property="og:image" content="https://cream-okinawa.com/images/senbero.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog & Column | CREAM OF THE CROP">
+  <meta name="twitter:description" content="飲食経営のリアルな知見を発信。石垣島5店舗の経営者が書くコラム。">
+  <meta name="twitter:image" content="https://cream-okinawa.com/images/senbero.jpg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --gold: #e8c97a;
-  --bg: #0a0a0a;
-  --accent: #0ea5e9;
-  --accent-dark: #0e7490;
-  --white: #fff;
-  --white-90: rgba(255,255,255,0.9);
-  --white-70: rgba(255,255,255,0.7);
-  --white-50: rgba(255,255,255,0.5);
-  --white-20: rgba(255,255,255,0.2);
-  --white-10: rgba(255,255,255,0.1);
-  --white-05: rgba(255,255,255,0.05);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 300;
-  color: var(--white);
-  background: var(--bg);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.8;
-}
-
-a { color: var(--gold); text-decoration: none; transition: opacity 0.3s; }
-a:hover { opacity: 0.8; }
-
-/* ===== Header ===== */
-.header {
-  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-  padding: 0 24px; height: 64px;
-  background: rgba(10,10,10,0.85);
-  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--white-10);
-}
-.header__inner {
-  max-width: 1200px; margin: 0 auto; height: 100%;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.header__logo {
-  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
-  color: var(--gold); letter-spacing: 0.05em;
-}
-.header__nav { display: flex; gap: 32px; }
-.header__link {
-  font-family: 'Cormorant Garamond', serif; font-size: 14px;
-  color: var(--white-70); letter-spacing: 0.1em; text-transform: uppercase;
-  transition: color 0.3s;
-}
-.header__link:hover { color: var(--gold); opacity: 1; }
-.header__link--active { color: var(--gold); }
-
-/* ===== Hamburger ===== */
-.header__menu-btn {
-  display: none; background: none; border: none; cursor: pointer;
-  width: 32px; height: 24px; position: relative; z-index: 1001;
-}
-.header__menu-btn span {
-  display: block; width: 100%; height: 2px; background: var(--white);
-  position: absolute; left: 0; transition: all 0.3s;
-}
-.header__menu-btn span:nth-child(1) { top: 0; }
-.header__menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.header__menu-btn span:nth-child(3) { bottom: 0; }
-.header__menu-btn.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
-.header__menu-btn.active span:nth-child(2) { opacity: 0; }
-.header__menu-btn.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
-
-/* ===== Hero ===== */
-.blog-hero {
-  margin-top: 64px; padding: 80px 24px 60px; text-align: center;
-  background: linear-gradient(180deg, rgba(10,10,10,1) 0%, rgba(20,20,30,1) 100%);
-}
-.blog-hero__sub {
-  font-family: 'Cormorant Garamond', serif; font-size: 14px;
-  color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.blog-hero__title {
-  font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px;
-}
-.blog-hero__lead {
-  font-size: 14px; color: var(--white-50); max-width: 480px; margin: 0 auto;
-}
-
-/* ===== Blog Grid ===== */
-.blog-container { max-width: 960px; margin: 0 auto; padding: 60px 24px 80px; }
-
-.blog-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
-}
-
-/* ===== Blog Card ===== */
-.blog-card {
-  background: var(--white-05); border: 1px solid var(--white-10);
-  border-radius: 12px; overflow: hidden;
-  transition: border-color 0.3s, transform 0.3s;
-  display: flex; flex-direction: column;
-}
-.blog-card:hover {
-  border-color: var(--accent); transform: translateY(-4px);
-}
-.blog-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-.blog-card__meta {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
-}
-.blog-card__date { font-size: 12px; color: var(--white-50); letter-spacing: 0.05em; }
-.blog-card__tag {
-  display: inline-block; padding: 2px 10px; border-radius: 12px;
-  font-size: 10px; letter-spacing: 0.08em; font-weight: 500;
-}
-.blog-card__tag--restaurant { background: rgba(249,115,22,0.12); color: #f97316; }
-.blog-card__tag--story { background: rgba(139,92,246,0.12); color: #8b5cf6; }
-.blog-card__tag--ai { background: rgba(14,165,233,0.12); color: #0ea5e9; }
-.blog-card__tag--business { background: rgba(16,185,129,0.12); color: #10b981; }
-.blog-card__tag--paid { background: rgba(232,201,122,0.15); color: var(--gold); }
-
-.blog-card__title {
-  font-size: 16px; font-weight: 400; color: var(--white-90);
-  line-height: 1.6; margin-bottom: 12px; flex: 1;
-  letter-spacing: 0.02em;
-}
-.blog-card__excerpt {
-  font-size: 13px; color: var(--white-50); line-height: 1.7;
-  margin-bottom: 16px;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.blog-card__link {
-  font-size: 13px; color: var(--accent); letter-spacing: 0.05em;
-  display: inline-flex; align-items: center; gap: 6px;
-}
-.blog-card__link:hover { opacity: 1; color: var(--gold); }
-
-/* ===== Note CTA ===== */
-.note-cta {
-  text-align: center; padding: 48px 24px;
-  border-top: 1px solid var(--white-10);
-}
-.note-cta__text { font-size: 14px; color: var(--white-50); margin-bottom: 20px; }
-.note-cta__btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 14px 36px; border: 1px solid var(--white-20);
-  border-radius: 40px; color: var(--white-70); font-size: 14px;
-  letter-spacing: 0.05em; transition: all 0.3s;
-}
-.note-cta__btn:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
-
-/* ===== Footer ===== */
-.footer {
-  padding: 60px 0 32px; background: #0a0a0a; border-top: 1px solid rgba(255,255,255,0.06);
-}
-.footer__inner { text-align: center; max-width: 900px; margin: 0 auto; padding: 0 24px; }
-.footer__logo {
-  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
-  color: var(--gold); letter-spacing: 0.08em; margin-bottom: 8px;
-}
-.footer__company { font-size: 11px; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 6px; }
-.footer__address { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
-.footer__email { font-size: 12px; margin-bottom: 20px; }
-.footer__email a { color: rgba(255,255,255,0.5); transition: color 0.3s; }
-.footer__email a:hover { color: var(--gold); }
-.footer__stores {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
-  margin-bottom: 24px; padding: 24px 0;
-  border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-.footer__store { text-align: center; }
-.footer__store-name { display: block; font-size: 11px; color: rgba(255,255,255,0.7); margin-bottom: 4px; font-weight: 600; }
-.footer__store-type { display: block; font-size: 9px; color: rgba(255,255,255,0.2); margin-bottom: 8px; }
-.footer__store-links { display: flex; justify-content: center; gap: 8px; }
-.footer__store-links a { color: rgba(255,255,255,0.5); transition: color 0.3s; display: flex; }
-.footer__store-links a:hover { color: var(--gold); }
-.footer__store-links svg { width: 18px; height: 18px; fill: currentColor; }
-.footer__official {
-  display: flex; justify-content: center; gap: 24px; margin-bottom: 24px; flex-wrap: wrap;
-}
-.footer__official a {
-  display: flex; align-items: center; gap: 5px;
-  font-size: 12px; color: rgba(255,255,255,0.5); transition: color 0.3s;
-}
-.footer__official a:hover { color: var(--gold); }
-.footer__official svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-.footer__nav {
-  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;
-}
-.footer__nav a {
-  font-family: 'Cormorant Garamond', serif; font-size: 13px;
-  color: rgba(255,255,255,0.5); letter-spacing: 0.08em;
-}
-.footer__nav a:hover { color: var(--gold); opacity: 1; }
-.footer__copy { font-size: 11px; color: rgba(255,255,255,0.2); letter-spacing: 0.05em; }
-
-/* ===== Fade-in ===== */
-.fade-in {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.fade-in.is-visible { opacity: 1; transform: translateY(0); }
-
-/* ===== Mobile ===== */
-@media (max-width: 768px) {
-  .header__nav {
-    position: fixed; inset: 0; background: rgba(10,10,10,0.98);
-    flex-direction: column; align-items: center; justify-content: center;
-    gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
-  }
-  .header__nav.open { opacity: 1; pointer-events: auto; }
-  .header__nav .header__link { font-size: 18px; }
-  .header__menu-btn { display: block; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-hero { padding: 60px 24px 40px; }
-  .footer__nav { gap: 16px; }
-  .footer__stores { grid-template-columns: repeat(2, 1fr); }
-  .footer__stores > :last-child:nth-child(odd) { grid-column: 1 / -1; }
-}
-</style>
 </head>
-<body>
+<body class="page-sub">
 
   <!-- ========== Header ========== -->
-  <header class="header" id="header">
+  <header class="header header--sub" id="header">
     <div class="header__inner">
       <a href="./" class="header__logo">CREAM OF THE CROP</a>
       <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
@@ -283,6 +68,16 @@ a:hover { opacity: 0.8; }
 
   <!-- ========== Blog Grid ========== -->
   <main class="blog-container">
+    <nav class="breadcrumb" aria-label="パンくずリスト">
+      <ol>
+        <li><a href="/">HOME</a></li>
+        <li aria-current="page">Blog</li>
+      </ol>
+    </nav>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"HOME","item":"https://cream-okinawa.com/"},{"@type":"ListItem","position":2,"name":"Blog"}]}
+    </script>
+
     <div class="blog-grid">
 
       <!-- BLOG_INSERT_POINT -->
@@ -455,7 +250,7 @@ a:hover { opacity: 0.8; }
   </main>
 
   <!-- ========== Footer ========== -->
-  <footer class="footer">
+  <footer class="footer footer--sub">
     <div class="blog-container" style="padding:0 24px;">
       <div class="footer__inner">
         <p class="footer__logo">CREAM OF THE CROP</p>
