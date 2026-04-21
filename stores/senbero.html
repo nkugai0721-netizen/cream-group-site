@@ -308,7 +308,7 @@ a:hover { opacity: 0.8; }
   border-radius: 12px; overflow: hidden; border: 1px solid var(--white-10);
   margin-bottom: 40px;
 }
-.access__map iframe { display: block; width: 100%; height: 400px; border: 0; filter: invert(0.9) hue-rotate(180deg); }
+.access__map iframe { display: block; width: 100%; height: 400px; border: 0; }
 
 /* ===== CTA ===== */
 .store-cta {
@@ -469,6 +469,16 @@ a:hover { opacity: 0.8; }
             <span class="store-info-item__label">席数 / 価格帯</span>
             <span class="store-info-item__value">36席 / ¥1,000〜¥3,000</span>
           </div>
+          <div class="store-info-item">
+            <svg class="store-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span class="store-info-item__label">定休日</span>
+            <span class="store-info-item__value">不定休</span>
+          </div>
+          <div class="store-info-item">
+            <svg class="store-info-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            <span class="store-info-item__label">支払い</span>
+            <span class="store-info-item__value">現金 / クレジットカード / PayPay</span>
+          </div>
         </div>
       </div>
     </section>
@@ -491,21 +501,32 @@ a:hover { opacity: 0.8; }
       <div class="container">
         <h2 class="section__title">Menu</h2>
         <p class="section__subtitle">おすすめメニュー</p>
-        <div class="menu-grid">
+
+        <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);letter-spacing:0.15em;margin-bottom:16px;text-transform:uppercase;">— Senbero Set —</p>
+        <div class="menu-grid" style="margin-bottom:40px;">
           <div class="menu-item">
             <p class="menu-item__name">せんべろセット</p>
             <p class="menu-item__price">¥1,000</p>
-            <p class="menu-item__desc">ドリンク3杯＋日替わり小鉢。昼14時から楽しめる看板セット</p>
+            <p class="menu-item__desc">ドリンク3杯＋日替わり小鉢。14時から楽しめる看板セット</p>
           </div>
+          <div class="menu-item">
+            <p class="menu-item__name">はしご酒セット</p>
+            <p class="menu-item__price">¥1,500</p>
+            <p class="menu-item__desc">ドリンク5杯＋小鉢2品。もう少し飲みたい方に</p>
+          </div>
+        </div>
+
+        <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);letter-spacing:0.15em;margin-bottom:16px;text-transform:uppercase;">— Food —</p>
+        <div class="menu-grid" style="margin-bottom:40px;">
           <div class="menu-item">
             <p class="menu-item__name">島豆腐チャンプルー</p>
             <p class="menu-item__price">¥680</p>
-            <p class="menu-item__desc">石垣島の島豆腐を使った定番のチャンプルー</p>
+            <p class="menu-item__desc">石垣島の島豆腐を使った定番チャンプルー</p>
           </div>
           <div class="menu-item">
             <p class="menu-item__name">ゴーヤーの天ぷら</p>
             <p class="menu-item__price">¥580</p>
-            <p class="menu-item__desc">サクッと揚げたゴーヤーの天ぷら。塩でどうぞ</p>
+            <p class="menu-item__desc">サクッと揚げたゴーヤー。塩でどうぞ</p>
           </div>
           <div class="menu-item">
             <p class="menu-item__name">海ぶどう</p>
@@ -513,9 +534,43 @@ a:hover { opacity: 0.8; }
             <p class="menu-item__desc">プチプチ食感の沖縄名物。泡盛との相性抜群</p>
           </div>
           <div class="menu-item">
-            <p class="menu-item__name">泡盛飲み比べ</p>
+            <p class="menu-item__name">ラフテー</p>
+            <p class="menu-item__price">¥780</p>
+            <p class="menu-item__desc">じっくり煮込んだ豚の角煮。トロトロ食感</p>
+          </div>
+          <div class="menu-item">
+            <p class="menu-item__name">島タコの刺身</p>
+            <p class="menu-item__price">¥680</p>
+            <p class="menu-item__desc">石垣島近海で獲れた新鮮なタコを薄切りに</p>
+          </div>
+          <div class="menu-item">
+            <p class="menu-item__name">もずく酢</p>
+            <p class="menu-item__price">¥380</p>
+            <p class="menu-item__desc">沖縄県産太もずく。さっぱり箸休めに</p>
+          </div>
+        </div>
+
+        <p style="font-family:'Cormorant Garamond',serif;font-size:14px;color:var(--accent);letter-spacing:0.15em;margin-bottom:16px;text-transform:uppercase;">— Drink —</p>
+        <div class="menu-grid">
+          <div class="menu-item">
+            <p class="menu-item__name">泡盛飲み比べ 3種</p>
             <p class="menu-item__price">¥980</p>
-            <p class="menu-item__desc">厳選した石垣島の泡盛3種を飲み比べ</p>
+            <p class="menu-item__desc">石垣島の泡盛を厳選3種。請福・八重泉・白百合など</p>
+          </div>
+          <div class="menu-item">
+            <p class="menu-item__name">オリオンビール 生</p>
+            <p class="menu-item__price">¥500</p>
+            <p class="menu-item__desc">沖縄のソウルビール。キンキンに冷えた生</p>
+          </div>
+          <div class="menu-item">
+            <p class="menu-item__name">シークヮーサーサワー</p>
+            <p class="menu-item__price">¥450</p>
+            <p class="menu-item__desc">島のシークヮーサーを搾った爽やかサワー</p>
+          </div>
+          <div class="menu-item">
+            <p class="menu-item__name">マンゴーハイボール</p>
+            <p class="menu-item__price">¥550</p>
+            <p class="menu-item__desc">石垣島産マンゴーを贅沢に使ったトロピカルハイボール</p>
           </div>
         </div>
       </div>
@@ -539,6 +594,18 @@ a:hover { opacity: 0.8; }
           <div class="gallery-item" onclick="openLightbox(this)">
             <img src="../images/recruit-senbero.jpg" alt="せんべろ風土のスタッフ" loading="lazy">
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 雰囲気 ========== -->
+    <section class="store-section" aria-label="雰囲気">
+      <div class="container">
+        <h2 class="section__title">Atmosphere</h2>
+        <p class="section__subtitle">お店の雰囲気</p>
+        <div class="store-concept__text">
+          <p>店内はカウンター席とテーブル席を合わせて36席。昼14時のオープンから地元の常連さんが集まり、夕方になると観光客も混ざって活気が出てきます。「千円でべろべろ」の看板に惹かれてふらっと立ち寄る人が多く、隣の席で自然と会話が生まれるのがこの店の魅力。</p>
+          <p>BGMは沖縄民謡から島唄まで。石垣の空気をそのまま感じられる、飾らない雰囲気の中で一杯どうぞ。地元のおじぃ・おばぁから観光で来た若者まで、年齢層は幅広く、初めてでも気軽に入れる島の酒場です。</p>
         </div>
       </div>
     </section>
@@ -568,12 +635,13 @@ a:hover { opacity: 0.8; }
         <p class="section__subtitle">アクセス</p>
         <div class="access__map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d124.1575!3d24.3396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2z44Gb44KT44G544KN6aKo5Zyf!5e0!3m2!1sja!2sjp!4v1"
+            src="https://maps.google.co.jp/maps?q=せんべろ風土+石垣市美崎町8-9&output=embed&hl=ja&z=17"
             width="100%" height="400" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             title="せんべろ風土の地図">
           </iframe>
         </div>
+        <p style="font-size:13px;color:var(--white-50);text-align:center;margin-top:16px;margin-bottom:24px;">730交差点から徒歩3分 / 離島ターミナルから徒歩10分</p>
 
         <!-- CTA -->
         <div class="store-cta">
