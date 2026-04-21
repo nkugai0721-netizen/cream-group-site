@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>採用情報 | CREAM OF THE CROP</title>
+  <meta name="description" content="CREAM OF THE CROPの採用情報。沖縄・石垣島で一緒に働きませんか？ホール・キッチン・スナックキャスト・カフェスタッフ募集中。寮完備・交通費全額負担。">
+  <link rel="canonical" href="https://cream-okinawa.com/recruit.html">
+
+  <!-- Google Analytics（GA4） -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2YDJ19GBTM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2YDJ19GBTM');
+  </script>
+
+  <!-- OGP -->
+  <meta property="og:title" content="採用情報 | CREAM OF THE CROP">
+  <meta property="og:description" content="沖縄・石垣島の飲食グループで一緒に働きませんか？寮完備・交通費全額負担。未経験歓迎。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cream-okinawa.com/recruit.html">
+  <meta property="og:site_name" content="CREAM OF THE CROP">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="採用情報 | CREAM OF THE CROP">
+  <meta name="twitter:description" content="沖縄・石垣島の飲食グループで一緒に働きませんか？寮完備・交通費全額負担。未経験歓迎。">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300&family=Playfair+Display:wght@400;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- 構造化データ: JobPosting -->
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "ホールスタッフ",
+    "description": "石垣島の飲食店でのホール業務全般。未経験歓迎。",
+    "datePosted": "2026-04-01",
+    "employmentType": ["FULL_TIME", "PART_TIME"],
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "CREAM OF THE CROP",
+      "sameAs": "https://cream-okinawa.com"
+    },
+    "jobLocation": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "石垣市",
+        "addressRegion": "沖縄県",
+        "addressCountry": "JP"
+      }
+    }
+  }]
+  </script>
+
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #e8c97a;
+  --bg: #0a0a0a;
+  --accent: #0ea5e9;
+  --accent-dark: #0e7490;
+  --white: #fff;
+  --white-90: rgba(255,255,255,0.9);
+  --white-70: rgba(255,255,255,0.7);
+  --white-50: rgba(255,255,255,0.5);
+  --white-20: rgba(255,255,255,0.2);
+  --white-15: rgba(255,255,255,0.15);
+  --white-10: rgba(255,255,255,0.1);
+  --white-05: rgba(255,255,255,0.05);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  color: var(--white);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.8;
+}
+
+a { color: var(--gold); text-decoration: none; transition: opacity 0.3s; }
+a:hover { opacity: 0.8; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: auto;
+  background: var(--gold); color: #000; padding: 8px 16px; z-index: 10000;
+}
+.skip-link:focus { left: 16px; top: 16px; }
+
+/* ===== Header ===== */
+.header {
+  position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+  padding: 0 24px; height: 64px;
+  background: rgba(10,10,10,0.85);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--white-10);
+  transition: background 0.3s;
+}
+.header.scrolled { background: rgba(10,10,10,0.95); }
+.header__inner {
+  max-width: 1200px; margin: 0 auto; height: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.header__logo {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.05em;
+}
+.header__nav { display: flex; gap: 32px; }
+.header__link {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--white-70); letter-spacing: 0.1em; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.header__link:hover { color: var(--gold); opacity: 1; }
+.header__link--active { color: var(--gold); }
+
+/* ===== Hamburger ===== */
+.header__menu-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  width: 32px; height: 24px; position: relative; z-index: 1001;
+}
+.header__menu-btn span {
+  display: block; width: 100%; height: 2px; background: var(--white);
+  position: absolute; left: 0; transition: all 0.3s;
+}
+.header__menu-btn span:nth-child(1) { top: 0; }
+.header__menu-btn span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.header__menu-btn span:nth-child(3) { bottom: 0; }
+.header__menu-btn.active span:nth-child(1) { top: 50%; transform: translateY(-50%) rotate(45deg); }
+.header__menu-btn.active span:nth-child(2) { opacity: 0; }
+.header__menu-btn.active span:nth-child(3) { bottom: 50%; transform: translateY(50%) rotate(-45deg); }
+
+/* ===== Hero ===== */
+.recruit-hero {
+  position: relative; min-height: 70vh; display: flex;
+  align-items: center; justify-content: center; text-align: center;
+  overflow: hidden; margin-top: 64px;
+}
+.recruit-hero__bg {
+  position: absolute; inset: 0;
+  background: url('images/recruit-senbero.jpg') center center / cover no-repeat;
+}
+.recruit-hero__overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.85) 100%);
+}
+.recruit-hero__content { position: relative; z-index: 2; padding: 60px 24px; }
+.recruit-hero__sub {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.recruit-hero__title {
+  font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 52px);
+  font-weight: 700; letter-spacing: 0.05em; margin-bottom: 20px;
+}
+.recruit-hero__lead {
+  font-size: 15px; color: var(--white-70); max-width: 520px; margin: 0 auto;
+  line-height: 2;
+}
+
+/* ===== Common Section ===== */
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 80px 0; }
+.section + .section { border-top: 1px solid var(--white-10); }
+.section__title {
+  font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600;
+  color: var(--gold); text-align: center; letter-spacing: 0.1em; margin-bottom: 4px;
+}
+.section__subtitle {
+  font-size: 12px; color: var(--white-50); text-align: center;
+  letter-spacing: 0.2em; margin-bottom: 48px;
+}
+
+/* ===== Message ===== */
+.recruit-message {
+  max-width: 680px; margin: 0 auto; text-align: center;
+}
+.recruit-message p {
+  font-size: 15px; color: var(--white-70); line-height: 2.2; margin-bottom: 20px;
+}
+.recruit-message p:last-child { margin-bottom: 0; }
+
+/* ===== Positions ===== */
+.positions-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+}
+.position-card {
+  background: var(--white-05); border: 1px solid var(--white-10);
+  border-radius: 12px; padding: 32px 28px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.position-card:hover {
+  border-color: var(--accent); transform: translateY(-4px);
+}
+.position-card__badge {
+  display: inline-block; padding: 4px 14px; border-radius: 20px;
+  font-size: 11px; letter-spacing: 0.1em;
+  background: rgba(14,165,233,0.15); color: var(--accent);
+  margin-bottom: 16px;
+}
+.position-card__title {
+  font-size: 20px; font-weight: 500; color: var(--white-90);
+  margin-bottom: 16px; letter-spacing: 0.03em;
+}
+.position-card__details {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.position-card__row {
+  display: flex; gap: 12px; font-size: 13px; align-items: baseline;
+}
+.position-card__label {
+  flex-shrink: 0; width: 72px; color: var(--white-50);
+  font-size: 11px; letter-spacing: 0.1em;
+}
+.position-card__value { color: var(--white-70); }
+
+/* ===== Benefits ===== */
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.benefit-item {
+  text-align: center; padding: 28px 16px;
+  background: var(--white-05); border: 1px solid var(--white-10);
+  border-radius: 12px; transition: border-color 0.3s;
+}
+.benefit-item:hover { border-color: var(--gold); }
+.benefit-item__icon {
+  width: 36px; height: 36px; margin: 0 auto 14px;
+  color: var(--gold);
+}
+.benefit-item__title {
+  font-size: 14px; font-weight: 400; color: var(--white-90);
+  margin-bottom: 6px;
+}
+.benefit-item__desc {
+  font-size: 12px; color: var(--white-50); line-height: 1.6;
+}
+
+/* ===== Flow ===== */
+.flow-steps {
+  display: flex; justify-content: center; gap: 0; max-width: 720px; margin: 0 auto;
+}
+.flow-step {
+  flex: 1; text-align: center; position: relative; padding: 0 20px;
+}
+.flow-step:not(:last-child)::after {
+  content: ''; position: absolute; top: 24px; right: -12px;
+  width: 24px; height: 2px; background: var(--white-20);
+}
+.flow-step__number {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--white); font-size: 18px; font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+}
+.flow-step__title {
+  font-size: 15px; font-weight: 400; color: var(--white-90);
+  margin-bottom: 8px;
+}
+.flow-step__desc {
+  font-size: 12px; color: var(--white-50); line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.recruit-cta {
+  text-align: center; padding: 60px 24px;
+  background: var(--white-05); border-top: 1px solid var(--white-10);
+  border-bottom: 1px solid var(--white-10);
+}
+.recruit-cta__lead {
+  font-size: 22px; font-weight: 400; color: var(--white-90);
+  margin-bottom: 8px; letter-spacing: 0.05em;
+}
+.recruit-cta__sub {
+  font-size: 14px; color: var(--white-50); margin-bottom: 32px;
+}
+.recruit-cta__buttons {
+  display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;
+}
+.recruit-cta__btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 40px; border-radius: 50px; font-size: 15px;
+  font-weight: 500; letter-spacing: 0.05em; transition: all 0.3s;
+}
+.recruit-cta__btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+.recruit-cta__btn--primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  color: var(--white); border: none;
+}
+.recruit-cta__btn--primary:hover {
+  transform: translateY(-3px); box-shadow: 0 8px 32px rgba(14,165,233,0.3);
+  opacity: 1;
+}
+.recruit-cta__btn--outline {
+  border: 1px solid var(--white-20); color: var(--white); background: transparent;
+}
+.recruit-cta__btn--outline:hover {
+  border-color: var(--gold); color: var(--gold); opacity: 1;
+}
+
+/* ===== Feature Cards ===== */
+.feature-cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+}
+.feature-card {
+  position: relative; min-height: 360px; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 36px 28px;
+}
+.feature-card-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.feature-card:hover .feature-card-bg { transform: scale(1.06); }
+.feature-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.85) 100%);
+  z-index: 1;
+}
+.feature-card-content { position: relative; z-index: 2; color: white; }
+.feature-card-title {
+  font-family: 'Noto Sans JP', sans-serif; font-size: 20px; font-weight: 500;
+  letter-spacing: 0.05em; margin-bottom: 12px; line-height: 1.5;
+}
+.feature-card-desc {
+  font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.8);
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 60px 0 32px; border-top: 1px solid var(--white-10); background: var(--bg);
+}
+.footer__inner { text-align: center; }
+.footer__logo {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.08em; margin-bottom: 8px;
+}
+.footer__company { font-size: 11px; color: var(--white-50); letter-spacing: 0.1em; margin-bottom: 6px; }
+.footer__address { font-size: 12px; color: var(--white-50); margin-bottom: 20px; }
+.footer__nav {
+  display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 24px;
+}
+.footer__nav a {
+  font-family: 'Cormorant Garamond', serif; font-size: 13px;
+  color: var(--white-50); letter-spacing: 0.08em;
+}
+.footer__nav a:hover { color: var(--gold); opacity: 1; }
+.footer__copy { font-size: 11px; color: var(--white-20); letter-spacing: 0.05em; }
+
+/* ===== Fade-in Animation ===== */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.is-visible {
+  opacity: 1; transform: translateY(0);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .header__nav {
+    position: fixed; inset: 0; background: rgba(10,10,10,0.98);
+    flex-direction: column; align-items: center; justify-content: center;
+    gap: 32px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+  }
+  .header__nav.open { opacity: 1; pointer-events: auto; }
+  .header__nav .header__link { font-size: 18px; }
+  .header__menu-btn { display: block; }
+
+  .recruit-hero { min-height: 60vh; }
+  .positions-grid { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .flow-steps { flex-direction: column; gap: 32px; }
+  .flow-step:not(:last-child)::after { display: none; }
+  .feature-cards { grid-template-columns: 1fr; }
+  .section { padding: 60px 0; }
+  .footer__nav { gap: 16px; }
+  .recruit-cta__buttons { flex-direction: column; align-items: center; }
+}
+</style>
+</head>
+<body>
+  <a href="#main" class="skip-link">メインコンテンツへスキップ</a>
+
+  <!-- ========== Header ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="./" class="header__logo">CREAM OF THE CROP</a>
+      <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="header__nav" id="nav" aria-label="メインナビゲーション">
+        <a href="about.html" class="header__link">About</a>
+        <a href="./#stores" class="header__link">Stores</a>
+        <a href="./#news" class="header__link">News</a>
+        <a href="recruit.html" class="header__link header__link--active">Recruit</a>
+        <a href="./#contact" class="header__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== Hero ========== -->
+  <section class="recruit-hero" aria-label="採用情報 メインビジュアル">
+    <div class="recruit-hero__bg"></div>
+    <div class="recruit-hero__overlay"></div>
+    <div class="recruit-hero__content">
+      <p class="recruit-hero__sub">Join Our Team</p>
+      <h1 class="recruit-hero__title">一緒に島の夜を<br>つくろう。</h1>
+      <p class="recruit-hero__lead">石垣島の繁華街で5店舗を展開する飲食グループ。<br>未経験でも、島暮らしに興味があるなら大歓迎です。</p>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- ========== メッセージ ========== -->
+    <section class="section fade-in" aria-label="メッセージ">
+      <div class="container">
+        <h2 class="section__title">Message</h2>
+        <p class="section__subtitle">私たちの想い</p>
+        <div class="recruit-message">
+          <p>CREAM OF THE CROPは「来てくれた人に、最高の時間を届ける」をモットーに、沖縄・石垣島を中心に飲食店を展開しています。</p>
+          <p>大切にしているのは、お客様だけでなくスタッフも楽しめる環境。島の空気の中で、仲間と一緒に成長できる——そんな職場を目指しています。経験よりも「やってみたい」という気持ちを大事にしています。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 募集職種 ========== -->
+    <section class="section fade-in" aria-label="募集職種">
+      <div class="container">
+        <h2 class="section__title">Positions</h2>
+        <p class="section__subtitle">募集職種</p>
+        <div class="positions-grid">
+
+          <div class="position-card">
+            <span class="position-card__badge">正社員 / アルバイト</span>
+            <h3 class="position-card__title">ホールスタッフ</h3>
+            <div class="position-card__details">
+              <div class="position-card__row">
+                <span class="position-card__label">勤務地</span>
+                <span class="position-card__value">石垣島 美崎町エリア（4店舗いずれか）</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">給与</span>
+                <span class="position-card__value">月給 20万円〜 / 時給 950円〜</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">仕事内容</span>
+                <span class="position-card__value">接客・配膳・ドリンク作成・店舗運営全般</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-card">
+            <span class="position-card__badge">正社員 / アルバイト</span>
+            <h3 class="position-card__title">キッチンスタッフ</h3>
+            <div class="position-card__details">
+              <div class="position-card__row">
+                <span class="position-card__label">勤務地</span>
+                <span class="position-card__value">せんべろ風土 / SAN DRIP GARAGE</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">給与</span>
+                <span class="position-card__value">月給 22万円〜 / 時給 1,000円〜</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">仕事内容</span>
+                <span class="position-card__value">調理・仕込み・メニュー開発・衛生管理</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-card">
+            <span class="position-card__badge">アルバイト</span>
+            <h3 class="position-card__title">スナックキャスト</h3>
+            <div class="position-card__details">
+              <div class="position-card__row">
+                <span class="position-card__label">勤務地</span>
+                <span class="position-card__value">スナックちゃっきー（美崎町）</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">給与</span>
+                <span class="position-card__value">時給 1,200円〜 + 各種バック</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">仕事内容</span>
+                <span class="position-card__value">接客・カラオケ・お客様とのコミュニケーション</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-card">
+            <span class="position-card__badge">正社員 / アルバイト</span>
+            <h3 class="position-card__title">カフェスタッフ</h3>
+            <div class="position-card__details">
+              <div class="position-card__row">
+                <span class="position-card__label">勤務地</span>
+                <span class="position-card__value">喫茶シタハク（八重瀬町）</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">給与</span>
+                <span class="position-card__value">月給 18万円〜 / 時給 900円〜</span>
+              </div>
+              <div class="position-card__row">
+                <span class="position-card__label">仕事内容</span>
+                <span class="position-card__value">ドリンク作成・接客・軽食調理・店舗管理</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 待遇・福利厚生 ========== -->
+    <section class="section fade-in" aria-label="待遇・福利厚生">
+      <div class="container">
+        <h2 class="section__title">Benefits</h2>
+        <p class="section__subtitle">待遇・福利厚生</p>
+        <div class="benefits-grid">
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <p class="benefit-item__title">完全個室寮</p>
+            <p class="benefit-item__desc">家具家電付き。すぐに新生活をスタートできます</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p class="benefit-item__title">交通費・引越費</p>
+            <p class="benefit-item__desc">全額会社負担。地方からの応募も安心</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            <p class="benefit-item__title">まかない無料</p>
+            <p class="benefit-item__desc">出勤日は食事を提供。食費を節約できます</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><path d="M20 8v6"/><path d="M23 11h-6"/></svg>
+            <p class="benefit-item__title">社会保険完備</p>
+            <p class="benefit-item__desc">正社員は各種保険・厚生年金に加入</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            <p class="benefit-item__title">昇給・賞与</p>
+            <p class="benefit-item__desc">実績に応じた昇給あり。店長・エリアMGRへの道も</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <p class="benefit-item__title">有給休暇</p>
+            <p class="benefit-item__desc">法定通りの有給付与。しっかり休める環境</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <p class="benefit-item__title">��服貸与</p>
+            <p class="benefit-item__desc">ユニフォームは会社支給。身軽に出勤OK</p>
+          </div>
+
+          <div class="benefit-item">
+            <svg class="benefit-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <p class="benefit-item__title">リゾートライフ</p>
+            <p class="benefit-item__desc">休日は海・山・離島。石垣島ならではの暮らし</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 応募フロー ========== -->
+    <section class="section fade-in" aria-label="応募の流れ">
+      <div class="container">
+        <h2 class="section__title">Flow</h2>
+        <p class="section__subtitle">応募の流れ</p>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <div class="flow-step__number">1</div>
+            <h3 class="flow-step__title">応募</h3>
+            <p class="flow-step__desc">メールまたはお電話で<br>お気軽にご連絡ください</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number">2</div>
+            <h3 class="flow-step__title">面接</h3>
+            <p class="flow-step__desc">対面またはオンラインで<br>お話しましょう</p>
+          </div>
+          <div class="flow-step">
+            <div class="flow-step__number">3</div>
+            <h3 class="flow-step__title">採用</h3>
+            <p class="flow-step__desc">最短1週間で勤務開始<br>寮への入居もサポート</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== CTA ========== -->
+  <section class="recruit-cta fade-in" aria-label="応募">
+    <h2 class="recruit-cta__lead">まずはお気軽にご連絡ください</h2>
+    <p class="recruit-cta__sub">メール・お電話どちらでも受け付けています</p>
+    <div class="recruit-cta__buttons">
+      <a href="mailto:info@cream-okinawa.com?subject=採用に関するお問い合わせ" class="recruit-cta__btn recruit-cta__btn--primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        メールで応募
+      </a>
+      <a href="tel:09074534007" class="recruit-cta__btn recruit-cta__btn--outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        090-7453-4007
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== Feature Cards ========== -->
+  <div class="feature-cards">
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-senbero.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">経験豊富なスタッフによる<br>運営体制</h3>
+        <p class="feature-card-desc">全国の飲食店で経験を積んだスタッフが在籍。先輩が丁寧に教えるので、未経験の方も安心してスタートできます。</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-chucky.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">チームワーク重視の<br>仕組みづくり</h3>
+        <p class="feature-card-desc">一人ひとりの成長をサポート。店長・エリアマネージャーへのキャリアアップも。スタッフの「得意」を活かせる環境です。</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-card-bg" style="background-image:url('images/recruit-leje.jpg')"></div>
+      <div class="feature-card-overlay"></div>
+      <div class="feature-card-content">
+        <h3 class="feature-card-title">安心して始められる<br>リゾートライフ</h3>
+        <p class="feature-card-desc">地方からの応募も大歓迎。交通費・引越し費用は会社が負担し、完全個室の寮を完備。リゾートバイトとしても働ける環境です。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__logo">CREAM OF THE CROP</p>
+        <p class="footer__company">���式会社CREAM OF THE CROP</p>
+        <p class="footer__address">沖縄県石垣市美崎町 / 沖縄県島尻郡八重瀬町</p>
+        <nav class="footer__nav" aria-label="フッターナビゲーション">
+          <a href="about.html">About</a>
+          <a href="./#stores">Stores</a>
+          <a href="./#news">News</a>
+          <a href="recruit.html">Recruit</a>
+          <a href="./#contact">Contact</a>
+          <a href="privacy-policy.html">プライバシーポリシー</a>
+        </nav>
+        <p class="footer__copy">&copy; 2026 CREAM OF THE CROP. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const header = document.getElementById('header');
+    const menuBtn = document.getElementById('menuBtn');
+    const nav = document.getElementById('nav');
+
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = menuBtn.classList.toggle('active');
+        nav.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', isOpen);
+        menuBtn.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      nav.querySelectorAll('.header__link').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.classList.remove('active');
+          nav.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+
+    // フェードインアニメーション
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          fadeObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+  });
+  </script>
+</body>
+</html>

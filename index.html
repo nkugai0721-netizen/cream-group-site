@@ -605,6 +605,42 @@
     flex-shrink: 0;
   }
 
+  /* 店舗詳細リンクボタン */
+  .card-detail-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-accent, rgba(255,255,255,0.2));
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    margin-left: auto;
+  }
+
+  .card-detail-btn:hover {
+    background: var(--card-accent, rgba(255,255,255,0.3));
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+
+  .card-detail-btn span {
+    font-size: 14px;
+    transition: transform 0.3s;
+  }
+
+  .card-detail-btn:hover span {
+    transform: translateX(4px);
+  }
+
   .card-link-btn.ig {
     background: linear-gradient(135deg, rgba(131,58,180,0.35), rgba(253,29,29,0.25), rgba(247,119,55,0.25));
     border-color: rgba(253,29,29,0.2);
@@ -1527,10 +1563,10 @@
 <header class="header" id="header">
   <a href="#" class="header__logo">CREAM OF THE CROP</a>
   <nav class="header__nav" id="nav">
-    <a href="#about" class="header__link">About</a>
+    <a href="about.html" class="header__link">About</a>
     <a href="#stores" class="header__link">Stores</a>
     <a href="#news" class="header__link">News</a>
-    <a href="#recruit" class="header__link">Recruit</a>
+    <a href="recruit.html" class="header__link">Recruit</a>
     <a href="#contact" class="header__link">Contact</a>
   </nav>
   <button class="header__menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false">
@@ -1592,6 +1628,7 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
+          <a href="stores/senbero.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -1618,6 +1655,7 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
+          <a href="stores/garage.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -1655,6 +1693,7 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
+          <a href="stores/leje.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -1681,6 +1720,7 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
+          <a href="stores/chacky.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -1703,6 +1743,7 @@
             <svg viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
             Map
           </a>
+          <a href="stores/shitahaku.html" class="card-detail-btn">詳しく見る <span>&rarr;</span></a>
         </div>
       </div>
     </div>
@@ -1804,6 +1845,13 @@
       </div>
     </div>
 
+    <!-- About詳細ページへのリンク -->
+    <div style="text-align:center; padding: 40px 24px 0;">
+      <a href="about.html" style="display:inline-flex; align-items:center; gap:8px; padding:14px 40px; border:1px solid rgba(14,116,144,0.3); color:#0e7490; border-radius:40px; font-size:14px; font-weight:400; letter-spacing:0.08em; transition:all 0.3s; text-decoration:none;">
+        会社情報をもっと���る <span style="font-size:16px;">&rarr;</span>
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -1846,8 +1894,8 @@
     </p>
 
     <div class="recruit-cta">
-      <a href="mailto:info@cream-okinawa.com?subject=採用に関するお問い合わせ" class="recruit-btn">応募・お問い合わせ</a>
-      <p class="recruit-note">メールまたはお電話にてお気軽にご連絡ください</p>
+      <a href="recruit.html" class="recruit-btn">採用情報を見る &rarr;</a>
+      <p class="recruit-note">募集職種・待遇・応募方法の詳細はこちら</p>
     </div>
   </div>
 
@@ -1971,10 +2019,10 @@
     <div>
       <div class="site-footer__heading">Pages</div>
       <nav class="site-footer__nav">
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="#stores">Stores</a>
         <a href="#news">News</a>
-        <a href="#recruit">Recruit</a>
+        <a href="recruit.html">Recruit</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
