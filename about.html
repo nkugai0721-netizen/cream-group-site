@@ -186,29 +186,56 @@ a:hover { opacity: 0.8; }
   font-size: 12px; color: var(--text-light); letter-spacing: 0.1em; margin-top: 4px;
 }
 
-/* ===== Philosophy ===== */
-.philosophy-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+/* ===== Mission / Vision / Values ===== */
+.mv-block {
+  max-width: 720px; margin: 0 auto 72px; text-align: center;
 }
-.philosophy-card {
-  text-align: center; padding: 36px 24px;
-  background: var(--white); border-radius: 12px;
+.mv-block:last-of-type { margin-bottom: 0; }
+.mv-label {
+  font-family: 'Cormorant Garamond', serif; font-size: 14px;
+  color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.mv-label-jp {
+  font-size: 12px; color: var(--text-light); letter-spacing: 0.15em;
+  margin-bottom: 28px;
+}
+.mv-headline {
+  font-size: 20px; font-weight: 500; color: var(--text-dark);
+  line-height: 1.9; margin-bottom: 32px;
+  padding: 24px 0; border-top: 2px solid rgba(14,116,144,0.2);
+  border-bottom: 2px solid rgba(14,116,144,0.2);
+}
+.mv-body p {
+  font-size: 14px; color: var(--text-mid); line-height: 2.1; margin-bottom: 12px;
+  text-align: left;
+}
+.mv-body p:last-child { margin-bottom: 0; }
+.values-header { text-align: center; margin-bottom: 40px; }
+.values-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+  max-width: 840px; margin: 0 auto;
+}
+.value-card {
+  padding: 28px 24px; background: var(--white); border-radius: 12px;
   box-shadow: 0 2px 16px rgba(14,116,144,0.06);
+  border-left: 4px solid var(--accent);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.philosophy-card:hover {
-  transform: translateY(-4px);
+.value-card:hover {
+  transform: translateY(-3px);
   box-shadow: 0 8px 32px rgba(14,116,144,0.1);
 }
-.philosophy-card__icon {
-  width: 40px; height: 40px; margin: 0 auto 16px; color: var(--accent);
+.value-card__number {
+  font-family: 'Playfair Display', serif; font-size: 13px;
+  color: var(--accent); letter-spacing: 0.1em; margin-bottom: 6px;
 }
-.philosophy-card__title {
-  font-size: 17px; font-weight: 500; color: var(--text-dark);
+.value-card__title {
+  font-size: 16px; font-weight: 500; color: var(--text-dark);
   margin-bottom: 12px;
 }
-.philosophy-card__desc {
-  font-size: 13px; color: var(--text-mid); line-height: 1.8;
+.value-card__desc {
+  font-size: 13px; color: var(--text-mid); line-height: 1.9;
 }
 
 /* ===== Timeline ===== */
@@ -357,7 +384,8 @@ a:hover { opacity: 0.8; }
   .about-hero { min-height: 50vh; }
   .about-stats { gap: 24px; }
   .about-stat__number { font-size: 32px; }
-  .philosophy-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+  .mv-headline { font-size: 18px; }
   .store-list { grid-template-columns: 1fr; }
   .feature-cards { grid-template-columns: 1fr; }
   .section { padding: 60px 0; }
@@ -408,7 +436,7 @@ a:hover { opacity: 0.8; }
           <div class="about-message__text">
             <p>石垣島の夜を、もっと楽しく——。その想いでCREAM OF THE CROPは生まれました。</p>
             <p>観光で訪れた人に「また来たい」と思ってもらえる場所を。地元の人に「ここがあってよかった」と感じてもらえる場所を。一軒一軒、その想いを込めて店舗をつくっています。</p>
-            <p>2021年の創業から、石垣島の美崎町エリアを中心に4店舗、沖縄本島・八重瀬町に1店舗を展開。居酒屋、タコスバル、シーシャバー、スナック、カフェと、さまざまなシーンに寄り添う店づくりを目指しています。</p>
+            <p>2016年に石垣島で最初の店舗をオープンし、2021年に法人化。現在は石垣島の美崎町エリアを中心に4店舗、沖縄本島・八重瀬町に1店舗を展開。居酒屋、タコスバル、シーシャバー、スナック、カフェと、さまざまなシーンに寄り添う店づくりを続けています。</p>
           </div>
           <div class="about-stats">
             <div class="about-stat">
@@ -420,36 +448,84 @@ a:hover { opacity: 0.8; }
               <span class="about-stat__label">エリア</span>
             </div>
             <div class="about-stat">
-              <span class="about-stat__number" data-count="2021">0</span>
-              <span class="about-stat__label">設立</span>
+              <span class="about-stat__number" data-count="2016">0</span>
+              <span class="about-stat__label">創業</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ========== 理念 ========== -->
-    <section class="section fade-in" aria-label="理念">
+    <!-- ========== 経営理念 ========== -->
+    <section class="section fade-in" aria-label="経営理念">
       <div class="container">
         <h2 class="section-title">Philosophy</h2>
-        <p class="section-sub">— what we value —</p>
-        <div class="philosophy-grid">
-          <div class="philosophy-card">
-            <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-            <h3 class="philosophy-card__title">最高の時間を届ける</h3>
-            <p class="philosophy-card__desc">料理やドリンクだけでなく、空間・接客・音楽——五感すべてで「来てよかった」と感じてもらえる体験を提供します。</p>
-          </div>
-          <div class="philosophy-card">
-            <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <h3 class="philosophy-card__title">地域と共に成長する</h3>
-            <p class="philosophy-card__desc">石垣島・沖縄の食材・文化を大切にしながら、地域に根差した店舗運営で島の活性化に貢献します。</p>
-          </div>
-          <div class="philosophy-card">
-            <svg class="philosophy-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            <h3 class="philosophy-card__title">挑戦し続ける</h3>
-            <p class="philosophy-card__desc">新しい業態・テクノロジー・働き方に常にチャレンジ。「島だからできない」ではなく「島だからこそできる」を追求します。</p>
+        <p class="section-sub">— our principles —</p>
+
+        <!-- Mission -->
+        <div class="mv-block">
+          <p class="mv-label">Mission</p>
+          <p class="mv-label-jp">存在意義</p>
+          <p class="mv-headline">人が集まる場所をつくり、<br>人の魅力で選ばれる会社をつくる</p>
+          <div class="mv-body">
+            <p>私たちの商品は、料理や空間だけじゃない。そこにいる"人"そのもの。</p>
+            <p>「あの会社の人たち、なんかいいよね」——その空気感こそが、最大のブランドになる。</p>
+            <p>お客様、従業員、業者さん。関わるすべての人が対等で、全員がWin-Winになる関係をつくる。</p>
+            <p>情報も技術も出し惜しみしない。真似されても構わない。私たちは常に成長し続けるから。</p>
           </div>
         </div>
+
+        <!-- Vision -->
+        <div class="mv-block">
+          <p class="mv-label">Vision</p>
+          <p class="mv-label-jp">目指す姿</p>
+          <p class="mv-headline">仕組みで揃い、個性で際立つ。<br>"あの人がいる会社で働きたい"が<br>連鎖する組織</p>
+          <div class="mv-body">
+            <p>既存の飲食業界の"当たり前"を脱却する。</p>
+            <p>給与・休日・キャリアパス——従業員が誇りを持って「ここで働いてる」と言える環境を、業界の新しい基準としてつくる。</p>
+            <p>今すぐすべてが整うわけじゃない。だからこそ、今いるメンバーは"享受する側"ではなく、この仕組みを一緒につくり上げる創業メンバー。</p>
+            <p>その過程そのものが、他社には真似できない組織の強さになる。</p>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div class="values-header">
+          <p class="mv-label">Values</p>
+          <p class="mv-label-jp">行動指針</p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card">
+            <p class="value-card__number">Value 01</p>
+            <h3 class="value-card__title">仕組みで守る、個性で超える</h3>
+            <p class="value-card__desc">マニュアル・システム・仕組みで土台を固める。そのうえで、SNSで自分のファンを持つスタッフ、独自メニューを生む料理人、人を惹きつけるコミュニケーション。一人ひとりの"尖り"をどんどん伸ばす。</p>
+          </div>
+          <div class="value-card">
+            <p class="value-card__number">Value 02</p>
+            <h3 class="value-card__title">伝える、ではなく「届ける」</h3>
+            <p class="value-card__desc">言ったかどうかじゃない。相手が動けたかどうか。経営の意図は現場の言葉に"翻訳"する。結論だけ渡して「あとはよろしく」はやらない。</p>
+          </div>
+          <div class="value-card">
+            <p class="value-card__number">Value 03</p>
+            <h3 class="value-card__title">全員がWin-Win、例外なし</h3>
+            <p class="value-card__desc">お客様、従業員、業者さん——忖度なく、関わるすべての人と対等に向き合う。情報も技術もオープンにする。出し惜しみしない姿勢が、信頼と成長を生む。</p>
+          </div>
+          <div class="value-card">
+            <p class="value-card__number">Value 04</p>
+            <h3 class="value-card__title">信頼は、日々の積み重ね</h3>
+            <p class="value-card__desc">立場や肩書きでは信頼は手に入らない。方針がブレたときにちゃんと説明する。現場が苦しいときに一緒に汗をかく。その積み重ねが「この人のためなら」をつくる。</p>
+          </div>
+          <div class="value-card">
+            <p class="value-card__number">Value 05</p>
+            <h3 class="value-card__title">パクられても、常に前へ</h3>
+            <p class="value-card__desc">競合を恐れない。いい意味で社会と切磋琢磨する。オープンであること自体が強さの証明。止まらず成長し続ける組織が、結果として追いつけないブランドになる。</p>
+          </div>
+          <div class="value-card">
+            <p class="value-card__number">Value 06</p>
+            <h3 class="value-card__title">飲食の"当たり前"を変える</h3>
+            <p class="value-card__desc">給与・休日・キャリアパス。業界の常識に甘えない。全部が今日明日で変わるわけじゃない。だからこそ「一緒につくる」。今いるメンバーとともに、従業員が誇れる飲食企業の新しい形をつくっていく。</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -460,24 +536,24 @@ a:hover { opacity: 0.8; }
         <p class="section-sub">— our journey —</p>
         <div class="timeline">
           <div class="timeline-item">
-            <p class="timeline-item__year">2021</p>
-            <p class="timeline-item__text">株式会社CREAM OF THE CROP 設立。石垣市美崎町に「せんべろ風土」をオープン。</p>
+            <p class="timeline-item__year">2016</p>
+            <p class="timeline-item__text">石垣市美崎町に「せんべろ風土」をオープン。</p>
           </div>
           <div class="timeline-item">
-            <p class="timeline-item__year">2022</p>
-            <p class="timeline-item__text">タコス＆バル「SAN DRIP GARAGE」オープン。2店舗体制へ。</p>
+            <p class="timeline-item__year">2021</p>
+            <p class="timeline-item__text">株式会社CREAM OF THE CROP 設立。</p>
           </div>
           <div class="timeline-item">
             <p class="timeline-item__year">2023</p>
-            <p class="timeline-item__text">シーシャ＆アミューズメントカジノバー「Leje 石垣島」オープン。エンターテインメント領域に進出。</p>
+            <p class="timeline-item__text">タコス＆タコライスバル「SAN DRIP GARAGE」オープン。2店舗体制へ。</p>
           </div>
           <div class="timeline-item">
             <p class="timeline-item__year">2024</p>
-            <p class="timeline-item__text">スナック「ちゃっきー」オープン。深夜帯の新業態に挑戦。</p>
+            <p class="timeline-item__text">1月、沖縄本島・八重瀬町に「喫茶シタハク」オープン。初の島外展開。<br>7月、スナック「ちゃっきー」オープン。深夜帯の新業態に挑戦。</p>
           </div>
           <div class="timeline-item">
             <p class="timeline-item__year">2025</p>
-            <p class="timeline-item__text">沖縄本島・八重瀬町に「喫茶シタハク」オープン。初の島外展開、5店舗体制へ。</p>
+            <p class="timeline-item__text">シーシャ＆アミューズメントカジノバー「Leje 石垣島」オープン。エンターテインメント領域に進出、5店舗体制へ。</p>
           </div>
         </div>
       </div>
