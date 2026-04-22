@@ -178,6 +178,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const status = document.getElementById('contactStatus');
       const formData = new FormData(contactForm);
 
+      // honeypotチェック: ボットが入力した場合は静かに無視
+      const honeypot = contactForm.querySelector('[name="website"]');
+      if (honeypot && honeypot.value) {
+        status.textContent = '送信が完了しました。折り返しご連絡いたします。';
+        status.classList.add('success');
+        contactForm.reset();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中...';
       status.textContent = '';

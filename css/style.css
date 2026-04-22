@@ -294,7 +294,7 @@ body.page-about a:hover { opacity: 0.8; }
   position: absolute;
   inset: -20%;
   background:
-    url('https://images.unsplash.com/photo-1509233725247-49e657c54213?w=1200&q=80')
+    url('../images/hero-main.jpg')
     center center / cover no-repeat;
   z-index: 0;
   will-change: transform;
@@ -989,6 +989,7 @@ body.page-about a:hover { opacity: 0.8; }
   background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px;
 }
 .contact-form__textarea { resize: vertical; min-height: 120px; }
+.contact-form__hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
 .contact-form__submit {
   display: block; width: 100%; padding: 16px; margin-top: 24px;
   background: transparent; color: var(--gold); font-size: 15px; font-weight: 500;

@@ -507,6 +507,11 @@
         <label for="contactMessage" class="contact-form__label">お問い合わせ内容 <span class="contact-form__req">*</span></label>
         <textarea id="contactMessage" name="message" class="contact-form__input contact-form__textarea" required rows="5" placeholder="お問い合わせ内容をご記入ください"></textarea>
       </div>
+      <!-- honeypot: ボットがこのフィールドに入力するとスパムとして弾く -->
+      <div class="contact-form__hp" aria-hidden="true" tabindex="-1">
+        <label for="contactWebsite">ウェブサイト</label>
+        <input type="text" id="contactWebsite" name="website" autocomplete="off" tabindex="-1">
+      </div>
       <button type="submit" class="contact-form__submit" id="contactSubmit">送信する</button>
       <div class="contact-form__status" id="contactStatus"></div>
     </form>
