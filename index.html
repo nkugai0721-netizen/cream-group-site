@@ -471,7 +471,47 @@
     <h2 class="section-title">Contact</h2>
     <p class="section-sub">— get in touch —</p>
 
-    <p class="contact-lead">各店舗へのお問い合わせは、お電話・Instagram DM・メールをご利用ください。</p>
+    <p class="contact-lead">お問い合わせはフォーム・お電話・Instagram DM・メールをご利用ください。</p>
+
+    <!-- お問い合わせフォーム -->
+    <form class="contact-form" id="contactForm">
+      <div class="contact-form__row">
+        <div class="contact-form__group">
+          <label for="contactName" class="contact-form__label">お名前 <span class="contact-form__req">*</span></label>
+          <input type="text" id="contactName" name="name" class="contact-form__input" required placeholder="山田 太郎">
+        </div>
+        <div class="contact-form__group">
+          <label for="contactEmail" class="contact-form__label">メールアドレス <span class="contact-form__req">*</span></label>
+          <input type="email" id="contactEmail" name="email" class="contact-form__input" required placeholder="example@mail.com">
+        </div>
+      </div>
+      <div class="contact-form__row">
+        <div class="contact-form__group">
+          <label for="contactPhone" class="contact-form__label">電話番号</label>
+          <input type="tel" id="contactPhone" name="phone" class="contact-form__input" placeholder="090-1234-5678">
+        </div>
+        <div class="contact-form__group">
+          <label for="contactCategory" class="contact-form__label">お問い合わせ種別 <span class="contact-form__req">*</span></label>
+          <select id="contactCategory" name="category" class="contact-form__input contact-form__select" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="general">一般的なお問い合わせ</option>
+            <option value="reservation">貸切・団体予約</option>
+            <option value="recruit">求人について</option>
+            <option value="media">取材・メディア</option>
+            <option value="business">業務提携・取引</option>
+            <option value="other">その他</option>
+          </select>
+        </div>
+      </div>
+      <div class="contact-form__group">
+        <label for="contactMessage" class="contact-form__label">お問い合わせ内容 <span class="contact-form__req">*</span></label>
+        <textarea id="contactMessage" name="message" class="contact-form__input contact-form__textarea" required rows="5" placeholder="お問い合わせ内容をご記入ください"></textarea>
+      </div>
+      <button type="submit" class="contact-form__submit" id="contactSubmit">送信する</button>
+      <div class="contact-form__status" id="contactStatus"></div>
+    </form>
+
+    <div class="contact-form__divider"><span>または直接ご連絡</span></div>
 
     <div class="contact-general">
       <p class="contact-general-label">General Inquiry</p>

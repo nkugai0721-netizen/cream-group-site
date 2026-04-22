@@ -168,4 +168,41 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
+
+  // 問い合わせフォーム送信
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById('contactSubmit');
+      const status = document.getElementById('contactStatus');
+      const formData = new FormData(contactForm);
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      status.textContent = '';
+      status.className = 'contact-form__status';
+
+      try {
+        const GAS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwciyIpY9oQ_htk7ZC-MYciY2xqN9HlGhurcShrlcszprSi0URHLyAy4FfgA4uwUCz9/exec';
+        const res = await fetch(GAS_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+        });
+        if (res.ok) {
+          status.textContent = '送信が完了しました。折り返しご連絡いたします。';
+          status.classList.add('success');
+          contactForm.reset();
+        } else {
+          throw new Error('送信に失敗しました');
+        }
+      } catch (err) {
+        status.textContent = '送信に失敗しました。お手数ですがメールでご連絡ください。';
+        status.classList.add('error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = '送信する';
+      }
+    });
+  }
 });
