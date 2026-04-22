@@ -279,6 +279,36 @@ body.page-about a:hover { opacity: 0.8; }
 
 
 /* ===== 6. Index Hero ===== */
+/* ヒーロー + 店舗 背景ラッパー */
+.hero-stores-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-stores-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('../images/hero-main.jpg')
+    center top / cover no-repeat;
+  z-index: 0;
+}
+
+.hero-stores-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.25) 15%,
+    rgba(0,0,0,0.35) 35%,
+    rgba(0,0,0,0.55) 55%,
+    rgba(0,0,0,0.75) 75%,
+    rgba(0,0,0,0.9) 100%
+  );
+  z-index: 1;
+}
+
 .hero {
   position: relative;
   height: 100vh;
@@ -287,36 +317,12 @@ body.page-about a:hover { opacity: 0.8; }
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: -20%;
-  background:
-    url('../images/hero-main.jpg')
-    center center / cover no-repeat;
-  z-index: 0;
-  will-change: transform;
-}
-
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0,0,0,0.55) 0%,
-    rgba(0,0,0,0.15) 18%,
-    rgba(0,0,0,0.02) 30%,
-    rgba(0,0,0,0.25) 60%,
-    rgba(0,0,0,0.8) 100%
-  );
+  z-index: 2;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   text-align: center;
   padding: 0 24px 56px;
   max-width: 480px;
@@ -377,7 +383,7 @@ body.page-about a:hover { opacity: 0.8; }
 
 .scroll-hint {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   text-align: center;
   padding-bottom: 24px;
   animation: bounce 2s infinite;
@@ -405,7 +411,8 @@ body.page-about a:hover { opacity: 0.8; }
 .stores-section {
   position: relative;
   padding: 48px 0 0;
-  background: #0a0a0a;
+  background: transparent;
+  z-index: 2;
 }
 
 .section-header {

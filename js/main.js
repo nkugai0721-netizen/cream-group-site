@@ -152,15 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ヒーローパララックス効果（軽量）
-  const heroBg = document.querySelector('.hero-bg');
+  const heroBg = document.querySelector('.hero-stores-bg');
   if (heroBg) {
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
           const scrollY = window.scrollY;
-          if (scrollY < window.innerHeight) {
-            heroBg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.05)`;
+          if (scrollY < window.innerHeight * 2) {
+            heroBg.style.transform = `translateY(${scrollY * 0.15}px)`;
           }
           ticking = false;
         });
