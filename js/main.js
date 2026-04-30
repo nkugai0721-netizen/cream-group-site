@@ -137,6 +137,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 背景画像の遅延読み込み
+  const bgObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const bg = el.getAttribute('data-bg');
+          if (bg) {
+            el.style.backgroundImage = `url('${bg}')`;
+            el.removeAttribute('data-bg');
+          }
+          bgObserver.unobserve(el);
+        }
+      });
+    },
+    { rootMargin: '200px 0px' }
+  );
+
+  document.querySelectorAll('[data-bg]').forEach(el => {
+    bgObserver.observe(el);
+  });
+
   // ストアセクションのフェードイン
   const storesSection = document.querySelector('.stores-section');
   if (storesSection) {

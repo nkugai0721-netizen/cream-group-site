@@ -74,8 +74,9 @@
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -133,7 +134,7 @@
 
     <!-- 1. せんべろ風土 -->
     <div class="swipe-card" data-store="senbero">
-      <div class="card-bg" style="background-image:url('images/senbero.jpg')"></div>
+      <div class="card-bg" data-bg="images/senbero.webp"></div>
       <div class="card-overlay"></div>
       <div class="card-content">
         <div class="card-number">01 / 05</div>
@@ -160,7 +161,7 @@
 
     <!-- 2. SAN DRIP GARAGE -->
     <div class="swipe-card" data-store="garage">
-      <div class="card-bg" style="background-image:url('images/garage.jpg')"></div>
+      <div class="card-bg" data-bg="images/garage.webp"></div>
       <div class="card-overlay"></div>
       <div class="card-content">
         <div class="card-number">02 / 05</div>
@@ -188,8 +189,8 @@
     <!-- 3. Leje -->
     <div class="swipe-card" data-store="leje">
       <div class="card-bg card-bg-split">
-        <div class="card-bg-half" style="background-image:url('images/leje1.jpg')"></div>
-        <div class="card-bg-half" style="background-image:url('images/leje2.jpg')"></div>
+        <div class="card-bg-half" data-bg="images/leje1.webp"></div>
+        <div class="card-bg-half" data-bg="images/leje2.webp"></div>
       </div>
       <div class="card-overlay"></div>
       <div class="card-content">
@@ -225,7 +226,7 @@
 
     <!-- 4. スナックちゃっきー -->
     <div class="swipe-card" data-store="chucky">
-      <div class="card-bg" style="background-image:url('images/chucky.jpg')"></div>
+      <div class="card-bg" data-bg="images/chucky.webp"></div>
       <div class="card-overlay"></div>
       <div class="card-content">
         <div class="card-number">04 / 05</div>
@@ -252,7 +253,7 @@
 
     <!-- 5. 喫茶シタハク -->
     <div class="swipe-card" data-store="shitahaku">
-      <div class="card-bg" style="background-image:url('images/shitahaku.jpg')"></div>
+      <div class="card-bg" data-bg="images/shitahaku.webp"></div>
       <div class="card-overlay"></div>
       <div class="card-content">
         <div class="card-number">05 / 05</div>
@@ -309,7 +310,7 @@
     <!-- 写真左 + テキスト右の分割レイアウト -->
     <div class="about-split">
       <div class="about-photo">
-        <img src="images/about-senbero.jpg" alt="せんべろ風土の店内" loading="lazy">
+        <img src="images/about-senbero.webp" alt="せんべろ風土の店内" loading="lazy">
       </div>
       <div class="about-body">
         <h2 class="section-title">About Us</h2>
@@ -347,7 +348,7 @@
     <!-- 特徴3カラム（写真背景カード） -->
     <div class="feature-cards">
       <div class="feature-card">
-        <div class="feature-card-bg" style="background-image:url('images/about-garage-food.jpg')"></div>
+        <div class="feature-card-bg" data-bg="images/about-garage-food.webp"></div>
         <div class="feature-card-overlay"></div>
         <div class="feature-card-content">
           <h3 class="feature-card-title">島のすべてを<br>味わえる5店舗</h3>
@@ -355,7 +356,7 @@
         </div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-bg" style="background-image:url('images/about-leje-table.jpg')"></div>
+        <div class="feature-card-bg" data-bg="images/about-leje-table.webp"></div>
         <div class="feature-card-overlay"></div>
         <div class="feature-card-content">
           <h3 class="feature-card-title">地元客も観光客も<br>楽しめる空間</h3>
@@ -363,7 +364,7 @@
         </div>
       </div>
       <div class="feature-card">
-        <div class="feature-card-bg" style="background-image:url('images/shitahaku.jpg')"></div>
+        <div class="feature-card-bg" data-bg="images/shitahaku.webp"></div>
         <div class="feature-card-overlay"></div>
         <div class="feature-card-content">
           <h3 class="feature-card-title">沖縄本島にも展開<br>八重瀬町・喫茶シタハク</h3>
@@ -403,7 +404,7 @@
   <!-- 写真背景3カラムカード -->
   <div class="feature-cards">
     <div class="feature-card">
-      <div class="feature-card-bg" style="background-image:url('images/recruit-senbero.jpg')"></div>
+      <div class="feature-card-bg" data-bg="images/recruit-senbero.webp"></div>
       <div class="feature-card-overlay"></div>
       <div class="feature-card-content">
         <h3 class="feature-card-title">経験豊富なスタッフによる<br>運営体制</h3>
@@ -411,7 +412,7 @@
       </div>
     </div>
     <div class="feature-card">
-      <div class="feature-card-bg" style="background-image:url('images/recruit-chucky.jpg')"></div>
+      <div class="feature-card-bg" data-bg="images/recruit-chucky.webp"></div>
       <div class="feature-card-overlay"></div>
       <div class="feature-card-content">
         <h3 class="feature-card-title">チームワーク重視の<br>仕組みづくり</h3>
@@ -419,7 +420,7 @@
       </div>
     </div>
     <div class="feature-card">
-      <div class="feature-card-bg" style="background-image:url('images/recruit-leje.jpg')"></div>
+      <div class="feature-card-bg" data-bg="images/recruit-leje.webp"></div>
       <div class="feature-card-overlay"></div>
       <div class="feature-card-content">
         <h3 class="feature-card-title">安心して始められる<br>リゾートライフ</h3>
@@ -543,7 +544,7 @@
   <!-- 店舗コンタクトカード（写真背景4カラム） -->
   <div class="contact-stores">
     <a href="tel:0980870799" class="contact-store">
-      <div class="contact-store-bg" style="background-image:url('images/contact-senbero.jpg')"></div>
+      <div class="contact-store-bg" data-bg="images/contact-senbero.webp"></div>
       <div class="contact-store-overlay"></div>
       <div class="contact-store-content">
         <div class="contact-store-type">Izakaya</div>
@@ -552,7 +553,7 @@
       </div>
     </a>
     <a href="tel:0980876261" class="contact-store">
-      <div class="contact-store-bg" style="background-image:url('images/contact-garage.jpg')"></div>
+      <div class="contact-store-bg" data-bg="images/contact-garage.webp"></div>
       <div class="contact-store-overlay"></div>
       <div class="contact-store-content">
         <div class="contact-store-type">Dining Bar</div>
@@ -561,7 +562,7 @@
       </div>
     </a>
     <a href="tel:0980876259" class="contact-store">
-      <div class="contact-store-bg" style="background-image:url('images/contact-leje.jpg')"></div>
+      <div class="contact-store-bg" data-bg="images/contact-leje.webp"></div>
       <div class="contact-store-overlay"></div>
       <div class="contact-store-content">
         <div class="contact-store-type">Amusement Casino</div>
@@ -570,7 +571,7 @@
       </div>
     </a>
     <a href="tel:09074534007" class="contact-store">
-      <div class="contact-store-bg" style="background-image:url('images/contact-chucky.jpg')"></div>
+      <div class="contact-store-bg" data-bg="images/contact-chucky.webp"></div>
       <div class="contact-store-overlay"></div>
       <div class="contact-store-content">
         <div class="contact-store-type">Snack Bar</div>

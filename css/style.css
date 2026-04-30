@@ -289,7 +289,7 @@ body.page-about a:hover { opacity: 0.8; }
   position: absolute;
   inset: 0;
   background:
-    url('../images/hero-main.jpg')
+    url('../images/hero-main.webp')
     center top / cover no-repeat;
   z-index: 0;
 }
@@ -787,8 +787,8 @@ body.page-about a:hover { opacity: 0.8; }
 }
 .resort-section#about::before {
   content: ''; position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1200&q=60') center center / cover no-repeat;
-  opacity: 0.12; z-index: 0;
+  background: linear-gradient(135deg, rgba(14,116,144,0.08) 0%, rgba(14,165,233,0.04) 100%);
+  z-index: 0;
 }
 .resort-section#about > * { position: relative; z-index: 1; }
 .resort-section#about .resort-container { max-width: 100%; padding: 0; }
@@ -852,8 +852,8 @@ body.page-about a:hover { opacity: 0.8; }
 }
 .news-section::before {
   content: ''; position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1471922694854-ff1b63b20054?w=1200&q=60') center center / cover no-repeat;
-  opacity: 0.10; z-index: 0;
+  background: linear-gradient(160deg, rgba(14,116,144,0.06) 0%, rgba(232,201,122,0.04) 100%);
+  z-index: 0;
 }
 .news-section > * { position: relative; z-index: 1; }
 .news-list { display: flex; flex-direction: column; gap: 0; }
@@ -884,8 +884,8 @@ body.page-about a:hover { opacity: 0.8; }
 }
 .recruit-section::before {
   content: ''; position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=60') center bottom / cover no-repeat;
-  opacity: 0.18; z-index: 0;
+  background: linear-gradient(180deg, rgba(14,165,233,0.08) 0%, rgba(14,116,144,0.05) 100%);
+  z-index: 0;
 }
 .recruit-section > * { position: relative; z-index: 1; }
 .recruit-lead {
@@ -911,8 +911,8 @@ body.page-about a:hover { opacity: 0.8; }
 .contact-section { background: #0a0a0a; position: relative; overflow: hidden; }
 .contact-section::before {
   content: ''; position: absolute; inset: 0;
-  background: url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=1200&q=60') center center / cover no-repeat;
-  opacity: 0.10; z-index: 0;
+  background: linear-gradient(135deg, rgba(10,10,10,0.9) 0%, rgba(30,58,95,0.3) 100%);
+  z-index: 0;
 }
 .contact-section > * { position: relative; z-index: 1; }
 .contact-section .section-title,
@@ -1140,7 +1140,7 @@ body.page-about a:hover { opacity: 0.8; }
   align-items: center; justify-content: center; text-align: center;
   overflow: hidden; margin-top: 64px; background: var(--bg-dark);
 }
-.about-hero__bg { position: absolute; inset: 0; background: url('images/about-leje-lounge.jpg') center center / cover no-repeat; }
+.about-hero__bg { position: absolute; inset: 0; background: url('images/about-leje-lounge.webp') center center / cover no-repeat; }
 .about-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.8) 100%); }
 .about-hero__content { position: relative; z-index: 2; padding: 60px 24px; color: var(--white); }
 .about-hero__sub {
@@ -1248,7 +1248,7 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
   align-items: center; justify-content: center; text-align: center;
   overflow: hidden; margin-top: 64px;
 }
-.recruit-hero__bg { position: absolute; inset: 0; background: url('images/recruit-senbero.jpg') center center / cover no-repeat; }
+.recruit-hero__bg { position: absolute; inset: 0; background: url('images/recruit-senbero.webp') center center / cover no-repeat; }
 .recruit-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.85) 100%); }
 .recruit-hero__content { position: relative; z-index: 2; padding: 60px 24px; }
 .recruit-hero__sub {
