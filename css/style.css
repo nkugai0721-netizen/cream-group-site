@@ -1082,7 +1082,7 @@ body.page-about a:hover { opacity: 0.8; }
   font-family: 'Cormorant Garamond', serif; font-size: 14px; color: var(--gold);
   letter-spacing: 0.1em; text-transform: uppercase; text-align: center; margin-bottom: 28px;
 }
-.site-footer__stores-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.site-footer__stores-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
 .site-footer__store { text-align: center; }
 .site-footer__store-name {
   font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.75);
@@ -1510,7 +1510,7 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
 .footer--sub .footer__email a { color: var(--white-50); transition: color 0.3s; }
 .footer--sub .footer__email a:hover { color: var(--gold); }
 .footer--sub .footer__stores {
-  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px;
   margin-bottom: 24px; padding: 24px 0;
   border-top: 1px solid var(--white-10); border-bottom: 1px solid var(--white-10);
 }
