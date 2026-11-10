@@ -514,7 +514,11 @@ body.page-about a:hover { opacity: 0.8; }
 .swipe-card[data-store="garage"]    { --card-accent: #6cb2eb; }
 .swipe-card[data-store="leje"]      { --card-accent: #a882ff; }
 .swipe-card[data-store="chucky"]    { --card-accent: #ff82ab; }
-.swipe-card[data-store="shitahaku"] { --card-accent: #8ec8a0; }
+/* グループ店舗（写真が届くまでは色の背景） */
+.swipe-card[data-store="ryugu"] { --card-accent: #4fb3d9; background: radial-gradient(circle at 30% 25%, #2a6f97 0%, #0b2545 55%, #050d1a 100%); }
+.swipe-card[data-store="paw"]   { --card-accent: #e8b4c8; background: radial-gradient(circle at 70% 25%, #8a5a7a 0%, #3b2440 55%, #150c18 100%); }
+.swipe-card[data-store="roma"]  { --card-accent: #d4af37; background: radial-gradient(circle at 30% 25%, #6b4e1f 0%, #2b1f0e 55%, #0d0905 100%); }
+.card-group-badge { display: inline-block; margin-left: 10px; padding: 2px 9px; border: 1px solid rgba(255,255,255,0.45); border-radius: 20px; font-size: 10px; letter-spacing: 0.18em; vertical-align: middle; }
 
 .card-content {
   position: absolute;
@@ -1388,6 +1392,9 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
   transition: border-color 0.3s, transform 0.3s; display: flex; flex-direction: column;
 }
 .blog-card:hover { border-color: #0ea5e9; transform: translateY(-4px); }
+.blog-card__thumb { aspect-ratio: 1.91 / 1; overflow: hidden; background: var(--white-05); }
+.blog-card__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s; }
+.blog-card:hover .blog-card__thumb img { transform: scale(1.04); }
 .blog-card__body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
 .blog-card__meta { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
 .blog-card__date { font-size: 12px; color: var(--white-50); letter-spacing: 0.05em; }
