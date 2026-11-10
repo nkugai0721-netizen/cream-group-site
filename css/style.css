@@ -938,7 +938,7 @@ body.page-about a:hover { opacity: 0.8; }
 }
 .contact-email:hover { color: #fff; }
 .contact-stores {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-bottom: 56px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-bottom: 56px;
 }
 .contact-store {
   position: relative; min-height: 280px; overflow: hidden;
