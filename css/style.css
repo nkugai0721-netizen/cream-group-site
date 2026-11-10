@@ -1351,6 +1351,8 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
 .recruit-cta__btn--primary:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(14,165,233,0.3); opacity: 1; }
 .recruit-cta__btn--outline { border: 1px solid var(--white-20); color: var(--white); background: transparent; }
 .recruit-cta__btn--outline:hover { border-color: var(--gold); color: var(--gold); opacity: 1; }
+.recruit-cta__btn--line { background: #06C755; color: #fff; border: none; }
+.recruit-cta__btn--line:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(6,199,85,0.35); opacity: 1; color: #fff; }
 
 /* FAQ */
 .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
