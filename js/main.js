@@ -173,9 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
     storeObs.observe(storesSection);
   }
 
-  // ヒーローパララックス効果（軽量）
+  // ヒーローパララックス効果（PCのみ。スマホは背景の描き直しでスクロールがカクつくので動かさない）
   const heroBg = document.querySelector('.hero-stores-bg');
-  if (heroBg) {
+  if (heroBg && window.matchMedia('(min-width: 1024px) and (hover: hover)').matches) {
+    heroBg.style.willChange = 'transform';
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {

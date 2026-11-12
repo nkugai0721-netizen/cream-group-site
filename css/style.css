@@ -82,7 +82,7 @@ body.page-about a:hover { opacity: 0.8; }
   background: rgba(10, 10, 10, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 .header--scrolled {
@@ -1541,6 +1541,13 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
 }
 
 @media (max-width: 768px) {
+  /* スマホはぼかし効果を外して濃い背景で代用（スクロールのカクつき対策） */
+  .header, .header--scrolled, .header--sub, .card-link-btn, .card-detail-btn, .map-link { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .header { background: rgba(10,10,10,0.75); }
+  .header--scrolled, .header--sub { background: rgba(10,10,10,0.95); }
+  .card-link-btn { background: rgba(30,30,30,0.7); }
+  .card-detail-btn { background: rgba(30,30,30,0.75); }
+  .map-link { background: rgba(255,255,255,0.06); }
   /* Index */
   .about-split { grid-template-columns: 1fr; min-height: auto; }
   .about-photo { height: 300px; }
