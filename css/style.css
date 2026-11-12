@@ -908,6 +908,10 @@ body.page-about a:hover { opacity: 0.8; }
 .recruit-btn:hover {
   transform: translateY(-3px); box-shadow: 0 8px 32px rgba(14, 165, 233, 0.35);
 }
+.recruit-btns { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.recruit-btn--line { background: #06C755; box-shadow: 0 4px 20px rgba(6,199,85,0.25); }
+.recruit-btn--line:hover { box-shadow: 0 8px 32px rgba(6,199,85,0.35); }
+@media (max-width: 768px) { .recruit-btns .recruit-btn { width: 100%; max-width: 320px; padding: 16px 24px; } }
 .recruit-note { text-align: center; font-size: 13px; color: #6b8aad; margin-top: 16px; }
 
 /* ===== 15. Contact Section (Index) ===== */
