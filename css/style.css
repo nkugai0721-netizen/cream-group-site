@@ -1173,6 +1173,9 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
 
 /* Message */
 .about-message { max-width: 680px; margin: 0 auto; }
+.about-message__photo { width: 240px; margin: 0 auto 40px; text-align: center; }
+.about-message__photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+.about-message__photo figcaption { margin-top: 14px; font-size: 13px; color: var(--text-mid); letter-spacing: 0.15em; }
 .about-message__text { text-align: center; }
 .about-message__text p { font-size: 15px; color: var(--text-mid); line-height: 2.2; margin-bottom: 20px; }
 .about-message__text p:last-child { margin-bottom: 0; }
