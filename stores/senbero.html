@@ -186,13 +186,156 @@
     <section class="store-section" aria-label="メニュー">
       <div class="container">
         <h2 class="section__title">Menu</h2>
-        <p class="section__subtitle">おすすめメニュー</p>
-
-        <div style="text-align:center;padding:60px 20px;">
-          <p style="font-size:48px;margin-bottom:16px;">🍽</p>
-          <p style="font-size:18px;color:var(--white-70);margin-bottom:8px;">メニュー準備中</p>
-          <p style="font-size:13px;color:var(--white-50);">Coming Soon — 素材がそろい次第公開予定です</p>
+        <!-- MENU:START -->
+        <p class="section__subtitle">メニュー</p>
+        <dl class="menu-system">
+          <div><dt>せんべろセット</dt><dd>1,000円<small>ドリンク3杯＋小鉢1品</small></dd></div>
+          <div class="menu-system__note">※おひとり様1ドリンク制 ※セットの生ビールは1杯まで ※単品のみの方はチャージ300円</div>
+        </dl>
+        <h3 class="menu-heading">おすすめ</h3>
+        <ul class="menu-picks">
+          <li><span class="menu-picks__name">元祖ウニクリームそうめんチャンプルー</span><span class="menu-picks__price">¥980</span></li>
+          <li><span class="menu-picks__name">美崎牛炙りユッケ</span><span class="menu-picks__price">¥1,490</span></li>
+          <li><span class="menu-picks__name">下町モツ煮込み</span><span class="menu-picks__price">¥600</span></li>
+          <li><span class="menu-picks__name">美崎牛もつ鍋（味噌・醤油）一人前</span><span class="menu-picks__price">¥1,500</span></li>
+        </ul>
+        <div class="menu-cats">
+          <details class="menu-cat" open>
+            <summary>せんべろ名物<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>下町モツ煮込み</span><span class="menu-list__price">¥600</span></li>
+              <li><span>美崎牛のすじ煮込み</span><span class="menu-list__price">¥600</span></li>
+              <li><span>自家製もずくキムチ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>美崎牛タタキ</span><span class="menu-list__price">¥1,280</span></li>
+              <li><span>元祖ウニクリームそうめんチャンプルー</span><span class="menu-list__price">¥980</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>とりあえず<span>8品</span></summary>
+            <ul class="menu-list">
+              <li><span>島豆腐の冷奴</span><span class="menu-list__price">¥500</span></li>
+              <li><span>枝豆</span><span class="menu-list__price">¥500</span></li>
+              <li><span>たこわさ</span><span class="menu-list__price">¥500</span></li>
+              <li><span>梅なんこつ</span><span class="menu-list__price">¥500</span></li>
+              <li><span>辛子明太子（生・炙り）</span><span class="menu-list__price">¥590</span></li>
+              <li><span>海ぶどう</span><span class="menu-list__price">¥500</span></li>
+              <li><span>エイヒレ</span><span class="menu-list__price">¥590</span></li>
+              <li><span>ミミガーポン酢</span><span class="menu-list__price">¥550</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>刺身<span>4品</span></summary>
+            <ul class="menu-list">
+              <li><span>美崎牛炙りユッケ</span><span class="menu-list__price">¥1,490</span></li>
+              <li><span>近海マグロのお刺身</span><span class="menu-list__price">¥590</span></li>
+              <li><span>マグロの山かけ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>薩摩鶏のたたき</span><span class="menu-list__price">¥850</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>逸品<span>10品</span></summary>
+            <ul class="menu-list">
+              <li><span>美崎牛ハンバーグ</span><span class="menu-list__price">¥1,490</span></li>
+              <li><span>美崎牛しぐれ煮</span><span class="menu-list__price">¥550</span></li>
+              <li><span>ニラ玉</span><span class="menu-list__price">¥650</span></li>
+              <li><span>島唐辛子ソーセージ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>鶏皮餃子</span><span class="menu-list__price">¥690</span></li>
+              <li><span>八重山かまぼこ</span><span class="menu-list__price">¥690</span></li>
+              <li><span>山芋鉄板（醤油・ソース）</span><span class="menu-list__price">¥690</span></li>
+              <li><span>ししゃも</span><span class="menu-list__price">¥600</span></li>
+              <li><span>鯖の塩焼き</span><span class="menu-list__price">¥950</span></li>
+              <li><span>揚げ出しジーマーミー豆腐</span><span class="menu-list__price">¥650</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>揚げもん<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>アジフライ（1枚）</span><span class="menu-list__price">¥300</span></li>
+              <li><span>にんにく丸揚げ</span><span class="menu-list__price">¥450</span></li>
+              <li><span>鶏の唐揚げ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>カーリーフライ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>紅ずわい蟹のクリームコロッケ</span><span class="menu-list__price">¥300</span></li>
+              <li><span>エビフライ</span><span class="menu-list__price">¥300</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>美崎牛もつ鍋<span>2品</span></summary>
+            <ul class="menu-list">
+              <li><span>味噌・醤油（一人前）</span><span class="menu-list__price">¥1,500</span></li>
+              <li><span>〆の雑炊・八重山そば</span><span class="menu-list__price">¥350</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>飯もん<span>3品</span></summary>
+            <ul class="menu-list">
+              <li><span>ご飯</span><span class="menu-list__price">¥300</span></li>
+              <li><span>TKG</span><span class="menu-list__price">¥550</span></li>
+              <li><span>とろろご飯</span><span class="menu-list__price">¥600</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ビール<span>2品</span></summary>
+            <ul class="menu-list">
+              <li><span>オリオン生（中）</span><span class="menu-list__price">¥600</span></li>
+              <li><span>クリアフリー（ノンアルコール）</span><span class="menu-list__price">¥500</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ハイボール<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>ハイボール</span><span class="menu-list__price">¥500</span></li>
+              <li><span>ジンジャーハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>コークハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>シークァーサーハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>バイスハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>カルピスハイ</span><span class="menu-list__price">¥600</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>酎ハイ・お茶割<span>9品</span></summary>
+            <ul class="menu-list">
+              <li><span>プレーン</span><span class="menu-list__price">¥500</span></li>
+              <li><span>レモンサワー</span><span class="menu-list__price">¥500</span></li>
+              <li><span>シークァーサーサワー</span><span class="menu-list__price">¥500</span></li>
+              <li><span>バイスサワー</span><span class="menu-list__price">¥500</span></li>
+              <li><span>カルピスサワー</span><span class="menu-list__price">¥500</span></li>
+              <li><span>トマトサワー</span><span class="menu-list__price">¥600</span></li>
+              <li><span>烏龍・さんぴん・緑茶・紅茶</span><span class="menu-list__price">¥500</span></li>
+              <li><span>JJ（茉莉花＋さんぴん）</span><span class="menu-list__price">¥500</span></li>
+              <li><span>JR（茉莉花＋緑茶）</span><span class="menu-list__price">¥500</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>泡盛・焼酎・ジン<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>請福・八重泉・玉之露・於茂登・白百合</span><span class="menu-list__price">¥500</span></li>
+              <li><span>宮之鶴</span><span class="menu-list__price">¥600</span></li>
+              <li><span>黒霧島・赤霧島（芋）</span><span class="menu-list__price">¥500</span></li>
+              <li><span>いいちこ（麦）</span><span class="menu-list__price">¥500</span></li>
+              <li><span>鍛高譚（紫蘇）</span><span class="menu-list__price">¥500</span></li>
+              <li><span>翠（ジン） ソーダ割</span><span class="menu-list__price">¥600</span></li>
+              <li><span>翠（ジン） 緑茶割</span><span class="menu-list__price">¥600</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ワイン・果実酒<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>グラス 赤・白</span><span class="menu-list__price">¥500</span></li>
+              <li><span>かち割り 赤・白</span><span class="menu-list__price">¥500</span></li>
+              <li><span>ソーダ割</span><span class="menu-list__price">¥500</span></li>
+              <li><span>梅</span><span class="menu-list__price">¥600</span></li>
+              <li><span>柚子</span><span class="menu-list__price">¥600</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ソフトドリンク<span>1品</span></summary>
+            <ul class="menu-list">
+              <li><span>オレンジ・コーラ・ジンジャー・カルピス・烏龍茶・さんぴん茶・うっちん茶・緑茶・紅茶</span><span class="menu-list__price">¥400</span></li>
+            </ul>
+          </details>
         </div>
+        <ul class="menu-notes"><li>泡盛・焼酎は水割・ソーダ割・お湯割・お茶割にできます</li><li>持ち込みはご遠慮ください。グラス交換制です</li><li>内容・価格は変わることがあります</li></ul>
+        <!-- MENU:END -->
       </div>
     </section>
 

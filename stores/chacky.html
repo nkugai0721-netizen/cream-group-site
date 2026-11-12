@@ -184,13 +184,85 @@
     <section class="store-section" aria-label="メニュー">
       <div class="container">
         <h2 class="section__title">Menu</h2>
-        <p class="section__subtitle">料金システム</p>
-
-        <div style="text-align:center;padding:60px 20px;">
-          <p style="font-size:48px;margin-bottom:16px;">🍽</p>
-          <p style="font-size:18px;color:var(--white-70);margin-bottom:8px;">メニュー準備中</p>
-          <p style="font-size:13px;color:var(--white-50);">Coming Soon — 素材がそろい次第公開予定です</p>
+        <!-- MENU:START -->
+        <p class="section__subtitle">メニュー</p>
+        <dl class="menu-system">
+          <div><dt>テーブルチャージ</dt><dd>2,000円／1人<small>カラオケ歌い放題込み</small></dd></div>
+          <div><dt>レディースドリンク</dt><dd>1,000円</dd></div>
+          <div class="menu-system__note">別途サービス・タックス10%</div>
+        </dl>
+        <div class="menu-cats">
+          <details class="menu-cat" open>
+            <summary>ボトル：泡盛<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>請福</span><span class="menu-list__price">¥8,000</span></li>
+              <li><span>八重泉</span><span class="menu-list__price">¥8,000</span></li>
+              <li><span>玉の露</span><span class="menu-list__price">¥8,000</span></li>
+              <li><span>琉球王朝</span><span class="menu-list__price">¥12,000</span></li>
+              <li><span>菊之露VIP</span><span class="menu-list__price">¥12,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ボトル：焼酎<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>二階堂</span><span class="menu-list__price">¥9,000</span></li>
+              <li><span>吉四六（壺）</span><span class="menu-list__price">¥14,000</span></li>
+              <li><span>黒霧島</span><span class="menu-list__price">¥9,000</span></li>
+              <li><span>DAIYAME</span><span class="menu-list__price">¥15,000</span></li>
+              <li><span>茉莉花</span><span class="menu-list__price">¥7,000</span></li>
+              <li><span>キンミヤ</span><span class="menu-list__price">¥9,000</span></li>
+              <li><span>鏡月</span><span class="menu-list__price">¥9,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ボトル：ウイスキー<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>角</span><span class="menu-list__price">¥15,000</span></li>
+              <li><span>知多</span><span class="menu-list__price">¥22,000</span></li>
+              <li><span>白州</span><span class="menu-list__price">¥65,000</span></li>
+              <li><span>山崎</span><span class="menu-list__price">¥85,000</span></li>
+              <li><span>ジャックダニエル</span><span class="menu-list__price">¥18,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>シャンパン<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>オリシャン</span><span class="menu-list__price">¥30,000</span></li>
+              <li><span>ヴーヴ・クリコ（イエロー）</span><span class="menu-list__price">¥35,000</span></li>
+              <li><span>ヴーヴ・クリコ（ホワイト）</span><span class="menu-list__price">¥40,000</span></li>
+              <li><span>ソウメイ</span><span class="menu-list__price">¥82,000</span></li>
+              <li><span>ドン ペリニヨン</span><span class="menu-list__price">¥85,000</span></li>
+              <li><span>ベル エポック</span><span class="menu-list__price">¥100,000</span></li>
+              <li><span>アルマン・ド ゴールド</span><span class="menu-list__price">¥120,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ビール<span>1品</span></summary>
+            <ul class="menu-list">
+              <li><span>オリオン</span><span class="menu-list__price">¥1,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ショット<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>クエルボゴールド</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>ハブ酒</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>アネホ1800</span><span class="menu-list__price">¥2,000</span></li>
+              <li><span>テキーラ観覧車（ハーフ）</span><span class="menu-list__price">¥20,000</span></li>
+              <li><span>テキーラ観覧車（フル）</span><span class="menu-list__price">¥40,000</span></li>
+              <li><span>ハブ観覧車（ハーフ）</span><span class="menu-list__price">¥20,000</span></li>
+              <li><span>ハブ観覧車（フル）</span><span class="menu-list__price">¥40,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ソフトドリンク<span>1品</span></summary>
+            <ul class="menu-list">
+              <li><span>緑茶・烏龍茶・珈琲・さんぴん茶・炭酸水</span><span class="menu-list__price">¥500</span></li>
+            </ul>
+          </details>
         </div>
+        <ul class="menu-notes"><li>その他ご要望はスタッフまでお尋ねください</li><li>内容・価格は変わることがあります</li></ul>
+        <!-- MENU:END -->
       </div>
     </section>
 

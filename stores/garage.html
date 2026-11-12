@@ -186,13 +186,254 @@
     <section class="store-section" aria-label="メニュー">
       <div class="container">
         <h2 class="section__title">Menu</h2>
-        <p class="section__subtitle">おすすめメニュー</p>
-
-        <div style="text-align:center;padding:60px 20px;">
-          <p style="font-size:48px;margin-bottom:16px;">🍽</p>
-          <p style="font-size:18px;color:var(--white-70);margin-bottom:8px;">メニュー準備中</p>
-          <p style="font-size:13px;color:var(--white-50);">Coming Soon — 素材がそろい次第公開予定です</p>
+        <!-- MENU:START -->
+        <p class="section__subtitle">メニュー</p>
+        <h3 class="menu-heading">おすすめ</h3>
+        <ul class="menu-picks">
+          <li><span class="menu-picks__name">石垣牛タコス</span><span class="menu-picks__price">¥1,600</span></li>
+          <li><span class="menu-picks__name">石垣島タコライス</span><span class="menu-picks__price">¥1,290</span></li>
+          <li><span class="menu-picks__name">ガーリックシュリンプ</span><span class="menu-picks__price">¥1,080</span></li>
+          <li><span class="menu-picks__name">ロコモコ</span><span class="menu-picks__price">¥1,390</span></li>
+        </ul>
+        <div class="menu-cats">
+          <details class="menu-cat" open>
+            <summary>タコス<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>石垣牛タコス</span><span class="menu-list__price">¥1,600</span></li>
+              <li><span>もろみ豚タコス</span><span class="menu-list__price">¥1,500</span></li>
+              <li><span>スパイシーチキンタコス</span><span class="menu-list__price">¥900</span></li>
+              <li><span>エビマヨタコス</span><span class="menu-list__price">¥900</span></li>
+              <li><span>フィッシュフライタコス</span><span class="menu-list__price">¥900</span></li>
+              <li><span>ポキタコス</span><span class="menu-list__price">¥900</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ご飯もの<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>石垣島タコライス</span><span class="menu-list__price">¥1,290</span></li>
+              <li><span>ポキボウル</span><span class="menu-list__price">¥1,250</span></li>
+              <li><span>ロコモコ</span><span class="menu-list__price">¥1,390</span></li>
+              <li><span>チキンオーバーライス</span><span class="menu-list__price">¥1,250</span></li>
+              <li><span>ガレージの豚丼</span><span class="menu-list__price">¥980</span></li>
+              <li><span>ガーリックシュリンププレート</span><span class="menu-list__price">¥1,420</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>一品料理<span>9品</span></summary>
+            <ul class="menu-list">
+              <li><span>サイコロステーキ</span><span class="menu-list__price">¥1,860</span></li>
+              <li><span>マカロニチーズ焼き</span><span class="menu-list__price">¥490</span></li>
+              <li><span>ナチョスオーブン焼き</span><span class="menu-list__price">¥690</span></li>
+              <li><span>スパムエッグ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>ハンバーグ</span><span class="menu-list__price">¥980</span></li>
+              <li><span>スパイシーチキン</span><span class="menu-list__price">¥870</span></li>
+              <li><span>ガーリックシュリンプ</span><span class="menu-list__price">¥1,080</span></li>
+              <li><span>タパスの盛合わせ</span><span class="menu-list__price">¥1,800</span></li>
+              <li><span>ソーセージの盛り合わせ</span><span class="menu-list__price">¥1,290</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>前菜<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>自家製ピクルス</span><span class="menu-list__price">¥540</span></li>
+              <li><span>ハモンセラーノ</span><span class="menu-list__price">¥570</span></li>
+              <li><span>シーザーサラダ</span><span class="menu-list__price">¥790</span></li>
+              <li><span>ポキマグロとアボカド</span><span class="menu-list__price">¥690</span></li>
+              <li><span>海ぶどう</span><span class="menu-list__price">¥590</span></li>
+              <li><span>チーズ盛り合わせ</span><span class="menu-list__price">¥1,980</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>アヒージョ<span>2品</span></summary>
+            <ul class="menu-list">
+              <li><span>海老とブロッコリー</span><span class="menu-list__price">¥980</span></li>
+              <li><span>にんにくと卵</span><span class="menu-list__price">¥880</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>揚げ物<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>ポテトフライ</span><span class="menu-list__price">¥540</span></li>
+              <li><span>チリチーズポテト</span><span class="menu-list__price">¥790</span></li>
+              <li><span>フィッシュ＆チップス</span><span class="menu-list__price">¥790</span></li>
+              <li><span>フライドチキン</span><span class="menu-list__price">¥570</span></li>
+              <li><span>ハラペーニョボム</span><span class="menu-list__price">¥890</span></li>
+              <li><span>海老パン</span><span class="menu-list__price">¥870</span></li>
+              <li><span>カーリーフライ</span><span class="menu-list__price">¥750</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>バーガー・ホットドッグ<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>チキンバーガー</span><span class="menu-list__price">¥1,190</span></li>
+              <li><span>フィレオフィッシュ</span><span class="menu-list__price">¥1,090</span></li>
+              <li><span>ホットドッグ</span><span class="menu-list__price">¥450</span></li>
+              <li><span>チリドッグ</span><span class="menu-list__price">¥650</span></li>
+              <li><span>ワカモレドッグ</span><span class="menu-list__price">¥650</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>パスタ・八重山そば<span>6品</span></summary>
+            <ul class="menu-list">
+              <li><span>八重山そば</span><span class="menu-list__price">¥700</span></li>
+              <li><span>あーさーそば</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>カルボナーラ</span><span class="menu-list__price">¥1,290</span></li>
+              <li><span>明太クリームパスタ</span><span class="menu-list__price">¥1,350</span></li>
+              <li><span>明太クリームの冷製パスタ</span><span class="menu-list__price">¥1,350</span></li>
+              <li><span>タコスパスタ</span><span class="menu-list__price">¥1,350</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>スナック・トッピング<span>9品</span></summary>
+            <ul class="menu-list">
+              <li><span>ポップコーン</span><span class="menu-list__price">¥380</span></li>
+              <li><span>サルサ＆ワカモレチップス</span><span class="menu-list__price">¥540</span></li>
+              <li><span>アボカド</span><span class="menu-list__price">¥280</span></li>
+              <li><span>ワカモレ</span><span class="menu-list__price">¥300</span></li>
+              <li><span>目玉焼き</span><span class="menu-list__price">¥150</span></li>
+              <li><span>バゲット</span><span class="menu-list__price">¥200</span></li>
+              <li><span>チーズ</span><span class="menu-list__price">¥200</span></li>
+              <li><span>白ごはん</span><span class="menu-list__price">¥200</span></li>
+              <li><span>お子様セット</span><span class="menu-list__price">¥1,000</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>スイーツ<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>ドライフルーツクッキー</span><span class="menu-list__price">¥350</span></li>
+              <li><span>さーたーあんだぎー</span><span class="menu-list__price">¥600</span></li>
+              <li><span>ブルーシール塩ちんすこう</span><span class="menu-list__price">¥400</span></li>
+              <li><span>ブルーシール島パインココナッツ</span><span class="menu-list__price">¥400</span></li>
+              <li><span>ブルーシールショコラクッキー</span><span class="menu-list__price">¥400</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ビール<span>8品</span></summary>
+            <ul class="menu-list">
+              <li><span>オリオン</span><span class="menu-list__price">¥700</span></li>
+              <li><span>プレミアム</span><span class="menu-list__price">¥900</span></li>
+              <li><span>コロナ</span><span class="menu-list__price">¥770</span></li>
+              <li><span>ハイネケン</span><span class="menu-list__price">¥770</span></li>
+              <li><span>バドワイザー</span><span class="menu-list__price">¥870</span></li>
+              <li><span>ヴァイツェン</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>マリン</span><span class="menu-list__price">¥1,100</span></li>
+              <li><span>生ビール</span><span class="menu-list__price">¥800</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ハイボール<span>9品</span></summary>
+            <ul class="menu-list">
+              <li><span>角</span><span class="menu-list__price">¥700</span></li>
+              <li><span>知多</span><span class="menu-list__price">¥1,100</span></li>
+              <li><span>ジャックダニエル</span><span class="menu-list__price">¥800</span></li>
+              <li><span>ラフロイグ</span><span class="menu-list__price">¥970</span></li>
+              <li><span>カナディアンクラブ</span><span class="menu-list__price">¥800</span></li>
+              <li><span>ハーパー</span><span class="menu-list__price">¥850</span></li>
+              <li><span>シーバスリーガル</span><span class="menu-list__price">¥950</span></li>
+              <li><span>ジェムソン</span><span class="menu-list__price">¥800</span></li>
+              <li><span>マッカラン</span><span class="menu-list__price">¥2,200</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>酎ハイ・お茶ハイ<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>レモンサワー</span><span class="menu-list__price">¥600</span></li>
+              <li><span>シークワーサーサワー</span><span class="menu-list__price">¥600</span></li>
+              <li><span>緑茶ハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>さんぴんハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>ウーロンハイ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>JJ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>JR</span><span class="menu-list__price">¥600</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>泡盛・焼酎<span>10品</span></summary>
+            <ul class="menu-list">
+              <li><span>請福</span><span class="menu-list__price">¥600</span></li>
+              <li><span>八重泉</span><span class="menu-list__price">¥600</span></li>
+              <li><span>玉の露</span><span class="menu-list__price">¥600</span></li>
+              <li><span>於茂登</span><span class="menu-list__price">¥600</span></li>
+              <li><span>白百合</span><span class="menu-list__price">¥700</span></li>
+              <li><span>宮の鶴</span><span class="menu-list__price">¥700</span></li>
+              <li><span>黒霧島</span><span class="menu-list__price">¥600</span></li>
+              <li><span>二階堂</span><span class="menu-list__price">¥600</span></li>
+              <li><span>鍛高譚</span><span class="menu-list__price">¥600</span></li>
+              <li><span>だいやめ</span><span class="menu-list__price">¥700</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>カクテル・ジン・ラム<span>24品</span></summary>
+            <ul class="menu-list">
+              <li><span>ボンベイサファイア（ジン）</span><span class="menu-list__price">¥800</span></li>
+              <li><span>タンカレーNO.TEN（ジン）</span><span class="menu-list__price">¥990</span></li>
+              <li><span>マサヒロジン（ジン）</span><span class="menu-list__price">¥1,100</span></li>
+              <li><span>マイヤーズ（ラム）</span><span class="menu-list__price">¥700</span></li>
+              <li><span>キャプテンモルガン（ラム）</span><span class="menu-list__price">¥750</span></li>
+              <li><span>イエラム（ラム）</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>カルアミルク</span><span class="menu-list__price">¥700</span></li>
+              <li><span>スプモーニ</span><span class="menu-list__price">¥850</span></li>
+              <li><span>カンパリソーダ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>カシスオレンジ</span><span class="menu-list__price">¥700</span></li>
+              <li><span>カシスさんぴん</span><span class="menu-list__price">¥700</span></li>
+              <li><span>ファジーネーブル</span><span class="menu-list__price">¥700</span></li>
+              <li><span>ピーチさんぴん</span><span class="menu-list__price">¥700</span></li>
+              <li><span>ジントニック</span><span class="menu-list__price">¥700</span></li>
+              <li><span>ジンバック</span><span class="menu-list__price">¥700</span></li>
+              <li><span>スクリュードライバー</span><span class="menu-list__price">¥700</span></li>
+              <li><span>モスコミュール</span><span class="menu-list__price">¥700</span></li>
+              <li><span>マリブコーク</span><span class="menu-list__price">¥700</span></li>
+              <li><span>マリブミルク</span><span class="menu-list__price">¥600</span></li>
+              <li><span>カシスショコラ</span><span class="menu-list__price">¥850</span></li>
+              <li><span>翠ジン</span><span class="menu-list__price">¥750</span></li>
+              <li><span>ミスティア</span><span class="menu-list__price">¥700</span></li>
+              <li><span>ホワイトルシアン</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>八重泉ジン</span><span class="menu-list__price">¥900</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ショット<span>5品</span></summary>
+            <ul class="menu-list">
+              <li><span>クエルボゴールド</span><span class="menu-list__price">¥700</span></li>
+              <li><span>イエガー</span><span class="menu-list__price">¥700</span></li>
+              <li><span>メスカル</span><span class="menu-list__price">¥1,000</span></li>
+              <li><span>ハブ酒</span><span class="menu-list__price">¥700</span></li>
+              <li><span>1800 アネホ</span><span class="menu-list__price">¥1,500</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ワイン・果実酒<span>7品</span></summary>
+            <ul class="menu-list">
+              <li><span>請福梅酒</span><span class="menu-list__price">¥700</span></li>
+              <li><span>請福ゆず酒</span><span class="menu-list__price">¥700</span></li>
+              <li><span>グラス赤</span><span class="menu-list__price">¥700</span></li>
+              <li><span>グラス白</span><span class="menu-list__price">¥700</span></li>
+              <li><span>白ワインソーダ</span><span class="menu-list__price">¥700</span></li>
+              <li><span>カリモーチョ</span><span class="menu-list__price">¥750</span></li>
+              <li><span>オペレーター</span><span class="menu-list__price">¥750</span></li>
+            </ul>
+          </details>
+          <details class="menu-cat">
+            <summary>ソフトドリンク・珈琲<span>14品</span></summary>
+            <ul class="menu-list">
+              <li><span>アイスコーヒー</span><span class="menu-list__price">¥700</span></li>
+              <li><span>アイスカフェオレ</span><span class="menu-list__price">¥750</span></li>
+              <li><span>コーヒーフロート</span><span class="menu-list__price">¥800</span></li>
+              <li><span>コーラ</span><span class="menu-list__price">¥500</span></li>
+              <li><span>ジンジャーエール</span><span class="menu-list__price">¥600</span></li>
+              <li><span>オレンジ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>マンゴー</span><span class="menu-list__price">¥600</span></li>
+              <li><span>グレープフルーツ</span><span class="menu-list__price">¥600</span></li>
+              <li><span>烏龍茶</span><span class="menu-list__price">¥500</span></li>
+              <li><span>さんぴん茶</span><span class="menu-list__price">¥600</span></li>
+              <li><span>緑茶</span><span class="menu-list__price">¥600</span></li>
+              <li><span>オリオンノンアルコール</span><span class="menu-list__price">¥550</span></li>
+              <li><span>グアバジュース</span><span class="menu-list__price">¥650</span></li>
+              <li><span>パッションフルーツジュース</span><span class="menu-list__price">¥750</span></li>
+            </ul>
+          </details>
         </div>
+        <ul class="menu-notes"><li>価格は税込です</li><li>テイクアウトできるメニューがあります（店内価格＋50円）</li><li>ご飯もの・タコスなどはドリンクとのお得なセットもあります</li><li>内容・価格は変わることがあります</li></ul>
+        <!-- MENU:END -->
       </div>
     </section>
 
