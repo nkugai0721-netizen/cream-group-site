@@ -1548,12 +1548,15 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
   .about-body .section-title { text-align: center !important; }
   .about-stats-row { justify-content: space-around; }
   .about-stat-number { font-size: 32px; }
-  .feature-cards { grid-template-columns: 1fr; }
-  .feature-card { min-height: 280px; }
+  /* 特長・採用のカードと店舗の電話はスマホで横にスワイプ（次のカードの端を見せる） */
+  .feature-cards, .contact-stores { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding: 0 20px; scroll-padding: 0 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .resort-section .feature-cards, .contact-stores { margin-left: -20px; margin-right: -20px; }
+  .feature-cards::-webkit-scrollbar, .contact-stores::-webkit-scrollbar { display: none; }
+  .feature-card { flex: 0 0 82%; min-height: 320px; scroll-snap-align: start; border-radius: 12px; }
+  .contact-store { flex: 0 0 62%; scroll-snap-align: start; border-radius: 12px; }
   .resort-section { padding: 60px 20px; }
   .news-item { flex-wrap: wrap; gap: 8px 12px; }
   .news-title { width: 100%; font-size: 14px; }
-  .contact-stores { grid-template-columns: 1fr; }
   .contact-store { min-height: 200px; }
   .contact-form { padding: 28px 20px; }
   .contact-form__row { grid-template-columns: 1fr; }
