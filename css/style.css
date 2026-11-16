@@ -1447,6 +1447,11 @@ body.page-sub .section + .section { border-top: 1px solid var(--white-10); }
   font-weight: 700; letter-spacing: 0.05em; margin-bottom: 16px; color: var(--white);
 }
 .store-hero__concept { font-size: 15px; color: var(--white-70); max-width: 640px; margin: 0 auto; line-height: 1.8; }
+/* 店名の下の電話・地図ボタン（スマホですぐ押せるように） */
+.store-hero__actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.store-hero__actions .store-cta__btn { padding: 12px 24px; }
+.store-hero__actions .store-cta__btn--primary { color: #000; }
+.store-hero__actions .store-cta__btn--outline { color: #fff; border-color: rgba(255,255,255,0.5); background: rgba(0,0,0,0.25); }
 .store-section { padding: 80px 0; }
 .store-section + .store-section { border-top: 1px solid var(--white-10); }
 .store-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
